@@ -1,0 +1,16 @@
+
+html, body{
+    height: 100%;
+ }
+
+
+ .background-login {
+    background-size: cover;
+ }
+
+
+
+.background-login form{
+   opacity: 0.9;
+   border-radius: 20px;
+}
