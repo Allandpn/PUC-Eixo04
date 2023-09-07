@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="../static/main.css" />
   </head>
   <body>
-
-    <!--Busca imagem para background da pagina no endereço: https://c.pxhere.com/photos/79/26/music_violin_person_string_instrument-138718.jpg!d-->
+    <!-- Busca imagem para background da pagina no endereço: https://c.pxhere.com/photos/79/26/music_violin_person_string_instrument-138718.jpg!d -->
     <div class="bg-image background-login" style="background-image: url('https://c.pxhere.com/photos/79/26/music_violin_person_string_instrument-138718.jpg!d');height: 100vh;">
       <div class="container-fluid d-flex h-100">
-        <div class="wrapper mx-auto d-flex align-items-center " style="max-width: 700px;">
-          <!--Cria formulario para acesso ao sistema-->
-          <form class="border p-5  shadow bg-white" action="#" method="POST">
+        <div class="wrapper mx-auto d-flex align-items-center" style="max-width: 700px;">
+          <!-- Cria formulario para acesso ao sistema -->
+          <form class="border p-5 shadow bg-white" action="#" method="POST" style=" 
+          opacity: 0.9;
+          border-radius: 20px;
+          ">
             <div class="mb-5 text-center">
               <h3 class="text-info">Orquestra Criarte Digital</h3>
             </div>
@@ -26,12 +28,12 @@
               <label for="inputPassword">Senha</label>
               <input type="password" class="form-control" id="inputPassword" placeholder="Password" value="" required />
             </div>
-            <div class="form-group form-inline justify-content-between">
-              <small><a class="form-text text-secondary ml-3 text-muted" href="#">1° Acesso</a></small>
-              <small><a class="form-text text-secondary mr-3 text-muted" href="#">Esqueci a senha</a></small>
+            <div class="form-group">                
+              <small class=""><a class="form-text text-secondary text-muted text-right" href="#">Esqueci a senha</a></small>
             </div>
             <div class="text-center mt-3">
-              <button class="btn btn-primary" type="submit">Entrar</button>
+              <!--<button class="btn btn-primary" type="submit">Entrar</button>-->
+              <a class="btn btn-primary text-white" type="submit" href="index.html">Entrar</a>
             </div>
           </form>
         </div>
