@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Arquivo Bootstrap versao 4.1-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Arquivo para icones Boxicons ultima versao-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Arquivo para icones FontAwesome ultima versao-->
+    <link href="../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
+    <!--Arquivo css local para configuracoes slidebar responsivo-->
+    <link rel="stylesheet" href="../static/layout-slidebar.css" />
+    <title>Orquestra Criarte Digital</title>
+</head>
+<body  id="body-pd">
+<header class="header " id="header">    
+        <div class="header_toggle">
+            <i class="bx bx-menu" id="header-toggle"></i>
+        </div>   
+        <div class="title-page ml-4 mr-auto ">
+           <span class="text-secondary" style="font-size: 25px;">Administração</span>
+        </div>      
+        <div >
+            <ul class="nav">
+                <li class="nav-item">                    
+                    <div class="perfil-icon" data-element="#id-perfil-menu-box">
+                        <i class="bx bx-user nav_icon " style="font-size: 2.2rem"></i>
+                        <i class='bx bx-chevron-down nav_icon'></i>   
+                    </div>                                    
+                </div> 
+            </ul> 
+        </div>
+        
+</header>
+<aside class="l-navbar" id="nav-bar">
+    <nav class="nav nav-slidebar">        
+            <a href="#" class="nav_logo">
+                <i class="bx bx-layer nav_logo-icon"></i>
+                <span class="nav_logo-name">Orq. Criarte Digital</span>
+            </a>
+            <div class="nav_list mb-auto">
+                <a href="#" class="nav_link " >
+                    <i class='bx bx-tachometer nav_icon'></i>
+                    <span class="nav-name">Dashboard</span>
+                </a>
+                <a href="#" class="nav_link " >
+                    <i class='bx bxs-cog nav_icon'></i>
+                    <span class="nav-name">Administração</span>
+                </a>
+                <a href="#" class="nav_link " >
+                    <i class='bx bxs-user-detail nav_icon'></i>
+                    <span class="nav-name">Alunos</span>
+                </a>
+                <a href="#" class="nav_link ">
+                    <i class='bx bx-dollar-circle nav_icon'></i>
+                    <span class="nav-name">Financeiro</span>
+                </a>
+                <a href="#" class="nav_link " >
+                    <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                    <span class="nav-name">Relatórios</span>
+                </a>                
+            </div>
+            <div class="text-center" id="id-system-version" style="color: #ebebeb; display: none; position: absolute; bottom: 10px;">
+                <small class="d-block">Desenvolvido por alunos do curso de S.I. da PUC Minas Virtual</small> 
+                <small>Versão 1.1</small>
+            </div>
+    </nav>
+</aside>
+
+<!--Conteudo Principal de Cada Pagina-->
+<div class="main">
+    <div class="wrapper container " style="height: 700px;">        
+        <div>
+            <!--NavTab para os dados das Escolas / Equipe / Alunos-->
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-escolas-tab" data-toggle="tab" href="#nav-escolas" role="tab" aria-controls="nav-escolas" aria-selected="false">Escolas</a>
+                <a class="nav-item nav-link" id="nav-equipe-tab" data-toggle="tab" href="#nav-equipe" role="tab" aria-controls="nav-equipe" aria-selected="true">Equipe</a>
+                <a class="nav-item nav-link" id="nav-acervo-tab" data-toggle="tab" href="#nav-acervo" role="tab" aria-controls="nav-acervo" aria-selected="false">Acervo</a>                
+            </div>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+            <!--Painel referente aos dados das Unidades da Ensino-->
+            <div class="tab-pane fade show active" id="nav-escolas" role="tabpanel" aria-labelledby="nav-escolas-tab">
+                <div class="container-fluid">
+                    <div class="row mt-1">
+                        <div class="ml-auto mr-3">                                
+                            <a class="btn-add-escola" id="addEscolaBtn" href="#" data-element="#telaCadastroEscola"><i class="fa fa-3x fa-plus-circle text-primary m-2" aria-hidden="true"></i></a>                   
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="container">
+                            <div class="row border-top border-bottom mb-3">
+                                <div class="d-flex flex-column justify-content-center col-3 p-2">
+                                    <span class="align-middle h5 text-center">Unidade de Belo Horizonte</span>                                    
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="container-fluid ml-0">
+                                        <table class="table text-center mb-0">
+                                            <thead class="thead-light">
+                                              <tr>                                                
+                                                <th scope="col">Equipe</th>
+                                                <th scope="col">Alunos</th>
+                                                <th scope="col">Acervo</th>                                                
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                              </tr>                                                                                         
+                                            </tbody>                                            
+                                        </table>                                                                      
+                                    </div>
+                                    <div class="d-flex flex-column mt-2 mb-2">
+                                        <i class='bx bx-edit text-secondary'  style="font-size: 1.75rem"></i>
+                                        <i class='bx bx-file-find text-secondary mt-auto' style="font-size: 1.75rem"></i> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-top border-bottom mb-3">
+                                <div class="d-flex flex-column justify-content-center col-3 p-2">
+                                    <span class="align-middle h5 text-center">Unidade de Belo Horizonte</span>                                    
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="container-fluid ml-0">
+                                        <table class="table text-center mb-0">
+                                            <thead class="thead-light">
+                                              <tr>                                                
+                                                <th scope="col">Equipe</th>
+                                                <th scope="col">Alunos</th>
+                                                <th scope="col">Acervo</th>                                                
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                              </tr>                                                                                         
+                                            </tbody>                                            
+                                        </table>                                                                      
+                                    </div>
+                                    <div class="d-flex flex-column mt-2 mb-2">
+                                        <i class='bx bx-edit text-secondary'  style="font-size: 2rem"></i>
+                                        <i class='bx bx-file-find text-secondary mt-auto' style="font-size: 2rem"></i> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-top border-bottom mb-3">
+                                <div class="d-flex flex-column justify-content-center col-3 p-2">
+                                    <span class="align-middle h5 text-center">Unidade de Belo Horizonte</span>                                    
+                                </div>
+                                <div class="col d-flex">
+                                    <div class="container-fluid ml-0">
+                                        <table class="table text-center mb-0">
+                                            <thead class="thead-light">
+                                              <tr>                                                
+                                                <th scope="col">Equipe</th>
+                                                <th scope="col">Alunos</th>
+                                                <th scope="col">Acervo</th>                                                
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                                <td>                                                    
+                                                    <span>10</span>                                                        
+                                                </td>
+                                              </tr>                                                                                         
+                                            </tbody>                                            
+                                        </table>                                                                      
+                                    </div>
+                                    <div class="d-flex flex-column mt-2 mb-2">
+                                        <i class='bx bx-edit text-secondary'  style="font-size: 1.75rem"></i>
+                                        <i class='bx bx-file-find text-secondary mt-auto' style="font-size: 1.75rem"></i> 
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>                
+                </div>
+            </div>
+            <!--Painel referente aos dados da Equipe da organização-->
+            <div class="tab-pane fade " id="nav-equipe" role="tabpanel" aria-labelledby="nav-equipe-tab">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, fugiat repudiandae necessitatibus dolorum natus saepe, similique officiis nostrum consequuntur asperiores adipisci corporis atque excepturi sequi aspernatur aliquam esse vitae! Enim ea fugiat aperiam sunt totam accusantium ipsam, a laboriosam vero laborum quibusdam? Fuga recusandae earum culpa doloribus! Libero voluptatibus magnam nihil aliquam ea commodi aperiam laboriosam, a unde. Totam debitis dolorem modi eligendi numquam odit saepe sequi ex quis quos id distinctio dolorum ducimus natus corporis quidem, aliquid eaque blanditiis illum explicabo voluptate, esse vel dicta. Fugit sint, deleniti, in vitae ex voluptates laboriosam tempore dolorem, et ducimus sequi error?
+
+            </div>
+            <!--Painel referente aos dados dos Alunos-->
+            <div class="tab-pane fade" id="nav-acervo" role="tabpanel" aria-labelledby="nav-acervo-tab">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, culpa? Reiciendis ab, recusandae explicabo, voluptate mollitia tenetur assumenda iure earum magni quibusdam quia quasi. Saepe voluptates minus excepturi pariatur. Illo amet cum perspiciatis sunt voluptas, error labore. Distinctio neque commodi, nihil temporibus quibusdam cum nesciunt et animi voluptate enim eaque!
+            </div>            
+        </div>
+
+       
+       
+    </div>
+
+   
+    <!--Modal para adicional Escola-->
+    <div class="tela-add-escola border rounded shadow p-4 bg-white" id="telaCadastroEscola">
+        <form>
+            <div class="text-center mb-3">
+                <span class="h5 text-info font-weight-bold">Cadastro de Escola</span>
+                <button type="button" class="close btn-add-escola" data-element="#telaCadastroEscola" data-dismiss="tela-add-escola" aria-label="Fechar">
+                    <span class="btn-add-escola" aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+            <div class="form-group">
+                <label for="nomeEscola">Nome da Escola</label>
+            <input type="text" class="form-control" id="nomeEscola" placeholder="Nome da Escola">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Endereço</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Rua XV de Novembro, nº 0">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                <label for="inputBairro">Bairro</label>
+                <input type="text" class="form-control" id="inputBairro">
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="inputTelefone">Cidade</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-3">
+                <label for="inputCEP">CEP</label>
+                <input type="text" class="form-control" id="inputCEP">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputGestor">Gestor</label>
+                <input type="text" class="form-control" id="inputGestor" placeholder="Nome do Gestor">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                <label for="inputDDD">DDD</label>
+                <input type="text" class="form-control" id="inputDDD">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputTelefone">Telefone</label>
+                    <input type="text" class="form-control" id="inputTelefone">
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail">
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-secondary ml-4  btn-add-escola" data-element="#telaCadastroEscola">Cancelar</button>
+            </div>
+        </form>
+    </div>
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--Modal para Perfil do Usuario-->
+<div class="perfil-menu float-right" id="id-perfil-menu-box" style="width: 200px; display: none;">
+    <div class="m-3">@Nome Usuario</div>
+    <div class="dropdown-divider"></div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">Perfil</a>
+        </li>            
+        <li class="nav-item">
+          <a class="nav-link text-muted" href="#">Sair</a>
+        </li>
+      </ul>
+ </div> 
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type='text/javascript' src="/static/layout-slidebar.js"></script>    
+</body>
+</html>

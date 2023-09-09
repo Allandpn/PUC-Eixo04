@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Arquivo Bootstrap versao 4.1-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Arquivo para icones Boxicons ultima versao-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+    <!--Arquivo css local para configuracoes slidebar responsivo-->
+    <link rel="stylesheet" href="../static/layout-slidebar.css" />
+    <title>Orquestra Criarte Digital</title>
+</head>
+<body  id="body-pd">
+<header class="header " id="header">    
+        <div class="header_toggle">
+            <i class="bx bx-menu" id="header-toggle"></i>
+        </div>   
+        <div class="title-page ml-4 mr-auto ">
+           <span class="text-secondary" style="font-size: 25px;">Dashboard</span>
+        </div>      
+        <div >
+            <ul class="nav">
+                <li class="nav-item">                    
+                    <div class="perfil-icon" data-element="#id-perfil-menu-box">
+                        <i class="bx bx-user nav_icon " style="font-size: 2.2rem"></i>
+                        <i class='bx bx-chevron-down nav_icon'></i>   
+                    </div>                                    
+                </div> 
+            </ul> 
+        </div>
+        
+</header>
+<aside class="l-navbar" id="nav-bar">
+    <nav class="nav nav-slidebar">        
+            <a href="#" class="nav_logo">
+                <i class="bx bx-layer nav_logo-icon"></i>
+                <span class="nav_logo-name">Orq. Criarte Digital</span>
+            </a>
+            <div class="nav_list mb-auto">
+                <a href="#" class="nav_link active" >
+                    <i class='bx bx-tachometer nav_icon'></i>
+                    <span class="nav-name">Dashboard</span>
+                </a>
+                <a href="#" class="nav_link " >
+                    <i class='bx bxs-cog nav_icon'></i>
+                    <span class="nav-name">Administração</span>
+                </a>
+                <a href="#" class="nav_link " >
+                    <i class='bx bxs-user-detail nav_icon'></i>
+                    <span class="nav-name">Alunos</span>
+                </a>
+                <a href="#" class="nav_link ">
+                    <i class='bx bx-dollar-circle nav_icon'></i>
+                    <span class="nav-name">Financeiro</span>
+                </a>
+                <a href="#" class="nav_link " >
+                    <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                    <span class="nav-name">Relatórios</span>
+                </a>                
+            </div>
+            <div class="text-center" id="id-system-version" style="color: #ebebeb; display: none; position: absolute; bottom: 10px;">
+                <small class="d-block">Desenvolvido por alunos do curso de S.I. da PUC Minas Virtual</small> 
+                <small>Versão 1.1</small>
+            </div>
+    </nav>
+</aside>
+
+<div class="main">
+    
+    <div class="perfil-menu float-right" id="id-perfil-menu-box" style="width: 200px; display: none;">
+        <div class="m-3">@Nome Usuario</div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="#">Perfil</a>
+            </li>            
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="#">Sair</a>
+            </li>
+          </ul>
+     </div>  
+
+    <div class="wrapper container-fluid" style="height: 700px;">
+        <div> CONTEUDO </div>
+    </div>
+
+
+
+   
+
+
+ 
+
+   
+ 
+</div>
+
+
+
+
+
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type='text/javascript' src="/static/layout-slidebar.js"></script>    
+</body>
+</html>

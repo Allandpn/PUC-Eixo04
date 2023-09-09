@@ -14,7 +14,7 @@
         <div class="wrapper mx-auto d-flex align-items-center" style="max-width: 700px;">
           <!-- Cria formulario para acesso ao sistema -->
           <form class="border p-5 shadow bg-white" action="#" method="POST" style=" 
-          opacity: 0.9;
+          opacity: 0.97;
           border-radius: 20px;
           ">
             <div class="mb-5 text-center">
@@ -28,12 +28,36 @@
               <label for="inputPassword">Senha</label>
               <input type="password" class="form-control" id="inputPassword" placeholder="Password" value="" required />
             </div>
-            <div class="form-group">                
-              <small class=""><a class="form-text text-secondary text-muted text-right" href="#">Esqueci a senha</a></small>
+            <div class="form-group">
+              <small class=""><a class="form-text text-secondary text-muted text-right" href="#modal-rec-senha" data-toggle="modal">Esqueci a senha</a></small>
             </div>
             <div class="text-center mt-3">
-              <!--<button class="btn btn-primary" type="submit">Entrar</button>-->
+              <!-- <button class="btn btn-primary" type="submit">Entrar</button> -->
               <a class="btn btn-primary text-white" type="submit" href="index.html">Entrar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para recuperacao de senha -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-rec-senha">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center text-info">
+            <h4>Recuperar Senha</h4>
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <form class="border p-5 shadow bg-white rounded" action="#" method="POST" autocomplete="off">
+            <div class="mb-3 text-center">
+              <p>Digite seu endereço de e-mail. Você receberá um link por e-mail para criar uma nova senha.</p>
+            </div>
+            <div class="form-group">
+              <label for="name">Email</label>
+              <input type="email" class="form-control" id="name" placeholder="Email" value="" required />
+            </div>
+            <div class="text-center mt-3">
+              <button class="btn btn-primary" type="submit">Enviar</button>
             </div>
           </form>
         </div>
