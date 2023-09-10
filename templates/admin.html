@@ -13,6 +13,7 @@
     <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
     <!--Arquivo css local para configuracoes slidebar responsivo-->
     <link rel="stylesheet" href="../static/layout-slidebar.css" />
+    <link rel="stylesheet" href="../static/admin.css" />
     <title>Orquestra Criarte Digital</title>
 </head>
 <body  id="body-pd">
@@ -76,135 +77,257 @@
         <div>
             <!--NavTab para os dados das Escolas / Equipe / Alunos-->
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link nav_link_table text-dark active" id="nav-escolas-tab" data-toggle="tab" href="#nav-escolas" role="tab" aria-controls="nav-escolas" aria-selected="false">Escolas</a>
+                <a class="nav-item nav-link nav_link_table text-dark active" id="nav-escolas-tab" data-toggle="tab" href="#nav-escolas" role="tab" aria-controls="nav-escolas" aria-selected="false" data-element="#dataInfoEscola">Escolas</a>
+                <a class="nav-item nav-link nav_link_table text-dark" id="nav-classes-tab" data-toggle="tab" href="#nav-classes" role="tab" aria-controls="nav-classes" aria-selected="false" data-element="#">Classes</a>
                 <a class="nav-item nav-link nav_link_table text-dark" id="nav-equipe-tab" data-toggle="tab" href="#nav-equipe" role="tab" aria-controls="nav-equipe" aria-selected="true">Equipe</a>
                 <a class="nav-item nav-link nav_link_table text-dark" id="nav-acervo-tab" data-toggle="tab" href="#nav-acervo" role="tab" aria-controls="nav-acervo" aria-selected="false">Acervo</a>                
             </div>
         </div>
         <div class="tab-content" id="nav-tabContent">
             <!--Painel referente aos dados das Unidades da Ensino-->
-            <div class="tab-pane fade show active" id="nav-escolas" role="tabpanel" aria-labelledby="nav-escolas-tab">
-                <div class="container-fluid">
-                    <div class="row mt-1">
-                        <div class="ml-auto mr-3">                                
-                            <a class="btn-add-escola" id="addEscolaBtn" href="#" data-element="#telaCadastroEscola"><i class="fa fa-2x fa-plus-circle text-primary m-2" aria-hidden="true"></i></a>                   
-                        </div>
+        <div class="tab-pane fade show active" id="nav-escolas" role="tabpanel" aria-labelledby="nav-escolas-tab">
+            <div class="container-fluid">
+                <div class="row mt-1">
+                    <div class="ml-auto mr-3">                                
+                        <a class="btn-add-escola" id="addEscolaBtn" href="#" data-element="#telaCadastroEscola"><i class="fa fa-2x fa-plus-circle text-primary m-2" aria-hidden="true"></i></a>                   
                     </div>
-                    <div class="row mt-1">
-                        <div class="container">
-                            <!--Tabela com os resumo da Escola-->
-                            <div class="row border-top border-bottom mb-3">
-                                <div class=" my-auto">
-                                    <button type="submit" class="btn btn-outline-info py-3" data-element="#telaCadastroEscola">Unidade de Belo Horizonte</button>                                                                      
-                                </div>
-                                <div class="col d-flex">
-                                    <div class="container-fluid ml-0">
-                                        <table class="table text-center mb-0">
-                                            <thead class="thead-light">
-                                              <tr>                                                
-                                                <th scope="col">Equipe</th>
-                                                <th scope="col">Alunos</th>
-                                                <th scope="col">Acervo</th>                                                
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-                                              <tr>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                              </tr>                                                                                         
-                                            </tbody>                                            
-                                        </table>                                                                      
-                                    </div>
-                                    <div class="d-flex flex-column mt-2 mb-2">
-                                        <a href="#" class="mb-auto btn-add-escola" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
-                                        <a href="#" class="open-info-escola" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a> 
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Tabela com os resumo da Escola-->
-                            <div class="row border-top border-bottom mb-3">
-                                <div class="d-flex flex-column justify-content-center  col-3 p-2">
-                                    <span class="align-middle text-center font-weight-bold" style="color: #5e5e5e;
-                                    font-size: 17px;">Unidade de Betim</span>                                    
-                                </div>
-                                <div class="col d-flex">
-                                    <div class="container-fluid ml-0">
-                                        <table class="table text-center mb-0">
-                                            <thead class="thead-light">
-                                              <tr>                                                
-                                                <th scope="col">Equipe</th>
-                                                <th scope="col">Alunos</th>
-                                                <th scope="col">Acervo</th>                                                
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-                                              <tr>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                              </tr>                                                                                         
-                                            </tbody>                                            
-                                        </table>                                                                      
-                                    </div>
-                                    <div class="d-flex flex-column mt-2 mb-2">
-                                        <a href="#" class="mb-auto"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
-                                        <a href="#"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a> 
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Tabela com os resumo da Escola-->
-                            <div class="row border-top border-bottom mb-3">
-                                <div class="d-flex flex-column justify-content-center  col-3 p-2">
-                                    <span class="align-middle text-center font-weight-bold" style="color: #5e5e5e;
-                                    font-size: 17px;">Unidade de Contagem</span>                                    
-                                </div>
-                                <div class="col d-flex">
-                                    <div class="container-fluid ml-0">
-                                        <table class="table text-center mb-0">
-                                            <thead class="thead-light">
-                                              <tr>                                                
-                                                <th scope="col">Equipe</th>
-                                                <th scope="col">Alunos</th>
-                                                <th scope="col">Acervo</th>                                                
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-                                              <tr>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                                <td>                                                    
-                                                    <span>10</span>                                                        
-                                                </td>
-                                              </tr>                                                                                         
-                                            </tbody>                                            
-                                        </table>                                                                      
-                                    </div>
-                                    <div class="d-flex flex-column mt-2 mb-2">
-                                        <a href="#" class="mb-auto"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
-                                        <a href="#"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a> 
-                                    </div>
-                                </div>
-                            </div>                                                  
-                        </div>
-                    </div>                                    
                 </div>
+                <div class="row mt-2">
+                    <div class="container-fluid border-top ">
+                        <div class="row">
+                            <div class="col-3">
+                                
+                            </div>
+                            <div class="col-8 text-center pr-0">
+                                <table class="table mb-0">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Classes</th>
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Alunos</th>
+                                            <th scope="col">Acervo</th>
+                                          </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="col-1">
+                              
+                            </div>
+                        </div>
+
+                        <!--Linha de dados de cada unidade inserido dinamicamente-->
+                        <div class="row ">
+                            <div class="col-3 my-auto ">
+                                    <button type="button" class="btn btn-outline-info py-2 open-info-escola" data-element="#dataInfoEscola">
+                                        Unidade de Belo Horizonte
+                                    </button>                               
+                            </div>
+                            <div class="col-8 text-center pr-0">
+                                <table class="table pt-3 mb-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                          </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-1 px-0 d-flex  my-auto">
+                                <a href="#" class="mb-auto btn-add-escola" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                <a href="#" class="open-info-escola ml-auto" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>  
+                            </div>
+                        </div>
+                        <!--Linha de dados de cada unidade inserido dinamicamente-->
+                        <div class="row ">
+                            <div class="col-3 my-auto ">
+                                    <button type="button" class="btn btn-outline-info py-2 open-info-escola" data-element="#dataInfoEscola">
+                                        Unidade de Belo Horizonte
+                                    </button>                               
+                            </div>
+                            <div class="col-8 text-center pr-0">
+                                <table class="table pt-3 mb-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                          </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-1 px-0 d-flex  my-auto">
+                                <a href="#" class="mb-auto btn-add-escola" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                <a href="#" class="open-info-escola ml-auto" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>  
+                            </div>
+                        </div>
+                        <!--Linha de dados de cada unidade inserido dinamicamente-->
+                        <div class="row ">
+                            <div class="col-3 my-auto ">
+                                    <button type="button" class="btn btn-outline-info py-2 open-info-escola" data-element="#dataInfoEscola">
+                                        Unidade de Belo Horizonte
+                                    </button>                               
+                            </div>
+                            <div class="col-8 text-center pr-0">
+                                <table class="table pt-3 mb-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                          </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-1 px-0 d-flex  my-auto">
+                                <a href="#" class="mb-auto btn-add-escola" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                <a href="#" class="open-info-escola ml-auto" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>  
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row mt-5">
+                    <div class="container">
+                        <!--Tabela com os resumo da Escola-->
+                        <div class="row border-top border-bottom mb-3">
+                            <div class=" my-auto">
+                                <button type="button" class="btn btn-outline-info py-3 open-info-escola" data-element="#dataInfoEscola">Unidade de Belo Horizonte</button>                                                                      
+                            </div>
+                            <div class="col d-flex">
+                                <div class="container-fluid ml-0">
+                                    <table class="table text-center mb-0">
+                                        <thead class="thead-light">
+                                        <tr>                                                
+                                            <th>Equipe</th>
+                                            <th scope="col">Classes</th>
+                                            <th scope="col">Alunos</th>
+                                            <th scope="col">Acervo</th>                                                
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                        </tr>                                                                                         
+                                        </tbody>                                            
+                                    </table>                                                                      
+                                </div>
+                                <div class="d-flex flex-column mt-2 mb-2">
+                                    <a href="#" class="mb-auto btn-add-escola" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                    <a href="#" class="open-info-escola" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a> 
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tabela com os resumo da Escola-->
+                        <div class="row border-top border-bottom mb-3">
+                            <div class=" my-auto">
+                                <button type="button" class="btn btn-outline-info py-3 open-info-escola" data-element="#dataInfoEscola">Unidade de Belo Horizonte</button>                                                                      
+                            </div>
+                            <div class="col d-flex">
+                                <div class="container-fluid ml-0">
+                                    <table class="table text-center mb-0">
+                                        <thead class="thead-light">
+                                        <tr>                                                
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Classes</th>
+                                            <th scope="col">Alunos</th>
+                                            <th scope="col">Acervo</th>                                                
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                        </tr>                                                                                         
+                                        </tbody>                                            
+                                    </table>                                                                      
+                                </div>
+                                <div class="d-flex flex-column mt-2 mb-2">
+                                    <a href="#" class="mb-auto btn-add-escola" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                    <a href="#" class="open-info-escola" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a> 
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tabela com os resumo da Escola-->
+                        <div class="row border-top border-bottom mb-3">
+                            <div class=" my-auto">
+                                <button type="button" class="btn btn-outline-info py-3 open-info-escola" data-element="#dataInfoEscola">Unidade de Belo Horizonte</button>                                                                      
+                            </div>
+                            <div class="col d-flex">
+                                <div class="container-fluid ml-0">
+                                    <table class="table text-center mb-0">
+                                        <thead class="thead-light">
+                                        <tr>                                                
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Classes</th>
+                                            <th scope="col">Alunos</th>
+                                            <th scope="col">Acervo</th>                                                
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                            <td>                                                    
+                                                <span>10</span>                                                        
+                                            </td>
+                                        </tr>                                                                                         
+                                        </tbody>                                            
+                                    </table>                                                                      
+                                </div>
+                                <div class="d-flex flex-column mt-2 mb-2">
+                                    <a href="#" class="mb-auto btn-add-escola" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                    <a href="#" class="open-info-escola" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a> 
+                                </div>
+                            </div>
+                        </div>                                                            
+                    </div>
+                </div>                                    
+            </div>
+        </div>
+
+            <!--Painel referente aos dados da Equipe da organização-->
+            <div class="tab-pane fade " id="nav-classes" role="tabpanel" aria-labelledby="nav-classes-tab">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, fugiat repudiandae necessitatibus dolorum natus saepe, similique officiis nostrum consequuntur asperiores adipisci corporis atque excepturi sequi aspernatur aliquam esse vitae! Enim ea fu
+
             </div>
             <!--Painel referente aos dados da Equipe da organização-->
             <div class="tab-pane fade " id="nav-equipe" role="tabpanel" aria-labelledby="nav-equipe-tab">
@@ -244,6 +367,82 @@
             </div>
         </div>
         <div class="row ">
+            <!--Coluna com a lista dos membros da Equipe-->
+            <div class="col mr-2">
+                <div class="row justify-content-center bg-info text-white">
+                    <span>Classes</span>                    
+                </div>
+                <div class="row  mb-4" >     
+                    <div class="container-fluid px-0" style="max-height: 500px; overflow-y: auto;">
+                         <ul class="list-group list-group-flush m-2">
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                           </ul> 
+                    </div>         
+                 </div>
+            </div>
             <!--Coluna com a lista dos membros da Equipe-->
             <div class="col mr-2">
                 <div class="row justify-content-center bg-info text-white">
@@ -574,5 +773,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script type='text/javascript' src="../static/layout-slidebar.js"></script>    
+<script type='text/javascript' src="../static/admin.js"></script>  
 </body>
 </html>
