@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         // exibe versao do sistema
         $("#id-system-version").toggle();
       })
-    }    
+    }
   }
 
   showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
@@ -54,8 +54,8 @@ myLink.addEventListener('click', function (e) {
 
 
 // exibe modal com menu perfil
-$(function() {
-  $(".perfil-icon").click(function(e) {
+$(function () {
+  $(".perfil-icon").click(function (e) {
     e.preventDefault();
     el = $(this).data('element');
     $(el).toggle();
@@ -65,8 +65,8 @@ $(function() {
 
 
 // exibe modal com cadastro escola
-$(function() {
-  $(".btn-add-escola").click(function(e) {
+$(function () {
+  $(".btn-add-escola").click(function (e) {
     e.preventDefault();
     el = $(this).data('element');
     $(el).toggle();
@@ -75,8 +75,8 @@ $(function() {
 
 
 // exibe tabela com informacoes da escola selecionada
-$(function() {
-  $(".open-info-escola").click(function(e) {
+$(function () {
+  $(".open-info-escola").click(function (e) {
     e.preventDefault();
     el = $(this).data('element');
     $(el).toggle();
@@ -88,18 +88,27 @@ $(function() {
 // exibe tabela com informacoes da escola selecionada
 
 
-  const linkTable = document.querySelectorAll('.nav_link_table')
+const linkTable = document.querySelectorAll('.nav_link_table')
 
-  function tableLink() {
-    if (linkTable) {
-      linkTable.forEach(
-       function(l) {
+function tableLink() {
+  if (linkTable) {
+    linkTable.forEach(
+      function (l) {
         console.log('tes')
-       })
-      console.log(this)
-    }
+      })
+    console.log(this)
   }
-  linkTable.forEach(l => l.addEventListener('click', tableLink))
+}
+linkTable.forEach(l => l.addEventListener('click', tableLink))
+
+// exibe modal com cadastro aluno
+$(function () {
+  $(".btn-add-aluno").click(function (e) {
+    e.preventDefault();
+    el = $(this).data('element');
+    $(el).toggle();
+  });
+});
 
 
 
