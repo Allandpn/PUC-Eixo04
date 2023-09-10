@@ -3,7 +3,7 @@
 
 /* define estilo do slidebar da tela principal */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
-:root{--header-height: 3rem;--nav-width: 68px;--first-color: #035b96;--first-color-light: #d1cfdb;--white-color: #e4e1e1;--text-color: #f3eeee; --body-font: 'Nunito', sans-serif;--normal-font-size: 1rem;--z-fixed: 100}*,
+:root{--header-height: 3rem;--nav-width: 68px;--first-color: #035b96;--first-color-light: #d1cfdb;--white-color: #f3f3f3;--text-color: #f3eeee; --body-font: 'Nunito', sans-serif;--normal-font-size: 1rem;--z-fixed: 100}*,
 ::before,
 ::after{box-sizing: border-box}body{position: relative;margin: var(--header-height) 0 0 0;padding: 0 1rem;font-family: var(--body-font);font-size: var(--normal-font-size);transition: .5s}a{text-decoration: none}
 .header{width: 100%;height: var(--header-height);position: fixed;top: 0;left: 0;display: flex;align-items: center;padding: 0 1rem;background-color: var(--white-color);z-index: var(--z-fixed);transition: .5s}
@@ -35,11 +35,12 @@
 /* Deine estilo modal perfil usuario */
 .perfil-menu {   
     position: absolute;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     z-index: 1060;
     top: -33px;
     right: 10px;
+    border-radius: 5px;
    }
 .perfil-menu li:hover {
     background-color: var(--white-color); 
@@ -47,14 +48,14 @@
 
 
 /*define area de wrapper da pagina onde ficarao contidos as elementos principais do sistema*/
-.wrapper {
+.wrapper-tab {
     margin-top: calc(var(--header-height) + 50px);       
 }
 
 
 /*Define tela para cadastro de Escola*/
 .tela-add-escola{
-    width: 600px;
+    max-width: 600px;
     margin: auto;
     position: absolute;
     z-index: 1060;
@@ -63,5 +64,17 @@
     display: none;      
 }
 
+
+/*Define tela com os dados de cada escola*/
+.wrapper-dados-escola{
+    display: none;
+}
+
+
+
+
+.teste {
+    
+}
 
 

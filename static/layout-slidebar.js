@@ -72,3 +72,34 @@ $(function() {
     $(el).toggle();
   });
 });
+
+
+// exibe tabela com informacoes da escola selecionada
+$(function() {
+  $(".open-info-escola").click(function(e) {
+    e.preventDefault();
+    el = $(this).data('element');
+    $(el).toggle();
+  });
+});
+
+
+
+// exibe tabela com informacoes da escola selecionada
+
+
+  const linkTable = document.querySelectorAll('.nav_link_table')
+
+  function tableLink() {
+    if (linkTable) {
+      linkTable.forEach(
+       function(l) {
+        console.log('tes')
+       })
+      console.log(this)
+    }
+  }
+  linkTable.forEach(l => l.addEventListener('click', tableLink))
+
+
+
