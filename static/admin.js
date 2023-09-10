@@ -22,6 +22,16 @@ $(function () {
 });
 
 
+// exibe modal com cadastro curso
+$(function () {
+    $(".btn-add-curso").click(function (e) {
+        e.preventDefault();
+        el = $(this).data('element');
+        $(el).toggle();
+    });
+});
+
+
 // exibe tabela com informacoes da escola selecionada
 $(function () {
     $(".open-info-escola").click(function (e) {
