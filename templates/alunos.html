@@ -77,9 +77,9 @@
     <!--Conteudo Principal de Cada Pagina-->
     <div class="main">
         <div class="border shadow rounded" style="margin-top: 100px;">
-            <div class="ml-auto mr-3">
-                <h5><a>Adicionar um aluno</a></h5>
-                <a class="btn-add-aluno" id="addAlunoBtn" href="#" data-element="#telaCadastroAluno"><i
+            <div class="row mt-3 mr-2">
+                <h5 class="ml-5 mt-3 mr-3"><a>Adicionar um aluno</a></h5>
+                <a class="btn-add-aluno ml-auto mr-3" id="addAlunoBtn" href="#" data-element="#telaCadastroAluno"><i
                         class="fa fa-2x fa-plus-circle text-primary m-2" aria-hidden="true"></i></a>
 
             </div>
@@ -90,17 +90,19 @@
                         <th scope="col">Nome</th>
                         <th scope="col">Instrumento</th>
                         <th scope="col">Data de início</th>
+                        <th scope="col">Contato</th>
                         <th scope="col">Tutor</th>
                         <th scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>zak</td>
+                        <th scope="row">001</th>
+                        <td>Guilherme</td>
+                        <td>violoncello</td>
+                        <td>10/08/2014</td>
+                        <td>cell</td>
+                        <td>xxxx</td>
                         <td>
                             <a class="btn-add-aluno" id="addAlunoBtn" href="#" data-element="#telaCadastroAluno"><i
                                     class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
@@ -108,22 +110,24 @@
                     </tr>
 
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>jonn</td>
+                        <th scope="row">002</th>
+                        <td>Nikolas</td>
+                        <td>Violão</td>
+                        <td>17/10/2018</td>
+                        <td>cell</td>
+                        <td>xxxx</td>
                         <td>
                             <a class="btn-add-aluno" id="addAlunoBtn" href="#" data-element="#telaCadastroAluno"><i
                                     class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>wikip</td>
+                        <th scope="row">003</th>
+                        <td>Aurelio</td>
+                        <td>Piano</td>
+                        <td>20/06/2015</td>
+                        <td>cell</td>
+                        <td>xxxx</td>
                         <td>
                             <a class="btn-add-aluno" id="addAlunoBtn" href="#" data-element="#telaCadastroAluno"><i
                                     class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
@@ -152,12 +156,9 @@
             </div>
             <div class="form-group">
                 <label for="inputMatricula">Matricula</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Nº de Matricula">
+                <input type="text" class="form-control" id="inputMatricula" placeholder="Nº de Matricula">
             </div>
-            <div class="form-group">
-                <label for="inputTutor">Tutor</label>
-                <input type="text" class="form-control" id="inputTutor">
-            </div>
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputInstrumento">Instrumento</label>
@@ -166,6 +167,14 @@
                 <div class="form-group col-md-6">
                     <label for="inputDatadeinicio">Data de início</label>
                     <input type="date" class="form-control" id="inputDatadeinicio">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputTutor">Tutor</label>
+                    <input type="text" class="form-control" id="inputTutor">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputContato">Contato</label>
+                    <input type="tel" class="form-control" id="inputContato">
                 </div>
 
             </div>
