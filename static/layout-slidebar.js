@@ -109,3 +109,12 @@ $(function () {
     $(el).toggle();
   });
 });
+
+// exibe modal com edição aluno
+$(function () {
+  $(".btn-edit-aluno").click(function (e) {
+    e.preventDefault();
+    el = $(this).data('element');
+    $(el).toggle();
+  });
+});

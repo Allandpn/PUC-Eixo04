@@ -219,3 +219,14 @@ a {
     left: calc(50% - 300px);
     display: none;
 }
+
+/*Define tela para edição de Aluno*/
+.tela-edit-aluno {
+    max-width: 600px;
+    margin: auto;
+    position: absolute;
+    z-index: 1060;
+    top: 0px;
+    left: calc(50% - 300px);
+    display: none;
+}
