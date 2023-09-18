@@ -72,13 +72,13 @@
 </aside>
 
 <!--Conteudo Principal de Cada Pagina-->
-<div class="main">
-    <div class="wrapper wrapper-tab container border p-4 rounded shadow">        
+<div class="main" >
+    <div class="wrapper wrapper-tab container border p-4 rounded shadow bg-white">        
         <div>
             <!--NavTab para os dados das Escolas / Equipe / Alunos-->
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link nav_link_table text-dark active" id="nav-escolas-tab" data-toggle="tab" href="#nav-escolas" role="tab" aria-controls="nav-escolas" aria-selected="false" data-element="#dataInfoEscola">Escolas</a>
-                <a class="nav-item nav-link nav_link_table text-dark " id="nav-cursos-tab" data-toggle="tab" href="#nav-cursos" role="tab" aria-controls="nav-cursos" aria-selected="false" data-element="#">Cursos</a>
+                <a class="nav-item nav-link nav_link_table text-dark active" id="nav-escolas-tab" data-toggle="tab" href="#nav-escolas" role="tab" aria-controls="nav-escolas" aria-selected="false" data-element=".hide-toggle-tab">Escolas</a>
+                <a class="nav-item nav-link nav_link_table text-dark " id="nav-cursos-tab" data-toggle="tab" href="#nav-cursos" role="tab" aria-controls="nav-cursos" aria-selected="false">Cursos</a>
                 <a class="nav-item nav-link nav_link_table text-dark" id="nav-equipe-tab" data-toggle="tab" href="#nav-equipe" role="tab" aria-controls="nav-equipe" aria-selected="true">Equipe</a>
                 <a class="nav-item nav-link nav_link_table text-dark" id="nav-acervo-tab" data-toggle="tab" href="#nav-acervo" role="tab" aria-controls="nav-acervo" aria-selected="false">Acervo</a>                
             </div>
@@ -349,7 +349,7 @@
         </div>
 
         <!--Painel referente aos dados dos Cursos da organização-->
-        <div class="tab-pane fade" id="nav-cursos" role="tabpanel" aria-labelledby="nav-cursos-tab">
+        <div class="tab-pane fade " id="nav-cursos" role="tabpanel" aria-labelledby="nav-cursos-tab">
             <div class="container-fluid">
                 <div class="row mt-1">
                     <div class="ml-auto mr-3">                                
@@ -357,53 +357,52 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="container-fluid">
+                    <div class="container-fluid wrapper-cards-cursos">
                         <div class="row d-flex justify-content-around align-items-around">
-
-                            <div class="card mb-2" style="width: 18rem;">
-                                <img class="card-img-top" src="../assets/pictures/img-violao.jpg" alt="Imagem de capa do card">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violao.jpg" alt="Imagem de capa do card">
                                 <div class="card-body text-center">
                                   <h5 class="card-title">Curso de Violão</h5>
                                   <p class="card-text">Unidade de Belo Horizonte</p>
                                   <a href="#" class="btn btn-info">Abrir</a>
                                 </div>
                             </div>
-                            <div class="card mb-2" style="width: 18rem;">
-                                <img class="card-img-top" src="../assets/pictures/img-flauta.jpg" alt="Imagem de capa do card">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-flauta.jpg" alt="Imagem de capa do card">
                                 <div class="card-body text-center">
-                                  <h5 class="card-title">Curso para Iniciante</h5>
+                                  <h5 class="card-title ">Curso para Iniciante</h5>
                                   <p class="card-text">Unidade de Belo Horizonte</p>
-                                  <a href="#" class="btn btn-info">Abrir</a>
+                                  <a href="#" class="btn btn-info mb-0 pb-0">Abrir</a>
                                 </div>
                             </div>
-                            <div class="card mb-2" style="width: 18rem;">
-                                <img class="card-img-top" src="../assets/pictures/img-violino.jpg" alt="Imagem de capa do card">
-                                <div class="card-body text-center">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violino.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center mt-auto">
                                   <h5 class="card-title">Curso de Violino</h5>
                                   <p class="card-text">Unidade de Belo Horizonte</p>
                                   <a href="#" class="btn btn-info">Abrir</a>
                                 </div>
                             </div>
-                            <div class="card mb-2" style="width: 18rem;">
-                                <img class="card-img-top" src="../assets/pictures/img-violino-2.jpg" alt="Imagem de capa do card">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violino-2.jpg" alt="Imagem de capa do card">
                                 <div class="card-body text-center">
                                   <h5 class="card-title">Curso de Violino</h5>
                                   <p class="card-text">Unidade de Betim</p>
                                   <a href="#" class="btn btn-info">Abrir</a>
                                 </div>
                             </div>
-                            <div class="card mb-2" style="width: 18rem;">
-                                <img class="card-img-top" src="../assets/pictures/img-violoncelo.jpg" alt="Imagem de capa do card">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violoncelo.jpg" alt="Imagem de capa do card">
                                 <div class="card-body text-center">
                                   <h5 class="card-title">Curso de Violoncelo</h5>
                                   <p class="card-text">Unidade de Contagem</p>
                                   <a href="#" class="btn btn-info">Abrir</a>
                                 </div>
                             </div>
-                            <div class="card mb-2" style="width: 18rem;">
-                                <img class="card-img-top" src="../assets/pictures/img-saxofone-2.jpg" alt="Imagem de capa do card">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-saxofone-2.jpg" alt="Imagem de capa do card">
                                 <div class="card-body text-center">
-                                  <h5 class="card-title">Curso de Violão</h5>
+                                  <h5 class="card-title">Curso de Saxofone</h5>
                                   <p class="card-text">Unidade de Contagem</p>
                                   <a href="#" class="btn btn-info">Abrir</a>
                                 </div>
@@ -535,7 +534,7 @@
     </div>
 
     <!--Tabela com os dados da ecola selecionada-->
-    <div class="wrapper wrapper-dados-item wrapper-dados-escola container border my-5 pr-4 pl-4  rounded shadow" id="dataInfoEscola">
+    <div class="wrapper wrapper-dados-item wrapper-dados-escola container border my-5 pr-4 pl-4  rounded shadow hidden hide-toggle-tab" id="dataInfoEscola">
         <div class="container-fluid py-3 mb-2">
             <div class="col">
                 <div class="row justify-content-center">
@@ -867,7 +866,7 @@
 
    
     <!--Modal para adicional Escola-->
-    <div class="tela-add-escola tela-add-item border rounded shadow p-4 bg-white" id="telaCadastroEscola">
+    <div class="tela-add-escola tela-add-item border rounded shadow p-4 bg-white hide-toggle-tab" id="telaCadastroEscola">
         <form>
             <div class="text-center mb-3">
                 <span class="h5 text-info font-weight-bold">Cadastro de Escola</span>
@@ -924,7 +923,7 @@
 
 
     <!--Modal para adicional Curso-->
-    <div class="tela-add-curso tela-add-item border rounded shadow p-4 bg-white" id="telaCadastroCurso">
+    <div class="tela-add-curso tela-add-item border rounded shadow hide-toggle-tab p-4 bg-white" id="telaCadastroCurso">
         <form>
             <div class="text-center mb-3">
                 <span class="h5 text-info font-weight-bold">Cadastro de Curso</span>
@@ -959,14 +958,11 @@
                 <input type="text" class="form-control" id="inputCoordenador" placeholder="Nome do Coordenador">
             </div>
             <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary">Salvar</button>
-                <button type="submit" class="btn btn-secondary ml-4  btn-add-escola" data-element="#telaCadastroCurso">Cancelar</button>
+                <button type="submit" class="btn btn-primary ">Salvar</button>
+                <button type="button" class="btn btn-secondary ml-4  btn-add-curso" data-element="#telaCadastroCurso">Cancelar</button>
             </div>
         </form>
     </div>
-
-
-
 
 
 
