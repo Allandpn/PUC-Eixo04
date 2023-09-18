@@ -104,7 +104,7 @@
                         <td>cell</td>
                         <td>xxxx</td>
                         <td>
-                            <a class="btn-add-aluno" id="addAlunoBtn" href="#" data-element="#telaCadastroAluno"><i
+                            <a class="btn-edit-aluno" id="editAlunoBtn" href="#" data-element="#telaEditarAluno"><i
                                     class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
                         </td>
                     </tr>
@@ -117,7 +117,7 @@
                         <td>cell</td>
                         <td>xxxx</td>
                         <td>
-                            <a class="btn-add-aluno" id="addAlunoBtn" href="#" data-element="#telaCadastroAluno"><i
+                            <a class="btn-edit-aluno" id="editAlunoBtn" href="#" data-element="#telaEditarAluno"><i
                                     class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
                         </td>
                     </tr>
@@ -129,7 +129,7 @@
                         <td>cell</td>
                         <td>xxxx</td>
                         <td>
-                            <a class="btn-add-aluno" id="addAlunoBtn" href="#" data-element="#telaCadastroAluno"><i
+                            <a class="btn-edit-aluno" id="editAlunoBtn" href="#" data-element="#telaEditarAluno"><i
                                     class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
                         </td>
                     </tr>
@@ -182,6 +182,52 @@
                 <button type="submit" class="btn btn-primary">Salvar</button>
                 <button type="submit" class="btn btn-secondary ml-4  btn-add-aluno"
                     data-element="#telaCadastroAluno">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <!--Modal para editar Aluno-->
+    <div class="tela-edit-aluno border rounded shadow p-4 bg-white" id="telaEditarAluno">
+        <form>
+            <div class="text-center mb-3">
+                <span class="h5 text-info font-weight-bold">Edição de Aluno</span>
+                <button class="close btn-edit-aluno " data-element="#telaEditarAluno" data-dismiss="tela-edit-aluno"
+                    aria-label="Fechar">
+                    <span class="btn-edit-aluno m-3" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="form-group">
+                <label for="nomeAluno">Nome do Aluno</label>
+                <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno">
+            </div>
+            <div class="form-group">
+                <label for="inputMatricula">Matricula</label>
+                <input type="text" class="form-control" id="inputMatricula" placeholder="Nº de Matricula">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputInstrumento">Instrumento</label>
+                    <input type="text" class="form-control" id="inputInstrumento">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputDatadeinicio">Data de início</label>
+                    <input type="date" class="form-control" id="inputDatadeinicio">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputTutor">Tutor</label>
+                    <input type="text" class="form-control" id="inputTutor">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputContato">Contato</label>
+                    <input type="tel" class="form-control" id="inputContato">
+                </div>
+
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-secondary ml-4  btn-edit-aluno"
+                    data-element="#telaEditarAluno">Cancelar</button>
             </div>
         </form>
     </div>
