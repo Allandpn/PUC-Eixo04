@@ -230,3 +230,25 @@ a {
     left: calc(50% - 300px);
     display: none;
 }
+
+/*Define tela para adicionar de Istrumento*/
+.tela-add-instrumento {
+    max-width: 600px;
+    margin: auto;
+    position: absolute;
+    z-index: 1060;
+    top: 0px;
+    left: calc(60% - 300px);
+    display: none;
+}
+
+/*Define tela para editar de Istrumento*/
+.tela-edit-instrumento {
+    max-width: 600px;
+    margin: auto;
+    position: absolute;
+    z-index: 1060;
+    top: 0px;
+    left: calc(60% - 300px);
+    display: none;
+}
