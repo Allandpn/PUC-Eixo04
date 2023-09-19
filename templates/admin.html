@@ -79,23 +79,16 @@
         </nav>
     </aside>
 
-    <!--Conteudo Principal de Cada Pagina-->
-    <div class="main">
-        <div class="wrapper wrapper-tab container border p-4 rounded shadow">
-            <div>
-                <!--NavTab para os dados das Escolas / Equipe / Alunos-->
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link nav_link_table text-dark active" id="nav-escolas-tab" data-toggle="tab"
-                        href="#nav-escolas" role="tab" aria-controls="nav-escolas" aria-selected="false"
-                        data-element="#dataInfoEscola">Escolas</a>
-                    <a class="nav-item nav-link nav_link_table text-dark " id="nav-cursos-tab" data-toggle="tab"
-                        href="#nav-cursos" role="tab" aria-controls="nav-cursos" aria-selected="false"
-                        data-element="#">Cursos</a>
-                    <a class="nav-item nav-link nav_link_table text-dark" id="nav-equipe-tab" data-toggle="tab"
-                        href="#nav-equipe" role="tab" aria-controls="nav-equipe" aria-selected="true">Equipe</a>
-                    <a class="nav-item nav-link nav_link_table text-dark" id="nav-acervo-tab" data-toggle="tab"
-                        href="#nav-acervo" role="tab" aria-controls="nav-acervo" aria-selected="false">Acervo</a>
-                </div>
+<!--Conteudo Principal de Cada Pagina-->
+<div class="main" >
+    <div class="wrapper wrapper-tab container border p-4 rounded shadow bg-white">        
+        <div>
+            <!--NavTab para os dados das Escolas / Equipe / Alunos-->
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link nav_link_table text-dark active" id="nav-escolas-tab" data-toggle="tab" href="#nav-escolas" role="tab" aria-controls="nav-escolas" aria-selected="false" data-element=".hide-toggle-tab">Escolas</a>
+                <a class="nav-item nav-link nav_link_table text-dark " id="nav-cursos-tab" data-toggle="tab" href="#nav-cursos" role="tab" aria-controls="nav-cursos" aria-selected="false">Cursos</a>
+                <a class="nav-item nav-link nav_link_table text-dark" id="nav-equipe-tab" data-toggle="tab" href="#nav-equipe" role="tab" aria-controls="nav-equipe" aria-selected="true">Equipe</a>
+                <a class="nav-item nav-link nav_link_table text-dark" id="nav-acervo-tab" data-toggle="tab" href="#nav-acervo" role="tab" aria-controls="nav-acervo" aria-selected="false">Acervo</a>                
             </div>
             <div class="tab-content" id="nav-tabContent">
                 <!--Painel referente aos dados das Unidades da Ensino-->
@@ -379,17 +372,68 @@
                             </div>                                                            
                         </div>
                     </div> 
-                -->
+                -->    
+            </div>
+        </div>
+
+        <!--Painel referente aos dados dos Cursos da organização-->
+        <div class="tab-pane fade " id="nav-cursos" role="tabpanel" aria-labelledby="nav-cursos-tab">
+            <div class="container-fluid">
+                <div class="row mt-1">
+                    <div class="ml-auto mr-3">                                
+                        <a class="btn-add-curso" id="addCursoBtn" href="#" data-element="#telaCadastroCurso"><i class="fa fa-2x fa-plus-circle text-primary m-2" aria-hidden="true"></i></a>                   
                     </div>
                 </div>
-
-                <!--Painel referente aos dados dos Cursos da organização-->
-                <div class="tab-pane fade" id="nav-cursos" role="tabpanel" aria-labelledby="nav-cursos-tab">
-                    <div class="container-fluid">
-                        <div class="row mt-1">
-                            <div class="ml-auto mr-3">
-                                <a class="btn-add-curso" id="addCursoBtn" href="#" data-element="#telaCadastroCurso"><i
-                                        class="fa fa-2x fa-plus-circle text-primary m-2" aria-hidden="true"></i></a>
+                <div class="row mt-2">
+                    <div class="container-fluid wrapper-cards-cursos">
+                        <div class="row d-flex justify-content-around align-items-around">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violao.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title">Curso de Violão</h5>
+                                  <p class="card-text">Unidade de Belo Horizonte</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-flauta.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title ">Curso para Iniciante</h5>
+                                  <p class="card-text">Unidade de Belo Horizonte</p>
+                                  <a href="#" class="btn btn-info mb-0 pb-0">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violino.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center mt-auto">
+                                  <h5 class="card-title">Curso de Violino</h5>
+                                  <p class="card-text">Unidade de Belo Horizonte</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violino-2.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title">Curso de Violino</h5>
+                                  <p class="card-text">Unidade de Betim</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violoncelo.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title">Curso de Violoncelo</h5>
+                                  <p class="card-text">Unidade de Contagem</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-saxofone-2.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title">Curso de Saxofone</h5>
+                                  <p class="card-text">Unidade de Contagem</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -609,114 +653,36 @@
                     </div>
                 </div>
             </div>
-            <div class="row ">
-                <!--Coluna com a lista dos membros da Equipe-->
-                <div class="col mr-2">
-                    <div class="row justify-content-center bg-info text-white">
-                        <span>Cursos</span>
-                    </div>
-                    <div class="row  mb-4">
-                        <div class="container-fluid px-0" style="max-height: 500px; overflow-y: auto;">
-                            <ul class="list-group list-group-flush m-2">
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
-                                    <span>Lorem ipsum dolorLoremr</span>
-                                    <a href="#"><i class="fa fa-eye text-info" aria-hidden="true"
-                                            style="font-size: 1.25rem"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
+        </div>
+        <!--Painel referente aos dados da Equipe da organização-->
+        <div class="tab-pane fade " id="nav-equipe" role="tabpanel" aria-labelledby="nav-equipe-tab">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, fugiat repudiandae necessitatibus dolorum natus saepe, similique officiis nostrum consequuntur asperiores adipisci corporis atque excepturi sequi aspernatur aliquam esse vitae! Enim ea fugiat aperiam sunt totam accusantium ipsam, a laboriosam vero laborum quibusdam? Fuga recusandae earum culpa doloribus! Libero voluptatibus magnam nihil aliquam ea commodi aperiam laboriosam, a unde. Totam debitis dolorem modi eligendi numquam odit saepe sequi ex quis quos id distinctio dolorum ducimus natus corporis quidem, aliquid eaque blanditiis illum explicabo voluptate, esse vel dicta. Fugit sint, deleniti, in vitae ex voluptates laboriosam tempore dolorem, et ducimus sequi error?
+
+        </div>
+        <!--Painel referente aos dados dos Alunos-->
+        <div class="tab-pane fade" id="nav-acervo" role="tabpanel" aria-labelledby="nav-acervo-tab">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, culpa? Reiciendis ab, recusandae explicabo, voluptate mollitia tenetur assumenda iure earum magni quibusdam quia quasi. Saepe voluptates minus excepturi pariatur. Illo amet cum perspiciatis sunt voluptas, error labore. Distinctio neque commodi, nihil temporibus quibusdam cum nesciunt et animi voluptate enim eaque!
+        </div>
+        <!--Painel referente aos dados do Acervo-->
+        <div class="tab-pane fade" id="nav-acervo" role="tabpanel" aria-labelledby="nav-acervo-tab">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, culpa? Reiciendis ab, recusandae explicabo, voluptate mollitia tenetur assumenda iure earum magni quibusdam quia quasi. Saepe voluptates minus excepturi pariatur. Illo amet cum perspiciatis sunt voluptas, error labore. Distinctio neque commodi, nihil temporibus quibusdam cum nesciunt et animi voluptate enim eaque!
+        </div>
+            
+            
+
+
+
+            
+        </div>
+    </div>
+
+    <!--Tabela com os dados da ecola selecionada-->
+    <div class="wrapper wrapper-dados-item wrapper-dados-escola container border my-5 pr-4 pl-4  rounded shadow hidden hide-toggle-tab" id="dataInfoEscola">
+        <div class="container-fluid py-3 mb-2">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <span class="h5 mb-1">Unidade de Belo Horizonte</span>
                 </div>
                 <!--Coluna com a lista dos membros da Equipe-->
                 <div class="col mr-2">
@@ -1109,15 +1075,31 @@
         </div>
 
 
-        <!--Modal para adicional Curso-->
-        <div class="tela-add-curso tela-add-item border rounded shadow p-4 bg-white" id="telaCadastroCurso">
-            <form>
-                <div class="text-center mb-3">
-                    <span class="h5 text-info font-weight-bold">Cadastro de Curso</span>
-                    <button class="close btn-add-curso " data-element="#telaCadastroCurso" data-dismiss="tela-add-curso"
-                        aria-label="Fechar">
-                        <span class="btn-add-curso m-3" aria-hidden="true">&times;</span>
-                    </button>
+
+
+
+   
+    <!--Modal para adicional Escola-->
+    <div class="tela-add-escola tela-add-item border rounded shadow p-4 bg-white hide-toggle-tab" id="telaCadastroEscola">
+        <form>
+            <div class="text-center mb-3">
+                <span class="h5 text-info font-weight-bold">Cadastro de Escola</span>
+                <button  class="close btn-add-escola " data-element="#telaCadastroEscola" data-dismiss="tela-add-escola" aria-label="Fechar">
+                    <span class="btn-add-escola m-3" aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+            <div class="form-group">
+                <label for="nomeEscola">Nome da Escola</label>
+            <input type="text" class="form-control" id="nomeEscola" placeholder="Nome da Escola">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Endereço</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Rua XV de Novembro, nº 0">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                <label for="inputBairro">Bairro</label>
+                <input type="text" class="form-control" id="inputBairro">
                 </div>
                 <div class="form-group">
                     <label for="nomeCurso">Nome do Curso</label>
@@ -1161,6 +1143,46 @@
 
 
 
+    <!--Modal para adicional Curso-->
+    <div class="tela-add-curso tela-add-item border rounded shadow hide-toggle-tab p-4 bg-white" id="telaCadastroCurso">
+        <form>
+            <div class="text-center mb-3">
+                <span class="h5 text-info font-weight-bold">Cadastro de Curso</span>
+                <button  class="close btn-add-curso " data-element="#telaCadastroCurso" data-dismiss="tela-add-curso" aria-label="Fechar">
+                    <span class="btn-add-curso m-3" aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+            <div class="form-group">
+                <label for="nomeCurso">Nome do Curso</label>
+            <input type="text" class="form-control" id="nomeCurso" placeholder="Nome do Curso">
+            </div>
+            <div class="form-group">
+                <label for="inputUnidade">Unidade de Ensino</label>
+                <select class="custom-select">
+                    <option selected disabled>Nome da Unidade</option>
+                    <option value="1">Belo Horizonte</option>
+                    <option value="2">Betim</option>
+                    <option value="3">Contagem</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputUnidade">Instrumento</label>
+                <select class="custom-select">
+                    <option selected disabled>Nome do Instrumento</option>
+                    <option value="1">Flauta Doce</option>
+                    <option value="2">Violão</option>
+                    <option value="3">Violino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputCoordenador">Coordenador do Curso</label>
+                <input type="text" class="form-control" id="inputCoordenador" placeholder="Nome do Coordenador">
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary ">Salvar</button>
+                <button type="button" class="btn btn-secondary ml-4  btn-add-curso" data-element="#telaCadastroCurso">Cancelar</button>
+            </div>
+        </form>
     </div>
 
 
@@ -1168,24 +1190,7 @@
 
 
 
-
-
-
-
-
-    <!--Modal para Perfil do Usuario-->
-    <div class="perfil-menu float-right" id="id-perfil-menu-box" style="width: 200px; display: none;">
-        <div class="m-3">@Nome Usuario</div>
-        <div class="dropdown-divider"></div>
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Perfil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-muted" href="#">Sair</a>
-            </li>
-        </ul>
-    </div>
+</div>
 
 
 

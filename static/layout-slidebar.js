@@ -52,7 +52,6 @@ myLink.addEventListener('click', function (e) {
 
 
 
-
 // exibe modal com menu perfil
 $(function () {
   $(".perfil-icon").click(function (e) {
@@ -64,75 +63,4 @@ $(function () {
 
 
 
-// exibe modal com cadastro escola
-$(function () {
-  $(".btn-add-escola").click(function (e) {
-    e.preventDefault();
-    el = $(this).data('element');
-    $(el).toggle();
-  });
-});
 
-
-// exibe tabela com informacoes da escola selecionada
-$(function () {
-  $(".open-info-escola").click(function (e) {
-    e.preventDefault();
-    el = $(this).data('element');
-    $(el).toggle();
-  });
-});
-
-
-
-// exibe tabela com informacoes da escola selecionada
-
-
-const linkTable = document.querySelectorAll('.nav_link_table')
-
-function tableLink() {
-  if (linkTable) {
-    linkTable.forEach(
-      function (l) {
-        console.log('tes')
-      })
-    console.log(this)
-  }
-}
-linkTable.forEach(l => l.addEventListener('click', tableLink))
-
-// exibe modal com cadastro aluno
-$(function () {
-  $(".btn-add-aluno").click(function (e) {
-    e.preventDefault();
-    el = $(this).data('element');
-    $(el).toggle();
-  });
-});
-
-// exibe modal com edição aluno
-$(function () {
-  $(".btn-edit-aluno").click(function (e) {
-    e.preventDefault();
-    el = $(this).data('element');
-    $(el).toggle();
-  });
-});
-
-// exibe modal com cadastro instrumento
-$(function () {
-  $(".btn-add-instrumento").click(function (e) {
-    e.preventDefault();
-    el = $(this).data('element');
-    $(el).toggle();
-  });
-});
-
-// exibe modal com edição instrumento
-$(function () {
-  $(".btn-edit-instrumento").click(function (e) {
-    e.preventDefault();
-    el = $(this).data('element');
-    $(el).toggle();
-  });
-});

@@ -1,5 +1,12 @@
 
 
+
+/*Esconde o elemento*/
+.hidden {
+    display: none;
+}
+
+
 /* Deine estilo modal perfil usuario */
 .perfil-menu {   
     position: absolute;
@@ -26,7 +33,7 @@
     margin: auto;
     position: absolute;
     z-index: 1060;
-    top: 0px;
+    top: 80px;
     display: none;      
 }
 
@@ -36,32 +43,31 @@
     left: calc(50% - 300px);
 }
 
-/*Define tela para cadastro de Escola*/
+
+
+/*Define tela para cadastro de Curso*/
 .tela-add-curso{
     width: 400px;
     left: calc(50% - 200px);
 }
 
 
-/*Esconde tabela*/
-.wrapper-dados-item{
-    display: none;
-}
 
+
+
+/*Define efeito em Nome da Escola na tabela Escolas*/
 .open-info-escola-btn  {
     border: none;
     outline: none;
     background-color: white;
     color: #17A2B8;
 }
-
 .open-info-escola-btn:hover  {
     outline: none;
     border-color: #17A2B8;
     background-color: #17A2B8;
     color: #ffffff;
 }
-
 .open-info-escola-btn:focus  {
     outline: none;
     border-color: #17A2B8;
@@ -71,7 +77,8 @@
 
 
 
-
-.teste {
-    
+/*Define tamnho da imagem no card da tabela Cursos*/
+.card-img-edit {
+   height: 190.5px;
+   width: auto; 
 }
