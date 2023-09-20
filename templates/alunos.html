@@ -15,7 +15,7 @@
     <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
     <!--Arquivo css local para configuracoes slidebar responsivo-->
     <link rel="stylesheet" href="../static/layout-slidebar.css" />
-    <link rel="stylesheet" href="C:\Users\nikol\OneDrive\Documentos\GitHub\PUC-Eixo04\static\alunos.css"/>
+    <link rel="stylesheet" href="../static/alunos.css" />
     <title>Orquestra Criarte Digital</title>
 </head>
 
@@ -151,95 +151,108 @@
     </div>
 
     <!--Modal para adicional Aluno-->
-    <div class="tela-add-aluno border rounded shadow p-4 bg-white" id="telaCadastroAluno">
-        <form>
-            <div class="text-center mb-3">
-                <span class="h5 text-info font-weight-bold">Cadastro de Aluno</span>
-                <button class="close btn-add-aluno " data-element="#telaCadastroAluno" data-dismiss="tela-add-aluno"
-                    aria-label="Fechar">
-                    <span class="btn-add-aluno m-3" aria-hidden="true">&times;</span>
-                </button>
+    <div class="hidden hide-container" id="telaCadastroAluno">
+        <div class="bg-container justify-content-center" >
+            <div class="background-dark">
             </div>
-            <div class="form-group">
-                <label for="nomeAluno">Nome do Aluno</label>
-                <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno">
+            <div class="tela-add-aluno border rounded shadow p-4 bg-white" >
+                <form>
+                    <div class="text-center mb-3">
+                        <span class="h5 text-info font-weight-bold">Cadastro de Aluno</span>
+                        <button class="close btn-add-aluno " data-element="#telaCadastroAluno" data-dismiss="tela-add-aluno"
+                            aria-label="Fechar">
+                            <span class="btn-add-aluno m-3" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeAluno">Nome do Aluno</label>
+                        <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputMatricula">Matricula</label>
+                        <input type="text" class="form-control" id="inputMatricula" placeholder="Nº de Matricula">
+                    </div>
+        
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputInstrumento">Instrumento</label>
+                            <input type="text" class="form-control" id="inputInstrumento">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputDatadeinicio">Data de início</label>
+                            <input type="date" class="form-control" id="inputDatadeinicio">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputTutor">Tutor</label>
+                            <input type="text" class="form-control" id="inputTutor">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputContato">Contato</label>
+                            <input type="tel" class="form-control" id="inputContato">
+                        </div>
+        
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="submit" class="btn btn-secondary ml-4  btn-add-aluno"
+                            data-element="#telaCadastroAluno">Cancelar</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="inputMatricula">Matricula</label>
-                <input type="text" class="form-control" id="inputMatricula" placeholder="Nº de Matricula">
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputInstrumento">Instrumento</label>
-                    <input type="text" class="form-control" id="inputInstrumento">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputDatadeinicio">Data de início</label>
-                    <input type="date" class="form-control" id="inputDatadeinicio">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputTutor">Tutor</label>
-                    <input type="text" class="form-control" id="inputTutor">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputContato">Contato</label>
-                    <input type="tel" class="form-control" id="inputContato">
-                </div>
-
-            </div>
-            <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary">Salvar</button>
-                <button type="submit" class="btn btn-secondary ml-4  btn-add-aluno"
-                    data-element="#telaCadastroAluno">Cancelar</button>
-            </div>
-        </form>
+        </div>
     </div>
 
     <!--Modal para editar Aluno-->
-    <div class="tela-edit-aluno border rounded shadow p-4 bg-white" id="telaEditarAluno">
-        <form>
-            <div class="text-center mb-3">
-                <span class="h5 text-info font-weight-bold">Edição de Aluno</span>
-                <button class="close btn-edit-aluno " data-element="#telaEditarAluno" data-dismiss="tela-edit-aluno"
-                    aria-label="Fechar">
-                    <span class="btn-edit-aluno m-3" aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="form-group">
-                <label for="nomeAluno">Nome do Aluno</label>
-                <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno">
-            </div>
-            <div class="form-group">
-                <label for="inputMatricula">Matricula</label>
-                <input type="text" class="form-control" id="inputMatricula" placeholder="Nº de Matricula">
-            </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputInstrumento">Instrumento</label>
-                    <input type="text" class="form-control" id="inputInstrumento">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputDatadeinicio">Data de início</label>
-                    <input type="date" class="form-control" id="inputDatadeinicio">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputTutor">Tutor</label>
-                    <input type="text" class="form-control" id="inputTutor">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputContato">Contato</label>
-                    <input type="tel" class="form-control" id="inputContato">
-                </div>
-
+    <div class="hidden hide-container" id="telaEditarAluno">
+        <div class="bg-container justify-content-center" >
+            <div class="background-dark">
             </div>
-            <div class="text-center mt-3">
-                <button type="submit" class="btn btn-primary">Salvar</button>
-                <button type="submit" class="btn btn-danger ml-4  btn-edit-aluno"
-                    data-element="#telaEditarAluno">Excluir</button>
+            <div class="tela-edit-aluno border rounded shadow p-4 bg-white" >
+                <form>
+                    <div class="text-center mb-3">
+                        <span class="h5 text-info font-weight-bold">Edição de Aluno</span>
+                        <button class="close btn-edit-aluno " data-element="#telaEditarAluno" data-dismiss="tela-edit-aluno"
+                            aria-label="Fechar">
+                            <span class="btn-edit-aluno m-3" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeAluno">Nome do Aluno</label>
+                        <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputMatricula">Matricula</label>
+                        <input type="text" class="form-control" id="inputMatricula" placeholder="Nº de Matricula">
+                    </div>
+        
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputInstrumento">Instrumento</label>
+                            <input type="text" class="form-control" id="inputInstrumento">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputDatadeinicio">Data de início</label>
+                            <input type="date" class="form-control" id="inputDatadeinicio">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputTutor">Tutor</label>
+                            <input type="text" class="form-control" id="inputTutor">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputContato">Contato</label>
+                            <input type="tel" class="form-control" id="inputContato">
+                        </div>
+        
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="submit" class="btn btn-danger ml-4  btn-edit-aluno"
+                            data-element="#telaEditarAluno">Excluir</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 
 
@@ -283,7 +296,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script type='text/javascript' src="../static/layout-slidebar.js"></script>
-    <script type="text/javascript" src="C:\Users\nikol\OneDrive\Documentos\GitHub\PUC-Eixo04\static\acervo.js"></script>
+    <script type="text/javascript" src="../static/acervo.js"></script>
 </body>
 
 </html>

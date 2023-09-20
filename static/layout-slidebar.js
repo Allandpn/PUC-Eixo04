@@ -49,6 +49,10 @@ myLink.addEventListener('click', function (e) {
 
 });
 
+  // Your code to run since DOM is loaded and ready
+});
+
+
 
 
 // exibe modal com menu perfil
@@ -68,6 +72,7 @@ const hidecontainer = document.querySelectorAll('.hide-container');
 
 function hideContainer(e){
   //verifica a box que esta ativa  
+  console.log(this)
   const container = $(this).children().children().eq(1)
   if(!container.is(e.target) && !container.has(e.target).length){
       $(this).hide();
@@ -88,6 +93,3 @@ $(document).mouseup(function(e) {
 });
 
 
-
-  // Your code to run since DOM is loaded and ready
-});
