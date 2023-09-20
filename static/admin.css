@@ -12,10 +12,12 @@
     position: absolute;
     background-color: #ffffff;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    z-index: 1060;
+    z-index: 900;
     top: -33px;
     right: 10px;
     border-radius: 5px;
+    width: 200px;
+    display: none;
    }
 .perfil-menu li:hover {
     background-color: var(--white-color); 
@@ -31,26 +33,28 @@
 /*Define tela para cadastro comum a todos*/
 .tela-add-item{
     margin: auto;
-    position: absolute;
-    z-index: 1060;
-    top: 80px;
-    display: none;      
+    z-index: 1100;
 }
 
 /*Define tela para cadastro de Escola*/
 .tela-add-escola{
     max-width: 600px;
-    left: calc(50% - 300px);
+    position: relative;
 }
 
 
 
 /*Define tela para cadastro de Curso*/
 .tela-add-curso{
-    width: 400px;
-    left: calc(50% - 200px);
+    width: 600px;
+    position: relative;
 }
 
+
+.tela-dados-usuario {
+    width: 600px;
+    position: relative; 
+}
 
 
 
@@ -81,4 +85,28 @@
 .card-img-edit {
    height: 190.5px;
    width: auto; 
+}
+
+
+
+
+/*Define background para as janelas centralizadas na pagina*/
+.bg-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.background-dark {
+    background-color: rgba(0, 0, 0, 0.415);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1050;   
 }
