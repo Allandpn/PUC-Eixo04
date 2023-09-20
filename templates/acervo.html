@@ -24,7 +24,7 @@
             <i class="bx bx-menu" id="header-toggle"></i>
         </div>
         <div class="title-page ml-4 mr-auto ">
-            <span class="text-secondary" style="font-size: 25px;">Aluno</span>
+            <span class="text-secondary" style="font-size: 25px;">Acervo</span>
         </div>
         <div>
             <ul class="nav">
@@ -45,22 +45,18 @@
                 <span class="nav_logo-name">Orq. Criarte Digital</span>
             </a>
             <div class="nav_list mb-auto">
-                <a href="#" class="nav_link " >
+                <a href="#" class="nav_link ">
                     <i class='bx bx-tachometer nav_icon'></i>
                     <span class="nav-name">Dashboard</span>
                 </a>
-                <a href="admin.html" class="nav_link " >
+                <a href="#" class="nav_link ">
                     <i class='bx bxs-cog nav_icon'></i>
                     <span class="nav-name">Administração</span>
                 </a>
-                <a href="alunos.html" class="nav_link " >
+                <a href="#" class="nav_link ">
                     <i class='bx bxs-user-detail nav_icon'></i>
                     <span class="nav-name">Alunos</span>
                 </a>
-                <a href="#" class="nav_link " >
-                    <i class='bx bxs-playlist nav_icon' ></i>
-                    <span class="nav-name">Inventário</span>
-                </a> 
                 <a href="#" class="nav_link ">
                     <i class='fa fa-th nav_icon'></i>
                     <span class="nav-name">Acervo</span>
@@ -68,7 +64,11 @@
                 <a href="#" class="nav_link ">
                     <i class='bx bx-dollar-circle nav_icon'></i>
                     <span class="nav-name">Financeiro</span>
-                </a>                               
+                </a>
+                <a href="#" class="nav_link ">
+                    <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                    <span class="nav-name">Relatórios</span>
+                </a>
             </div>
             <div class="text-center" id="id-system-version"
                 style="color: #ebebeb; display: none; position: absolute; bottom: 10px;">
@@ -83,160 +83,145 @@
         <div class="border shadow rounded table-responsive" style="margin-top: 100px;">
             <div class="row mt-auto mr-auto ml-auto">
                 <div class="ml-1 mt-3">
-                    <span class="text-primary" style="font-size: 20px;">Alunos Orquestra Escola Criarte</span>
+                    <span class="text-primary" style="font-size: 20px;">Adicionar instrumento</span>
                 </div>
-                <div class="ml-auto">
-                    <abbr title="Adicionar aluno"><a class="btn-add-aluno mt-2 " id="addAlunoBtn" href="#"
-                            data-element="#telaCadastroAluno"><i class="fa fa-2x fa-plus-circle text-primary m-2"
-                                aria-hidden="true"></i></a></abbr>
+                <a class="btn-add-instrumento mt-2 mr-0" id="addInstrumentoBtn" href="#"
+                    data-element="#telaCadastroInstrumento"><i class="fa fa-2x fa-plus-circle text-primary m-2"
+                        aria-hidden="true"></i></a>
+                <div class="dropdown mt-2">
+                    <button class="btn btn-primary dropdown-toggle mt-1" type="button" id="dropdownInstrumentos"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Instrumento
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Todos</a>
+                        <a class="dropdown-item" href="#">Flauta doce</a>
+                        <a class="dropdown-item" href="#">violino</a>
+                        <a class="dropdown-item" href="#">violoncello</a>
+                    </div>
                 </div>
 
+
+
             </div>
+
             <table class="table table-striped mt-3 text-center">
                 <thead>
                     <tr>
-                        <th scope="col">Matricula</th>
-                        <th scope="col">Nome</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Instrumento</th>
-                        <th scope="col">Data de início</th>
-                        <th scope="col">Contato</th>
-                        <th scope="col">Tutor</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Data de aquisição</th>
+                        <th scope="col">Emprestimo</th>
                         <th scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">001</th>
-                        <td>Guilherme</td>
                         <td>violoncello</td>
+                        <td>Serenata</td>
                         <td>10/08/2014</td>
-                        <td>cell</td>
-                        <td>xxxxxxxxxxx</td>
+                        <td>Sim</td>
                         <td>
-                            <a class="btn-edit-aluno" id="editAlunoBtn" href="#" data-element="#telaEditarAluno"><i
-                                    class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
+                            <a class="btn-edit-instrumento" id="editInstrumentoBtn" href="#"
+                                data-element="#telaEditarInstrumento"><i class='bx bx-edit text-info'
+                                    style="font-size: 1.75rem"></i></a>
                         </td>
                     </tr>
 
                     <tr>
                         <th scope="row">002</th>
-                        <td>Nikolas</td>
-                        <td>Violão</td>
-                        <td>17/10/2018</td>
-                        <td>cell</td>
-                        <td>xxxxxxxxxxx</td>
+                        <td>violino</td>
+                        <td>Serenata</td>
+                        <td>20/10/2016</td>
+                        <td>Sim</td>
                         <td>
-                            <a class="btn-edit-aluno" id="editAlunoBtn" href="#" data-element="#telaEditarAluno"><i
-                                    class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
+                            <a class="btn-edit-instrumento" id="editInstrumentoBtn" href="#"
+                                data-element="#telaEditarInstrumento"><i class='bx bx-edit text-info'
+                                    style="font-size: 1.75rem"></i></a>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">003</th>
-                        <td>Aurelio</td>
-                        <td>Piano</td>
-                        <td>20/06/2015</td>
-                        <td>cell</td>
-                        <td>xxxxxxxxxxx</td>
+                        <td>Flauta doce</td>
+                        <td>Serenata</td>
+                        <td>11/08/2018</td>
+                        <td>Não</td>
                         <td>
-                            <a class="btn-edit-aluno" id="editAlunoBtn" href="#" data-element="#telaEditarAluno"><i
-                                    class='bx bx-edit text-info' style="font-size: 1.75rem"></i></a>
+                            <a class="btn-edit-instrumento" id="editInstrumentoBtn" href="#"
+                                data-element="#telaEditarInstrumento"><i class='bx bx-edit text-info'
+                                    style="font-size: 1.75rem"></i></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
 
+
         </div>
     </div>
 
-    <!--Modal para adicional Aluno-->
-    <div class="tela-add-aluno border rounded shadow p-4 bg-white" id="telaCadastroAluno">
+    <!--Modal para adicional instrumento-->
+    <div class="tela-add-instrumento border rounded shadow p-4 bg-white" id="telaCadastroInstrumento">
         <form>
             <div class="text-center mb-3">
-                <span class="h5 text-info font-weight-bold">Cadastro de Aluno</span>
-                <button class="close btn-add-aluno " data-element="#telaCadastroAluno" data-dismiss="tela-add-aluno"
-                    aria-label="Fechar">
-                    <span class="btn-add-aluno m-3" aria-hidden="true">&times;</span>
+                <span class="h5 text-info font-weight-bold">Cadastro de Instrumento</span>
+                <button class="close btn-add-instrumento" data-element="#telaCadastroInstrumento"
+                    data-dismiss="tela-add-instrumento" aria-label="Fechar">
+                    <span class="btn-add-instrumento m-3" aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="form-group">
-                <label for="nomeAluno">Nome do Aluno</label>
-                <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno">
+                <label for="nomeInstrumento">Nome do Instrumento</label>
+                <input type="text" class="form-control" id="nomeInstrumento" placeholder="Nome do instrumento">
             </div>
             <div class="form-group">
-                <label for="inputMatricula">Matricula</label>
-                <input type="text" class="form-control" id="inputMatricula" placeholder="Nº de Matricula">
+                <label for="inputID">ID</label>
+                <input type="text" class="form-control" id="inputID" placeholder="Nº do ID">
+            </div>
+            <div class="form-group">
+                <label for="inputAquisicao">Data de aquisição</label>
+                <input type="date" class="form-control" id="inputAquisicao" placeholder="Data">
             </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputInstrumento">Instrumento</label>
-                    <input type="text" class="form-control" id="inputInstrumento">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputDatadeinicio">Data de início</label>
-                    <input type="date" class="form-control" id="inputDatadeinicio">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputTutor">Tutor</label>
-                    <input type="text" class="form-control" id="inputTutor">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputContato">Contato</label>
-                    <input type="tel" class="form-control" id="inputContato">
-                </div>
 
-            </div>
             <div class="text-center mt-3">
                 <button type="submit" class="btn btn-primary">Salvar</button>
-                <button type="submit" class="btn btn-secondary ml-4  btn-add-aluno"
-                    data-element="#telaCadastroAluno">Cancelar</button>
+                <button type="submit" class="btn btn-secondary ml-4  btn-add-instrumento"
+                    data-element="#telaCadastroInstrumento">Cancelar</button>
             </div>
         </form>
     </div>
 
-    <!--Modal para editar Aluno-->
-    <div class="tela-edit-aluno border rounded shadow p-4 bg-white" id="telaEditarAluno">
+    <!--Modal para editar Instrumento-->
+    <div class="tela-edit-instrumento border rounded shadow p-4 bg-white" id="telaEditarInstrumento">
         <form>
             <div class="text-center mb-3">
-                <span class="h5 text-info font-weight-bold">Edição de Aluno</span>
-                <button class="close btn-edit-aluno " data-element="#telaEditarAluno" data-dismiss="tela-edit-aluno"
-                    aria-label="Fechar">
-                    <span class="btn-edit-aluno m-3" aria-hidden="true">&times;</span>
+                <span class="h5 text-info font-weight-bold">Edição de Instrumento</span>
+                <button class="close btn-edit-instrumento" data-element="#telaEditarInstrumento"
+                    data-dismiss="tela-edit-instrumento" aria-label="Fechar">
+                    <span class="btn-add-instrumento m-3" aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="form-group">
-                <label for="nomeAluno">Nome do Aluno</label>
-                <input type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno">
+                <label for="nomeInstrumento">Nome do Instrumento</label>
+                <input type="text" class="form-control" id="nomeInstrumento" placeholder="Nome do instrumento">
             </div>
             <div class="form-group">
-                <label for="inputMatricula">Matricula</label>
-                <input type="text" class="form-control" id="inputMatricula" placeholder="Nº de Matricula">
+                <label for="inputID">ID</label>
+                <input type="text" class="form-control" id="inputID" placeholder="Nº do ID">
+            </div>
+            <div class="form-group">
+                <label for="inputAquisicao">Data de aquisição</label>
+                <input type="date" class="form-control" id="inputAquisicao" placeholder="Data">
             </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputInstrumento">Instrumento</label>
-                    <input type="text" class="form-control" id="inputInstrumento">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputDatadeinicio">Data de início</label>
-                    <input type="date" class="form-control" id="inputDatadeinicio">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputTutor">Tutor</label>
-                    <input type="text" class="form-control" id="inputTutor">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputContato">Contato</label>
-                    <input type="tel" class="form-control" id="inputContato">
-                </div>
 
-            </div>
             <div class="text-center mt-3">
                 <button type="submit" class="btn btn-primary">Salvar</button>
-                <button type="submit" class="btn btn-danger ml-4  btn-edit-aluno"
-                    data-element="#telaEditarAluno">Excluir</button>
+                <button type="submit" class="btn btn-secondary ml-4  btn-edit-instrumento"
+                    data-element="#telaEditarInstrumento">Excluir</button>
             </div>
         </form>
     </div>
