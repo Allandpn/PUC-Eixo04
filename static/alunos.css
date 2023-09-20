@@ -189,9 +189,6 @@ a {
 
 
 
-/*<<<<<<< HEAD
-=======
-
 /*Define tela com os dados de cada escola*/
 .wrapper-dados-escola {
     display: none;
@@ -200,7 +197,7 @@ a {
 
 
 
-.teste {}
+
 
 /*Define tela para cadastro de Aluno*/
 .tela-add-aluno {
@@ -223,7 +220,6 @@ a {
     left: calc(50% - 300px);
     display: none;
 }
-<<<<<<< HEAD
 
 /*Define tela para adicionar de Istrumento*/
 .tela-add-instrumento {
@@ -246,6 +242,3 @@ a {
     left: calc(60% - 300px);
     display: none;
 }
-=======
->>>>>>> 60e5bd4155586e1215881398b17ba97b676cfb8d
->>>>>>> c151144a32e69f27c0b2dcad72d186dc596b1c83
