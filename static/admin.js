@@ -5,9 +5,7 @@
 $(function () {
     $(".btn-add-escola").click(function (e) {
         e.preventDefault();
-        console.log(e)
         el = $(this).data('element');
-        console.log(el)
         $(el).toggle();
     });
 });
@@ -17,11 +15,8 @@ $(function () {
 $(function () {
     $(".btn-add-curso").click(function (e) {
         e.preventDefault();
-        console.log(e)
         el = $(this).data('element');
-        console.log(el)
-        $(el).toggle();
-        
+        $(el).toggle();        
     });
 });
 
@@ -31,8 +26,16 @@ $(function () {
     $(".open-info-escola").click(function (e) {
         e.preventDefault();
         el = $(this).data('element');
-        $(el).toggle();
-       
+        $(el).toggle();       
+    });
+});
+
+// exibe tabela com informacoes da escola selecionada
+$(function () {
+    $(".btn-dados-usuario").click(function (e) {
+        e.preventDefault();
+        el = $(this).data('element');
+        $(el).toggle();       
     });
 });
 
@@ -53,13 +56,3 @@ function tableLink() {
 linkTable.forEach(l => l.addEventListener('click', tableLink))
 
 
-// exibe modal com cadastro escola
-$(function () {
-    $(".teste-show").click(function (e) {
-        e.preventDefault();
-        console.log(e)
-        el = $(this).data('element');
-        console.log(el)
-        $(el).toggle();
-    });
-});

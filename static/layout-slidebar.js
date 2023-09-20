@@ -38,8 +38,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-  // Your code to run since DOM is loaded and ready
-});
+
 
 
 
@@ -64,3 +63,31 @@ $(function () {
 
 
 
+// oculta elementos ao clicar fora
+const hidecontainer = document.querySelectorAll('.hide-container');
+
+function hideContainer(e){
+  //verifica a box que esta ativa  
+  const container = $(this).children().children().eq(1)
+  if(!container.is(e.target) && !container.has(e.target).length){
+      $(this).hide();
+  }
+}
+hidecontainer.forEach(l => l.addEventListener('mouseup', hideContainer));
+
+
+
+
+
+// oculta menu de perfil do usuario
+$(document).mouseup(function(e) {
+  const container = $(".perfil-menu");
+  if(!container.is(e.target) && !container.has(e.target).length){
+    container.hide();
+  }  
+});
+
+
+
+  // Your code to run since DOM is loaded and ready
+});
