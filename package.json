@@ -7,10 +7,15 @@
   "author": "rapa2302 <rafael.alves.587605@sga.pucminas.br>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev" : "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+  },
   "dependencies": {
+    "express": "^4.18.2",
     "prisma": "^5.3.1"
   },
   "devDependencies": {
+    "@prisma/client": "^5.3.1",
     "@types/express": "^4.17.18",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
