@@ -93,9 +93,12 @@ model Turma {
   nroAlunos   Int
   isAtiva     Boolean
   diaDaSemana DiaDaSemana[]
+  horario     String
 }
 
 model DiaDaSemana {
-  Turma   Turma? @relation(fields: [turmaId], references: [id])
-  turmaId Int?
+  Turma             Turma? @relation(fields: [turmaId], references: [id])
+  turmaId           Int?
+  diaDaSemanaInt    Int    @unique
+  diaDaSemanaString String @unique
 }
