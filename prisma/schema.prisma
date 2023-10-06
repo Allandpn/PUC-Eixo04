@@ -40,10 +40,10 @@ model Aluno {
   emailResponsavel      String?
   anotacoesAluno        String?
   contribuicao          Contribuicao[]
-  turma                 Turma                   @relation(fields: [turmaId], references: [id])
+  turma                 Turma?                  @relation(fields: [turmaId], references: [id])
   turmaId               Int
 
-  @@map("usuarios")
+  @@map("alunos")
 }
 
 model Coordenador {
@@ -149,12 +149,12 @@ model Endereco {
   cidade      String
   CEP         String
 
-  unidadeId     Int         @unique
-  unidade       Unidade     @relation(fields: [unidadeId], references: [id])
-  alunoId       Int         @unique
-  aluno         Aluno       @relation(fields: [alunoId], references: [id])
-  coordenadorId Int         @unique
-  coordenador   Coordenador @relation(fields: [coordenadorId], references: [id])
+  unidadeId     Int?         @unique
+  unidade       Unidade?     @relation(fields: [unidadeId], references: [id])
+  alunoId       Int?         @unique
+  aluno         Aluno?       @relation(fields: [alunoId], references: [id])
+  coordenadorId Int?         @unique
+  coordenador   Coordenador? @relation(fields: [coordenadorId], references: [id])
 
   @@map("enderecos")
 }
