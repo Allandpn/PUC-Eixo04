@@ -41,7 +41,7 @@ model Aluno {
   anotacoesAluno        String?
   contribuicao          Contribuicao[]
   turma                 Turma?                  @relation(fields: [turmaId], references: [id])
-  turmaId               Int
+  turmaId               Int?
 
   @@map("alunos")
 }

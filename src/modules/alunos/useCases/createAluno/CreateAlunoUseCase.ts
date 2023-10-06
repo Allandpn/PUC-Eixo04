@@ -32,9 +32,12 @@ export class CreateAlunoUseCase {
         const bairro = endereco.bairro;
         const cidade = endereco.cidade;
         const CEP = endereco.CEP;
-                //verificar se endereço é válido
-        
-        
+        //verificar se endereço é válido
+        const end = JSON.stringify(endereco)
+        console.log(`rua: ${rua} numero: ${numero} complemento: ${complemento}   endereço: ${JSON.stringify(endereco)}`);
+
+
+
         //verificar se senha é nula
 
         let aluno: Prisma.AlunoCreateInput
@@ -46,12 +49,12 @@ export class CreateAlunoUseCase {
             dataNascimento,
             endereco: {  
                 create: {
-                    rua,
-                    numero,
-                    complemento,
-                    bairro,
-                    cidade,
-                    CEP,
+                    rua: rua,
+                    numero: numero,
+                    complemento: complemento,
+                    bairro: bairro,
+                    cidade: cidade,
+                    CEP: CEP,
                 }                 
             },
             nomeResponsavel,
