@@ -25,16 +25,16 @@ export class CreateAlunoUseCase {
         //verificar se data de nascimento é nula ou verificar formato
         // Para DateTime verificar https://github.com/prisma/prisma-client-js/issues/658 deve-se usar ISO 8601 - 2020-05-04T14:05:23Z
 
-        //função para retornar endereço
+        //variáveis para retornar endereço
         const rua = endereco.rua;
         const numero = endereco.numero; 
         const complemento = endereco.complemento;
         const bairro = endereco.bairro;
         const cidade = endereco.cidade;
         const CEP = endereco.CEP;
+        
         //verificar se endereço é válido
-        const end = JSON.stringify(endereco)
-        console.log(`rua: ${rua} numero: ${numero} complemento: ${complemento}   endereço: ${JSON.stringify(endereco)}`);
+        
 
 
 

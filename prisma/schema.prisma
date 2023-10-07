@@ -64,11 +64,9 @@ model Coordenador {
 }
 
 model TiposDeInstrumento {
-  nomeInstrumento String      @unique
-  coordenadorId   Int
-  coordenador     Coordenador @relation(fields: [coordenadorId], references: [id])
-  cursoId         Int
-  curso           Curso       @relation(fields: [cursoId], references: [id])
+  nomeInstrumento String        @id @unique
+  coordenador     Coordenador[]
+  curso           Curso[]
 
   @@map("tiposdeinstrumentos")
 }
@@ -110,14 +108,14 @@ model Curso {
 
 model Turma {
   id            Int           @id @default(autoincrement())
-  nroAlunos     Int           @default(0)
-  isAtiva       Boolean
+  nroAlunos     Int?          @default(0)
+  isAtiva       Boolean?
   diaDaSemana   DiaDaSemana[]
   horario       String
-  curso         Curso         @relation(fields: [cursoId], references: [id])
-  cursoId       Int
-  Coordenador   Coordenador   @relation(fields: [coordenadorId], references: [id])
-  coordenadorId Int
+  curso         Curso         @relation(fields: [cursoId], references: [nomeCurso])
+  cursoId       String
+  Coordenador   Coordenador?  @relation(fields: [coordenadorId], references: [id])
+  coordenadorId Int?
   aluno         Aluno[]
 
   @@map("turmas")
