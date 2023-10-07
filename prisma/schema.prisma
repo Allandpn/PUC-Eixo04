@@ -1,0 +1,168 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id             String   @id @default(uuid())
+  nome           String
+  email          String   @unique
+  telefone       String
+  dataNascimento DateTime
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+  senha          String
+
+  @@map("admins")
+}
+
+model Aluno {
+  id                    Int                     @id @default(autoincrement())
+  nome                  String
+  email                 String                  @unique
+  telefone              String
+  dataNascimento        DateTime
+  created_at            DateTime                @default(now())
+  updated_at            DateTime                @updatedAt
+  instrumentoEmprestimo EmprestimoInstrumento[]
+  endereco              Endereco?
+  dataAdmissao          DateTime?
+  dataDesligamento      DateTime?
+  nomeResponsavel       String?
+  telefoneResponsavel   String?
+  emailResponsavel      String?
+  anotacoesAluno        String?
+  contribuicao          Contribuicao[]
+  turma                 Turma?                  @relation(fields: [turmaId], references: [id])
+  turmaId               Int?
+
+  @@map("alunos")
+}
+
+model Coordenador {
+  id                  Int                  @id @default(autoincrement())
+  nome                String
+  email               String               @unique
+  telefone            String
+  dataNascimento      DateTime
+  instrumentosLeciona TiposDeInstrumento[]
+  salario             Decimal?
+  created_at          DateTime?            @default(now())
+  updated_at          DateTime?            @updatedAt
+  turma               Turma[]
+  //Curso               Curso[] //Fiquei na dúvida, pois as turmas estão ligadas a cursos, não sei se faz sentido ligar coordenador a turmas e também a cursos
+  endereco            Endereco?
+
+  @@map("coordenadores")
+}
+
+model TiposDeInstrumento {
+  nomeInstrumento String        @id @unique
+  coordenador     Coordenador[]
+  curso           Curso[]
+
+  @@map("tiposdeinstrumentos")
+}
+
+model Instrumento {
+  id                             Int                     @id @default(autoincrement())
+  nomeInstrumento                String
+  marcaInstrumento               String
+  estadoConservacaoDoInstrumento String
+  isEmprestado                   Boolean
+  alunosEmprestimo               EmprestimoInstrumento[]
+
+  @@map("instrumentos")
+}
+
+model EmprestimoInstrumento {
+  instrumentoId         Int
+  instrumento           Instrumento @relation(fields: [instrumentoId], references: [id])
+  alunoId               Int
+  aluno                 Aluno       @relation(fields: [alunoId], references: [id])
+  dataInicialEmprestimo DateTime?   @default(now())
+  dataFinalEmprestimo   DateTime?
+
+  @@id([instrumentoId, alunoId])
+  @@map("emprestimoinstrumento")
+}
+
+model Curso {
+  id                Int                  @id @default(autoincrement())
+  nomeCurso         String               @unique
+  instrumentosCurso TiposDeInstrumento[]
+  turma             Turma[]
+  turmaId           Int
+  //coordenador       Coordenador          @relation(fields: [coordenadorId], references: [id]) //Fiquei na dúvida, pois as turmas estão ligadas a cursos, não sei se faz sentido ligar coordenador a turmas e também a cursos
+  //coordenadorId     Int
+
+  @@map("cursos")
+}
+
+model Turma {
+  id            Int           @id @default(autoincrement())
+  nroAlunos     Int?          @default(0)
+  isAtiva       Boolean?
+  diaDaSemana   DiaDaSemana[]
+  horario       String
+  curso         Curso         @relation(fields: [cursoId], references: [nomeCurso])
+  cursoId       String
+  Coordenador   Coordenador?  @relation(fields: [coordenadorId], references: [id])
+  coordenadorId Int?
+  aluno         Aluno[]
+
+  @@map("turmas")
+}
+
+model Unidade {
+  id       Int       @id @default(autoincrement())
+  nome     String
+  endereco Endereco?
+
+  @@map("unidades")
+}
+
+model DiaDaSemana {
+  Turma             Turma? @relation(fields: [turmaId], references: [id])
+  turmaId           Int?
+  diaDaSemanaInt    Int    @unique
+  diaDaSemanaString String @unique
+
+  @@map("diasdasemana")
+}
+
+model Endereco {
+  id          Int     @id @default(autoincrement())
+  rua         String
+  numero      String
+  complemento String?
+  bairro      String?
+  cidade      String
+  CEP         String
+
+  unidadeId     Int?         @unique
+  unidade       Unidade?     @relation(fields: [unidadeId], references: [id])
+  alunoId       Int?         @unique
+  aluno         Aluno?       @relation(fields: [alunoId], references: [id])
+  coordenadorId Int?         @unique
+  coordenador   Coordenador? @relation(fields: [coordenadorId], references: [id])
+
+  @@map("enderecos")
+}
+
+model Contribuicao {
+  id                Int       @id @default(autoincrement())
+  dataContribuicao  DateTime? @default(now())
+  valorContribuicao Decimal
+  alunoId           Int
+  aluno             Aluno     @relation(fields: [alunoId], references: [id])
+
+  @@map("contribuicoes")
+}
