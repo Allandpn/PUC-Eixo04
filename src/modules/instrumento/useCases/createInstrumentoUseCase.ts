@@ -3,7 +3,7 @@ import { CreateInstrumentoDTO } from "../dtos/createInstrumentoDTO";
 import { prisma } from "../../../prisma/client";
 
 export class CreateInstrumentoUseCase {
-    async execute({nomeInstrumento, marcaInstrumento, estadoConservacaoDoInstrumento, isEmprestado} : CreateInstrumentoDTO) :Promise<Instrumento>{
+    async execute({nomeInstrumento, marcaInstrumento, estadoConservacaoDoInstrumento} : CreateInstrumentoDTO) :Promise<Instrumento>{
         //verificar instrumento já existe
     
 
@@ -13,7 +13,7 @@ export class CreateInstrumentoUseCase {
             nomeInstrumento,
             marcaInstrumento,
             estadoConservacaoDoInstrumento,
-            isEmprestado,
+            
         }
 
     const createInstrumento = await prisma.instrumento.create({

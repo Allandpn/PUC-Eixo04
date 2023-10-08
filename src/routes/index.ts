@@ -11,6 +11,6 @@ routes.use("/admin", adminRoutes);
 routes.use("/aluno", alunoRoutes);
 routes.use("/coordenador", coordenadorRoutes);
 routes.use("/curso", cursoRoutes);
-routes.use("/instrumento", instrumentoRoutes)
+routes.use("/instrumento", instrumentoRoutes);
 
 export { routes };
