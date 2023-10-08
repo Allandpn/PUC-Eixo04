@@ -77,7 +77,7 @@ model Instrumento {
   marcaInstrumento               String
   estadoConservacaoDoInstrumento String
   isEmprestado                   Boolean
-  alunosEmprestimo               EmprestimoInstrumento[]
+  emprestimoInstrumento          EmprestimoInstrumento[]
 
   @@map("instrumentos")
 }
@@ -99,7 +99,7 @@ model Curso {
   nomeCurso         String               @unique
   instrumentosCurso TiposDeInstrumento[]
   turma             Turma[]
-  turmaId           Int
+  //turmaId           Int
   //coordenador       Coordenador          @relation(fields: [coordenadorId], references: [id]) //Fiquei na dúvida, pois as turmas estão ligadas a cursos, não sei se faz sentido ligar coordenador a turmas e também a cursos
   //coordenadorId     Int
 
@@ -112,8 +112,8 @@ model Turma {
   isAtiva       Boolean?
   diaDaSemana   DiaDaSemana[]
   horario       String
-  curso         Curso         @relation(fields: [cursoId], references: [nomeCurso])
-  cursoId       String
+  curso         Curso?        @relation(fields: [cursoId], references: [nomeCurso])
+  cursoId       String?
   Coordenador   Coordenador?  @relation(fields: [coordenadorId], references: [id])
   coordenadorId Int?
   aluno         Aluno[]
