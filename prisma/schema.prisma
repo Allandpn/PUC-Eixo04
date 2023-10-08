@@ -76,7 +76,7 @@ model Instrumento {
   nomeInstrumento                String
   marcaInstrumento               String
   estadoConservacaoDoInstrumento String
-  isEmprestado                   Boolean
+  isEmprestado                   Boolean?
   emprestimoInstrumento          EmprestimoInstrumento[]
 
   @@map("instrumentos")

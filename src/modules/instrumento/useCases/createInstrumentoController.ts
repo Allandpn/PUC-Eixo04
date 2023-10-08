@@ -9,14 +9,7 @@ export class CreateInstrumentoController {
 
         const createinstrumentoUseCase = new CreateInstrumentoUseCase();
 
-        const result = await createinstrumentoUseCase.execute({nomeInstrumento, marcaInstrumento, estadoConservacaoDoInstrumento, isEmprestado})
-            .then(async () => {
-                await prisma.$disconnect();
-            })
-            .catch(async (e) => {
-                console.error(e);
-                await prisma.$disconnect();
-            });
+        const result = await createinstrumentoUseCase.execute({nomeInstrumento, marcaInstrumento, estadoConservacaoDoInstrumento})
 
         return res.status(201).json(result);
 

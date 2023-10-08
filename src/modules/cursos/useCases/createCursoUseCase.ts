@@ -3,7 +3,7 @@ import { CreateCursoDTO } from "../dtos/createCursoDTO";
 import { prisma } from '../../../prisma/client';
 
 
-export class CreateCursosUseCase {
+export class CreateCursoUseCase {
     async execute({nomeCurso, nomeInstrumento}: CreateCursoDTO) : Promise<Curso> {
         
         //verificar se nome do Curso é válido

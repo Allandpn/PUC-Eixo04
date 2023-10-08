@@ -11,13 +11,13 @@ export class CreateCoordenadorController {
         const createCoordenadorUseCase = new CreateCoordenadorUseCase();
 
         const result = await createCoordenadorUseCase.execute({nome, email, telefone, dataNascimento, salario, endereco, instrumentoLeciona})
-            .then(async () => {
-                await prisma.$disconnect();
-            })
-            .catch(async (e) => {
-                console.error(e);
-                await prisma.$disconnect();
-            });
+            // .then(async () => {
+            //     await prisma.$disconnect();
+            // })
+            // .catch(async (e) => {
+            //     console.error(e);
+            //     await prisma.$disconnect();
+            // });
 
         return res.status(201).json(result);
 
