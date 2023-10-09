@@ -1,14 +1,10 @@
-import { DiaDaSemanaCreateOrConnectWithoutTurmaInput, DiaDaSemanaCreateNestedManyWithoutTurmaInput } from './../../../../node_modules/.prisma/client/index.d';
 import { Prisma, Turma } from "@prisma/client";
 import { CreateTurmaDTO } from "../dtos/createTurmaDTO";
 import { prisma } from "../../../prisma/client";
 import { AppError } from "../../../errors/AppError";
 
-
-
 export class CreateTurmaUseCase {
     async execute({nome, diaDaSemanaInt, horario, nomeCurso} : CreateTurmaDTO): Promise<Turma>{
-
 
         //verificar se nome é nulo ou se tem caracteres proibidos
 
@@ -29,18 +25,28 @@ export class CreateTurmaUseCase {
 
         let turma : Prisma.TurmaCreateInput
         // Problema SQLite não aceita uma lista de escalares para conectar mais de um dia da semana de uma vez
-        
+
         turma = {
             nome,
             horario,
             diaDaSemana: {
                 connect: {
                     diaDaSemanaInt: diaDaSemanaInt
-                }
-                    
-                }
-            }
+                },                    
+                },
+            curso: {
+                connect:{
+                    nomeCurso: nomeCurso
+                },
+            },
         }
+       
+        //Criar turma
+        const createTurma = await prisma.turma.create({
+            data: turma
+        });
+
+        return createTurma
 
     }
 }
