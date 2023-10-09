@@ -108,6 +108,7 @@ model Curso {
 model Turma {
   id            Int           @id @default(autoincrement())
   nroAlunos     Int?          @default(0)
+  nome          String        @unique
   isAtiva       Boolean?
   diaDaSemana   DiaDaSemana[]
   horario       String
@@ -129,10 +130,9 @@ model Unidade {
 }
 
 model DiaDaSemana {
-  Turma             Turma? @relation(fields: [turmaId], references: [id])
-  turmaId           Int?
-  diaDaSemanaInt    Int    @unique
-  diaDaSemanaString String @unique
+  turma             Turma[]
+  diaDaSemanaInt    Int     @id @unique
+  diaDaSemanaString String  @unique
 
   @@map("diasdasemana")
 }
