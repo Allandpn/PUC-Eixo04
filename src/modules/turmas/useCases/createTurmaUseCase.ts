@@ -4,7 +4,7 @@ import { prisma } from "../../../prisma/client";
 import { AppError } from "../../../errors/AppError";
 
 export class CreateTurmaUseCase {
-    async execute({nome, diaDaSemanaInt, horario, nomeCurso} : CreateTurmaDTO): Promise<Turma>{
+    async execute({nome, diaDaSemanaInt, horario, nomeCurso} : CreateTurmaDTO): Promise<Turma | null> {
 
         //verificar se nome é nulo ou se tem caracteres proibidos
 
@@ -29,11 +29,11 @@ export class CreateTurmaUseCase {
         turma = {
             nome,
             horario,
-            diaDaSemana: {
-                connect: {
-                    diaDaSemanaInt: diaDaSemanaInt
-                },                    
-                },
+            // diaDaSemana: {
+            //     connect: {
+            //         diaDaSemanaInt: diaDaSemanaInt
+            //     },                    
+            //     },
             curso: {
                 connect:{
                     nomeCurso: nomeCurso
@@ -46,7 +46,28 @@ export class CreateTurmaUseCase {
             data: turma
         });
 
-        return createTurma
+        
+        let turmaUpdate;
+        for (const dia of diaDaSemanaInt){
+            turmaUpdate = await prisma.turma.update({
+                where: {nome: nome},
+                data: { 
+                    diaDaSemana: {
+                        connect:{
+                            diaDaSemanaInt: dia,
+                        },
+                    },
+                },            
+            })
+        }
+        
+        const result = await prisma.turma.findUnique({
+            where: {
+                nome: nome,
+            }
+        })
+        
+        return result
 
     }
 }

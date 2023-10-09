@@ -2,7 +2,7 @@
 
 export interface CreateTurmaDTO{
     nome: string,
-    diaDaSemanaInt: number,
+    diaDaSemanaInt: number[],
     horario: string,
     nomeCurso: string | undefined,
 
