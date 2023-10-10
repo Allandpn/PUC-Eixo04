@@ -24,9 +24,7 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
             
             status: "error",
             message: err.message 
-    }
-
-    )
+        })
     }
     return response.status(501).json({
         status: "error",

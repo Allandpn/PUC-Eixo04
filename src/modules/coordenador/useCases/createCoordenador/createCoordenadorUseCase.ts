@@ -1,4 +1,4 @@
-import { Coordenador, TiposDeInstrumento } from './../../../../../node_modules/.prisma/client/index.d';
+import { Coordenador } from './../../../../../node_modules/.prisma/client/index.d';
 import { CreateCoordenadorDTO } from "../../dtos/createCoordenadorDTO";
 import { prisma } from '../../../../prisma/client';
 import { AppError } from '../../../../errors/AppError';
@@ -6,7 +6,7 @@ import { Prisma } from '@prisma/client';
 
 
 export class CreateCoordenadorUseCase {
-    async execute({nome, email, telefone, dataNascimento, salario, endereco, instrumentoLeciona }:CreateCoordenadorDTO) : Promise<Coordenador>{
+    async execute({nome, email, telefone, dataNascimento, salario, endereco, instrumentosLeciona }:CreateCoordenadorDTO) : Promise<Coordenador | null>{
 
         //verificar se nome é nulo ou se tem caracteres proibidos
 
@@ -62,23 +62,59 @@ export class CreateCoordenadorUseCase {
                     CEP: CEP,
                 },                 
             },
-            instrumentosLeciona: {
-                connectOrCreate: {
-                    where: {nomeInstrumento: instrumentoLeciona},
-                    create: {
-                        nomeInstrumento: instrumentoLeciona
-                    },
-                } ,         
-            },
-                   
-            
+            // instrumentosLeciona: {
+            //     connectOrCreate: {
+            //         where: {nomeInstrumento: instrumentoLeciona},
+            //         create: {
+            //             nomeInstrumento: instrumentoLeciona
+            //         },
+            //     } ,         
+            // },                
         }
-        //Criar o Aluno
+
         const createCoordenador = await prisma.coordenador.create({
             data: coordenador
         });
 
+        let coordenadorUpdate;
+        
 
-        return createCoordenador
+        // instrumentosLeciona.forEach(async (instrumento) => {
+        //     await prisma.coordenador.update({
+        //         where: {email: email},
+        //         data: {
+        //             instrumentosLeciona: {
+        //                 connectOrCreate: {
+        //                     where: {nomeInstrumento: instrumento},
+        //                     create: {nomeInstrumento: instrumento},
+        //                 },
+        //             }
+        //         }
+        //     })
+        // })
+
+        for ( const instrumento of instrumentosLeciona ){
+            coordenadorUpdate = await prisma.coordenador.update({
+                where: {email: email},
+                data: {
+                    instrumentosLeciona: {
+                        connectOrCreate: {
+                            where: {nomeInstrumento: instrumento},
+                            create: {nomeInstrumento: instrumento},
+                        },
+                    }
+                }
+            })
+        }
+
+
+        //retorna coordenador
+        const result = await prisma.coordenador.findUnique({
+            where: {
+                email: email
+            },
+        })
+        
+        return result
     }
 }
