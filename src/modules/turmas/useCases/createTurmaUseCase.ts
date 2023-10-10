@@ -1,10 +1,11 @@
+import { Unidade } from './../../../../node_modules/.prisma/client/index.d';
 import { Prisma, Turma } from "@prisma/client";
 import { CreateTurmaDTO } from "../dtos/createTurmaDTO";
 import { prisma } from "../../../prisma/client";
 import { AppError } from "../../../errors/AppError";
 
 export class CreateTurmaUseCase {
-    async execute({nome, diaDaSemanaInt, horario, nomeCurso} : CreateTurmaDTO): Promise<Turma | null> {
+    async execute({nome, diaDaSemanaInt, horario, nomeCurso, nomeUnidade} : CreateTurmaDTO): Promise<Turma | null> {
 
         //verificar se nome é nulo ou se tem caracteres proibidos
 
@@ -23,6 +24,8 @@ export class CreateTurmaUseCase {
 
         // verificar se nomeCurso existe no bd curso, só se pode criar a turma caso exista o curso
 
+        // verificar se unidade existe
+
         let turma : Prisma.TurmaCreateInput
         // Problema SQLite não aceita uma lista de escalares para conectar mais de um dia da semana de uma vez
 
@@ -36,7 +39,12 @@ export class CreateTurmaUseCase {
             //     },
             curso: {
                 connect:{
-                    nomeCurso: nomeCurso
+                    nomeCurso: nomeCurso,
+                },
+            },
+            unidade : {
+                connect:{
+                    nome: nomeUnidade,
                 },
             },
         }

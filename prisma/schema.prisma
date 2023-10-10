@@ -82,6 +82,7 @@ model Instrumento {
 }
 
 model EmprestimoInstrumento {
+  id                    Int         @id @default(autoincrement())
   instrumentoId         Int
   instrumento           Instrumento @relation(fields: [instrumentoId], references: [id])
   alunoId               Int
@@ -89,7 +90,6 @@ model EmprestimoInstrumento {
   dataInicialEmprestimo DateTime?   @default(now())
   dataFinalEmprestimo   DateTime?
 
-  @@id([instrumentoId, alunoId])
   @@map("emprestimoinstrumento")
 }
 
@@ -117,14 +117,16 @@ model Turma {
   Coordenador   Coordenador?  @relation(fields: [coordenadorId], references: [id])
   coordenadorId Int?
   aluno         Aluno[]
+  unidade       Unidade[]
 
   @@map("turmas")
 }
 
 model Unidade {
   id       Int       @id @default(autoincrement())
-  nome     String
+  nome     String    @unique
   endereco Endereco?
+  turma    Turma[]
 
   @@map("unidades")
 }

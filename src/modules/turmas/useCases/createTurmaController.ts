@@ -5,11 +5,11 @@ import { Request, Response } from "express";
 export class CreateTurmaController {
 
     async handle(req: Request, res: Response){
-        const {nome, diaDaSemanaInt, horario, nomeCurso} = req.body;
+        const {nome, diaDaSemanaInt, horario, nomeCurso, nomeUnidade} = req.body;
 
         const createTurmaUseCase = new CreateTurmaUseCase();
 
-        const result = await createTurmaUseCase.execute({nome, diaDaSemanaInt, horario, nomeCurso});
+        const result = await createTurmaUseCase.execute({nome, diaDaSemanaInt, horario, nomeCurso, nomeUnidade});
 
         return res.status(200).json(result);
 
