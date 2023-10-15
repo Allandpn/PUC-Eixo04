@@ -1,0 +1,12 @@
+
+html, body{
+    height: 100%;
+ }
+
+
+ /* define imagem de background em modo responsivo */
+ .background-login {
+    background-size: cover;
+ }
+
+
