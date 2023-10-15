@@ -8,11 +8,12 @@
     <!--Arquivo para icones Boxicons ultima versao-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!--Arquivo para icones FontAwesome ultima versao-->
-    <link href="../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="../assets/fontawesome/css/brands.css" rel="stylesheet">
-    <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="../../../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="../../../assets/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="../../../assets/fontawesome/css/solid.css" rel="stylesheet">
     <!--Arquivo css local para configuracoes slidebar responsivo-->
     <link rel="stylesheet" href="../static/layout-slidebar.css" />
+    <link rel="stylesheet" href="../static/admin.css" />
     <title>Orquestra Criarte Digital</title>
 </head>
 <body  id="body-pd">
@@ -21,12 +22,12 @@
             <i class="bx bx-menu" id="header-toggle"></i>
         </div>   
         <div class="title-page ml-4 mr-auto ">
-           <span class="text-secondary" style="font-size: 25px;">Nome da Pagina</span>
+           <span class="text-secondary" style="font-size: 22px;">Administração</span>
         </div>      
         <div >
             <ul class="nav">
                 <li class="nav-item">                    
-                    <div class="perfil-icon" data-element="#id-perfil-menu-box">
+                    <div class="perfil-icon text-secondary" data-element="#id-perfil-menu-box">
                         <i class="bx bx-user nav_icon " style="font-size: 2.2rem"></i>
                         <i class='bx bx-chevron-down nav_icon'></i>   
                     </div>                                    
@@ -56,24 +57,21 @@
                 </a>
                 <a href="#" class="nav_link " >
                     <i class='bx bxs-playlist nav_icon' ></i>
-                    <span class="nav-name">Inventário</span>
+                    <span class="nav-name">Acervo</span>
                 </a> 
-                <a href="#" class="nav_link ">
+                <a href="#" class="nav_link " style="color: gray; pointer-events: none;">
                     <i class='bx bx-dollar-circle nav_icon'></i>
                     <span class="nav-name">Financeiro</span>
                 </a>                               
             </div>
-            <div class="text-center" id="id-system-version" style="color: #ebebeb; display: none; position: absolute; bottom: 10px;">
-                <small class="d-block">Desenvolvido por alunos do curso de S.I. da PUC Minas Virtual</small> 
-                <small>Versão 1.1</small>
+            <div class="d-flex " id="id-system-version" style="color: #ebebeb; display: none; position: absolute; bottom: 10px;">
+                <small class="">Versão 1.1</small>
             </div>
     </nav>
 </aside>
 
 <!--Conteudo Principal de Cada Pagina-->
-<div class="main">
 
-</div>
 
 
 
@@ -86,12 +84,12 @@
 
 
 <!--Modal para Perfil do Usuario-->
-<div class="perfil-menu float-right" id="id-perfil-menu-box" style="width: 200px; display: none;">
-    <div class="m-3">@Nome Usuario</div>
+<div class="perfil-menu float-right" id="id-perfil-menu-box">
+    <div id="perfil-nomeUsuario" class="m-3">@Nome Usuario</div>
     <div class="dropdown-divider"></div>
     <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Perfil</a>
+          <a class="nav-link text-dark btn-dados-usuario" data-element="#telaDadosUsuario">Perfil</a>
         </li>            
         <li class="nav-item">
           <a class="nav-link text-muted" href="#">Sair</a>
@@ -100,6 +98,55 @@
  </div> 
 
 
+ <!--Modal editar dados Usuario-->
+ <div class="hidden hide-container" id="telaDadosUsuario">
+    <div class="bg-container justify-content-center" >
+        <div class="background-dark">
+        </div>
+        <div class="tela-dados-usuario tela-add-item border rounded shadow  p-4 bg-white">
+            <form>
+                <div class="text-center mb-3">
+                    <span class="h5 text-info font-weight-bold">Perfil</span>
+                    <button  class="close btn-dados-usuario " data-element="#telaDadosUsuario" data-dismiss="" aria-label="Fechar">
+                        <span class="btn-dados-usuario m-3" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label for="nomeUsuario">Nome de Usuario</label>
+                <input type="text" class="form-control" id="nomeUsuario" placeholder="usuario">
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" placeholder="nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="senha">
+                </div>
+                <div class="form-group">
+                    <label for="confirmSenha">Confirmar Senha</label>
+                <input type="password" class="form-control" id="confirmSenha" placeholder="confirmar senha">
+                </div>                
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                <input type="text" class="form-control" id="telefone" placeholder="telefone">
+                </div>
+                <div class="form-group">
+                    <label for="dataNascimento">Data Nascimento</label>
+                    <input id="dataNascimento" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
+                </div>
+                <div class="text-center  mt-5">
+                    <button type="submit" class="btn btn-primary ">Salvar</button>
+                    <button type="button" class="btn btn-secondary ml-4  btn-dados-usuario" data-element="#telaDadosUsuario">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 
@@ -111,6 +158,7 @@
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script type='text/javascript' src="../static/layout-slidebar.js"></script>  
+<script type='text/javascript' src="../static/layout-slidebar.js"></script>    
+<script type='text/javascript' src="../static/admin.js"></script>  
 </body>
 </html>

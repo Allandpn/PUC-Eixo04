@@ -56,24 +56,11 @@
 
 
 /*Define efeito em Nome da Escola na tabela Escolas*/
-.open-info-escola-btn  {
-    border: none;
-    outline: none;
-    background-color: white;
-    color: #17A2B8;
+
+.bg-gray {
+    background-color: #d6d8da;
 }
-.open-info-escola-btn:hover  {
-    outline: none;
-    border-color: #17A2B8;
-    background-color: #17A2B8;
-    color: #ffffff;
-}
-.open-info-escola-btn:focus  {
-    outline: none;
-    border-color: #17A2B8;
-    box-shadow: 0px 0px 2px 2px #65c1cf;
-    
-}
+
 
 
 

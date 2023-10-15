@@ -30,6 +30,15 @@ $(function () {
     });
 });
 
+// exibe tabela com informacoes da turma selecionada
+$(function () {
+    $(".open-info-turma").click(function (e) {
+        e.preventDefault();
+        el = $(this).data('element');
+        $(el).toggle();       
+    });
+});
+
 // exibe tabela com informacoes da escola selecionada
 $(function () {
     $(".btn-dados-usuario").click(function (e) {
