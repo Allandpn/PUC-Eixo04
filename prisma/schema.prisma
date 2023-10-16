@@ -40,7 +40,8 @@ model Aluno {
   emailResponsavel      String?
   anotacoesAluno        String?
   contribuicao          Contribuicao[]
-  turma                 Turma[]
+  turma                 Turma?                  @relation(fields: [turmaId], references: [id])
+  turmaId               Int?
 
   @@map("alunos")
 }
@@ -77,6 +78,8 @@ model Instrumento {
   estadoConservacaoDoInstrumento String
   isEmprestado                   Boolean?
   emprestimoInstrumento          EmprestimoInstrumento[]
+  unidade                        Unidade                 @relation(fields: [unidadeId], references: [id])
+  unidadeId                      Int
 
   @@map("instrumentos")
 }
@@ -98,7 +101,6 @@ model Curso {
   nomeCurso         String               @unique
   instrumentosCurso TiposDeInstrumento[]
   turma             Turma[]
-  //turmaId           Int
   //coordenador       Coordenador          @relation(fields: [coordenadorId], references: [id]) //Fiquei na dúvida, pois as turmas estão ligadas a cursos, não sei se faz sentido ligar coordenador a turmas e também a cursos
   //coordenadorId     Int
 
@@ -112,21 +114,23 @@ model Turma {
   isAtiva       Boolean?
   diaDaSemana   DiaDaSemana[]
   horario       String
-  curso         Curso?        @relation(fields: [cursoId], references: [nomeCurso])
-  cursoId       String?
+  curso         Curso         @relation(fields: [cursoId], references: [id])
+  cursoId       Int
   Coordenador   Coordenador?  @relation(fields: [coordenadorId], references: [id])
   coordenadorId Int?
   aluno         Aluno[]
-  unidade       Unidade[]
+  unidade       Unidade       @relation(fields: [unidadeId], references: [id])
+  unidadeId     Int
 
   @@map("turmas")
 }
 
 model Unidade {
-  id       Int       @id @default(autoincrement())
-  nome     String    @unique
-  endereco Endereco?
-  turma    Turma[]
+  id            Int           @id @default(autoincrement())
+  nome          String        @unique
+  instrumentoId Instrumento[]
+  endereco      Endereco?
+  turma         Turma[]
 
   @@map("unidades")
 }

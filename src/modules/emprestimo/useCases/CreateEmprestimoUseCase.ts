@@ -29,6 +29,9 @@ export class CreateEmprestimoUseCase {
             throw new AppError("Aluno não existe no bd");
         }
 
+       
+        //verificar se o instrumento está emprestado
+       
         let emprestimo : Prisma.EmprestimoInstrumentoCreateInput;
 
         emprestimo = {

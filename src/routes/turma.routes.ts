@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CreateTurmaController } from "../modules/turmas/useCases/createTurmaController";
+import { CreateTurmaController } from "../modules/turmas/useCases/createTurma/createTurmaController";
 
 
 const createTurmaController = new CreateTurmaController();

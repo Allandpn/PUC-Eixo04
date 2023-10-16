@@ -1,8 +1,8 @@
-import { Unidade } from './../../../../node_modules/.prisma/client/index.d';
+import { Unidade } from '.prisma/client';
 import { Prisma, Turma } from "@prisma/client";
-import { CreateTurmaDTO } from "../dtos/createTurmaDTO";
-import { prisma } from "../../../prisma/client";
-import { AppError } from "../../../errors/AppError";
+import { CreateTurmaDTO } from "../../dtos/createTurmaDTO";
+import { prisma } from "../../../../prisma/client";
+import { AppError } from "../../../../errors/AppError";
 
 export class CreateTurmaUseCase {
     async execute({nome, diaDaSemanaInt, horario, nomeCurso, nomeUnidade} : CreateTurmaDTO): Promise<Turma | null> {
@@ -17,7 +17,7 @@ export class CreateTurmaUseCase {
         })
         if (turmaAlreadyExists){
             //erro
-            throw new AppError("Coordenador já existe no bd");
+            throw new AppError("Turma já existe no bd");
         }
 
         //verificar se horario é válido e se está em formato válido

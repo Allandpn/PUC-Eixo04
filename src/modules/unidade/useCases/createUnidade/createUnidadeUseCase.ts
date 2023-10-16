@@ -1,7 +1,7 @@
 import { Prisma, Unidade } from "@prisma/client";
-import { CreateUnidadeDTO } from "../dtos/createUnidadeDTO";
-import { prisma } from "../../../prisma/client";
-import { AppError } from "../../../errors/AppError";
+import { CreateUnidadeDTO } from "../../dtos/createUnidadeDTO";
+import { prisma } from "../../../../prisma/client";
+import { AppError } from "../../../../errors/AppError";
 
 export class CreateUnidadeUseCase {
     async execute({nome, endereco}: CreateUnidadeDTO) : Promise<Unidade>{
