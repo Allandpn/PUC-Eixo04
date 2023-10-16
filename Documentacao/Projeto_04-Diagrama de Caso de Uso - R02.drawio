@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-09-25T23:28:43.014Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="tCMiVfpbfE9xTI7zmq-g" version="21.7.5" type="device">
+<mxfile host="app.diagrams.net" modified="2023-10-11T11:53:52.986Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="LBSKyyxLMUAsLx8AT_k1" version="22.0.4" type="github">
   <diagram name="Página-1" id="OuaDPxV6vWgWIFLeQTGV">
-    <mxGraphModel dx="4539" dy="1997" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3881" dy="1767" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1023,29 +1023,53 @@
             <mxPoint x="2" y="-12" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-1" value="Usuário&amp;lt;genérica&amp;gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-1" value="Usuário&amp;lt;genérica&amp;gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="171" y="466" width="188" height="219" as="geometry" />
         </mxCell>
-        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-2" value="- id: int&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- nome: string&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- email: string&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- telefone: string&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- dataNascimento: Date&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- senha: string&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- isAtivo: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="3lkJX4Ux8RZ6sUzpUBTn-1">
+        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-2" value="- id: int&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- nome: string&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- email: string&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- telefone: string&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- dataNascimento: Date&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- senha: string&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;- isAtivo: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="3lkJX4Ux8RZ6sUzpUBTn-1" vertex="1">
           <mxGeometry y="26" width="188" height="159" as="geometry" />
         </mxCell>
-        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="3lkJX4Ux8RZ6sUzpUBTn-1">
+        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="3lkJX4Ux8RZ6sUzpUBTn-1" vertex="1">
           <mxGeometry y="185" width="188" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-4" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="3lkJX4Ux8RZ6sUzpUBTn-1">
+        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-4" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="3lkJX4Ux8RZ6sUzpUBTn-1" vertex="1">
           <mxGeometry y="193" width="188" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-5" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="aUn-TZOy5CU89tunpi1s-32" target="3lkJX4Ux8RZ6sUzpUBTn-1">
+        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-5" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-32" target="3lkJX4Ux8RZ6sUzpUBTn-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="417" y="721" as="sourcePoint" />
             <mxPoint x="577" y="721" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-6" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" edge="1" parent="1" source="FAkx_wA7FtMw9XLHccDj-11" target="3lkJX4Ux8RZ6sUzpUBTn-1">
+        <mxCell id="3lkJX4Ux8RZ6sUzpUBTn-6" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;" parent="1" source="FAkx_wA7FtMw9XLHccDj-11" target="3lkJX4Ux8RZ6sUzpUBTn-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="480" y="447" as="sourcePoint" />
             <mxPoint x="640" y="447" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="op2QT1IlKd5e1XtfNigK-1" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1241" y="501" width="243" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="op2QT1IlKd5e1XtfNigK-2" value="&lt;div&gt;export interface CreateCoordenadorDTO{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; salario: number;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; instrumentoLeciona: string;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1556" y="499" width="243" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="op2QT1IlKd5e1XtfNigK-3" value="&lt;div&gt;export interface CreateInstrumentoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; marcaInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; estadoConservacaoDoInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; isEmprestado: boolean,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; //alunosEmprestimo: ,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1241" y="776" width="243" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="op2QT1IlKd5e1XtfNigK-4" value="&lt;div&gt;export interface CreateAdminDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; senha: string,&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1556" y="776" width="243" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="op2QT1IlKd5e1XtfNigK-5" value="&lt;div&gt;export interface CreateCursoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeCurso: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1241" y="1050" width="243" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="op2QT1IlKd5e1XtfNigK-6" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1556" y="1048" width="243" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="op2QT1IlKd5e1XtfNigK-7" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1241" y="1338" width="243" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="op2QT1IlKd5e1XtfNigK-8" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1556" y="1338" width="243" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

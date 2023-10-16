@@ -32,6 +32,7 @@ export class CreateTurmaUseCase {
         turma = {
             nome,
             horario,
+            
             // diaDaSemana: {
             //     connect: {
             //         diaDaSemanaInt: diaDaSemanaInt
