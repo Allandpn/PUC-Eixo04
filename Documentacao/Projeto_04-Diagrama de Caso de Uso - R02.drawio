@@ -1,100 +1,100 @@
-<mxfile host="app.diagrams.net" modified="2023-10-11T11:53:52.986Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="LBSKyyxLMUAsLx8AT_k1" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-16T23:26:40.454Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="WdwSOp8w22cfuL_3ssBr" version="21.8.0" type="github">
   <diagram name="Página-1" id="OuaDPxV6vWgWIFLeQTGV">
-    <mxGraphModel dx="3881" dy="1767" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4134" dy="1728" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="aUn-TZOy5CU89tunpi1s-1" value="Admin / Gestor / Professor&lt;br&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
-          <mxGeometry x="594" y="92" width="30" height="60" as="geometry" />
+        <mxCell id="aUn-TZOy5CU89tunpi1s-1" value="&amp;nbsp;Gestor /&amp;nbsp;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="852" y="-238" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-5" value="Efetuar CRUD de alunos" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="675" y="184" width="140" height="70" as="geometry" />
+          <mxGeometry x="933" y="-146" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-8" value="" style="endArrow=none;html=1;rounded=0;entryX=0.021;entryY=0.657;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-1" target="aUn-TZOy5CU89tunpi1s-5" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="564" y="297" as="sourcePoint" />
-            <mxPoint x="614" y="247" as="targetPoint" />
+            <mxPoint x="822" y="-33" as="sourcePoint" />
+            <mxPoint x="872" y="-83" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-9" value="Efetuar CRUD de instrumentos" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="669" y="261" width="140" height="70" as="geometry" />
+          <mxGeometry x="927" y="-69" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-10" value="" style="endArrow=none;html=1;rounded=0;entryX=0.064;entryY=0.286;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-1" target="aUn-TZOy5CU89tunpi1s-9" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="564" y="297" as="sourcePoint" />
-            <mxPoint x="614" y="247" as="targetPoint" />
+            <mxPoint x="822" y="-33" as="sourcePoint" />
+            <mxPoint x="872" y="-83" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-11" value="Gerir empréstimos" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="449" y="202" width="140" height="70" as="geometry" />
+          <mxGeometry x="707" y="-128" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-13" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-11" target="aUn-TZOy5CU89tunpi1s-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="564" y="297" as="sourcePoint" />
-            <mxPoint x="614" y="247" as="targetPoint" />
+            <mxPoint x="822" y="-33" as="sourcePoint" />
+            <mxPoint x="872" y="-83" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-14" value="Gerir contribuições" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="369" y="119" width="140" height="70" as="geometry" />
+          <mxGeometry x="627" y="-211" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-15" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.571;exitY=0.029;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-14" target="aUn-TZOy5CU89tunpi1s-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="564" y="297" as="sourcePoint" />
-            <mxPoint x="614" y="247" as="targetPoint" />
+            <mxPoint x="822" y="-33" as="sourcePoint" />
+            <mxPoint x="872" y="-83" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-16" value="Listar Dados de alunos" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="734" y="107" width="140" height="70" as="geometry" />
+          <mxGeometry x="992" y="-223" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-17" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-1" target="aUn-TZOy5CU89tunpi1s-16" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="564" y="297" as="sourcePoint" />
-            <mxPoint x="614" y="247" as="targetPoint" />
+            <mxPoint x="822" y="-33" as="sourcePoint" />
+            <mxPoint x="872" y="-83" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-18" value="Efetuar CRUD de classes de aula" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="527" y="277" width="140" height="70" as="geometry" />
+          <mxGeometry x="785" y="-53" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-19" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-1" target="aUn-TZOy5CU89tunpi1s-18" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="814" y="477" as="sourcePoint" />
-            <mxPoint x="864" y="427" as="targetPoint" />
+            <mxPoint x="1072" y="147" as="sourcePoint" />
+            <mxPoint x="1122" y="97" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-20" value="Visualizar Dashboard com Dados Gerais" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="714" y="27" width="140" height="70" as="geometry" />
+          <mxGeometry x="972" y="-303" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-21" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-1" target="aUn-TZOy5CU89tunpi1s-20" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="604" y="27" as="sourcePoint" />
-            <mxPoint x="654" y="-23" as="targetPoint" />
+            <mxPoint x="862" y="-303" as="sourcePoint" />
+            <mxPoint x="912" y="-353" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-22" value="&lt;strike&gt;Gerar Relatórios com Dados Gerais&lt;/strike&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="664" y="-53" width="140" height="70" as="geometry" />
+          <mxGeometry x="922" y="-383" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-23" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-1" target="aUn-TZOy5CU89tunpi1s-22" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="584" y="-3" as="sourcePoint" />
-            <mxPoint x="634" y="-53" as="targetPoint" />
+            <mxPoint x="842" y="-333" as="sourcePoint" />
+            <mxPoint x="892" y="-383" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-24" value="Listar agendas de aulas e lotação" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="421" y="37" width="140" height="70" as="geometry" />
+          <mxGeometry x="679" y="-293" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-25" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-1" target="aUn-TZOy5CU89tunpi1s-24" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="484.125" y="27" as="sourcePoint" />
-            <mxPoint x="494" y="-43" as="targetPoint" />
+            <mxPoint x="742.125" y="-303" as="sourcePoint" />
+            <mxPoint x="752" y="-373" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-26" value="Listar disponibilidade de instrumentos" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="507" y="-49" width="140" height="70" as="geometry" />
+          <mxGeometry x="765" y="-379" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-27" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-1" target="aUn-TZOy5CU89tunpi1s-26" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="504" y="40.627450980392155" as="sourcePoint" />
-            <mxPoint x="684" y="-23" as="targetPoint" />
+            <mxPoint x="762" y="-289.37254901960785" as="sourcePoint" />
+            <mxPoint x="942" y="-353" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-32" value="Aluno" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -244,18 +244,6 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="aUn-TZOy5CU89tunpi1s-85" value="Relatorio" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-114" y="908" width="201" height="193" as="geometry" />
-        </mxCell>
-        <mxCell id="aUn-TZOy5CU89tunpi1s-86" value="- id: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="aUn-TZOy5CU89tunpi1s-85" vertex="1">
-          <mxGeometry y="26" width="201" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="aUn-TZOy5CU89tunpi1s-87" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="aUn-TZOy5CU89tunpi1s-85" vertex="1">
-          <mxGeometry y="52" width="201" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="aUn-TZOy5CU89tunpi1s-88" value="+ gerarRelatorio(): void&lt;br&gt;+ salvarRelatorio(): void&lt;br&gt;+ listarRelatorio(): void&lt;br&gt;+ excluirRelatorio(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="aUn-TZOy5CU89tunpi1s-85" vertex="1">
-          <mxGeometry y="60" width="201" height="133" as="geometry" />
-        </mxCell>
         <mxCell id="aUn-TZOy5CU89tunpi1s-93" value="Contribuicoes" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-109" y="706" width="160" height="157" as="geometry" />
         </mxCell>
@@ -278,32 +266,23 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="aUn-TZOy5CU89tunpi1s-98" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" parent="1" source="aUn-TZOy5CU89tunpi1s-32" target="aUn-TZOy5CU89tunpi1s-85" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="329" y="928" as="sourcePoint" />
-            <mxPoint x="489" y="928" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="158" y="998" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="Tblm0iQjoKCew46TgZgH-1" value="&amp;lt;&amp;lt;dispositivo&amp;gt;&amp;gt;&lt;br&gt;Browser do cliente" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-634" y="235" width="180" height="120" as="geometry" />
+          <mxGeometry x="-726" y="-101" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="Tblm0iQjoKCew46TgZgH-2" value="&amp;lt;&amp;lt;artefato&amp;gt;&amp;gt;&lt;br&gt;Browser Web" style="html=1;whiteSpace=wrap;align=center;" parent="1" vertex="1">
-          <mxGeometry x="-610" y="289" width="110" height="50" as="geometry" />
+          <mxGeometry x="-702" y="-47" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Tblm0iQjoKCew46TgZgH-3" value="&amp;lt;&amp;lt;dispositivo&amp;gt;&amp;gt;&lt;br&gt;Servidor web&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;{servidor web = cloud&lt;span style=&quot;background-color: initial;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;{OS = Linux}&lt;/span&gt;&lt;/div&gt;" style="verticalAlign=top;align=center;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-328" y="235" width="180" height="120" as="geometry" />
+          <mxGeometry x="-420" y="-101" width="180" height="120" as="geometry" />
         </mxCell>
         <mxCell id="Tblm0iQjoKCew46TgZgH-6" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=65;entryDy=180;entryPerimeter=0;exitX=0.542;exitY=-0.006;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="Tblm0iQjoKCew46TgZgH-1" target="Tblm0iQjoKCew46TgZgH-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-124" y="450" as="sourcePoint" />
-            <mxPoint x="-74" y="400" as="targetPoint" />
+            <mxPoint x="-216" y="114" as="sourcePoint" />
+            <mxPoint x="-166" y="64" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Tblm0iQjoKCew46TgZgH-7" value="http/internet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="-424" y="270" width="60" height="30" as="geometry" />
+          <mxGeometry x="-516" y="-66" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="FAkx_wA7FtMw9XLHccDj-1" value="Unidade" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-128" y="514" width="207" height="145" as="geometry" />
@@ -1047,29 +1026,113 @@
             <mxPoint x="640" y="447" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="op2QT1IlKd5e1XtfNigK-1" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="op2QT1IlKd5e1XtfNigK-1" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1241" y="501" width="243" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="op2QT1IlKd5e1XtfNigK-2" value="&lt;div&gt;export interface CreateCoordenadorDTO{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; salario: number;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; instrumentoLeciona: string;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="op2QT1IlKd5e1XtfNigK-2" value="&lt;div&gt;export interface CreateCoordenadorDTO{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; salario: number;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; instrumentoLeciona: string;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1556" y="499" width="243" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="op2QT1IlKd5e1XtfNigK-3" value="&lt;div&gt;export interface CreateInstrumentoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; marcaInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; estadoConservacaoDoInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; isEmprestado: boolean,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; //alunosEmprestimo: ,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="op2QT1IlKd5e1XtfNigK-3" value="&lt;div&gt;export interface CreateInstrumentoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; marcaInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; estadoConservacaoDoInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; isEmprestado: boolean,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; //alunosEmprestimo: ,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1241" y="776" width="243" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="op2QT1IlKd5e1XtfNigK-4" value="&lt;div&gt;export interface CreateAdminDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; senha: string,&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="op2QT1IlKd5e1XtfNigK-4" value="&lt;div&gt;export interface CreateAdminDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; senha: string,&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1556" y="776" width="243" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="op2QT1IlKd5e1XtfNigK-5" value="&lt;div&gt;export interface CreateCursoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeCurso: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="op2QT1IlKd5e1XtfNigK-5" value="&lt;div&gt;export interface CreateCursoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeCurso: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeInstrumento: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1241" y="1050" width="243" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="op2QT1IlKd5e1XtfNigK-6" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="op2QT1IlKd5e1XtfNigK-6" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1556" y="1048" width="243" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="op2QT1IlKd5e1XtfNigK-7" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="op2QT1IlKd5e1XtfNigK-7" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1241" y="1338" width="243" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="op2QT1IlKd5e1XtfNigK-8" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="op2QT1IlKd5e1XtfNigK-8" value="&lt;div&gt;export interface CreateAlunoDTO {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nome: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; email: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; telefone: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataNascimento: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; endereco: Endereco,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; dataAdmissao: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; nomeResponsavel: string,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1556" y="1338" width="243" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-1" value="&amp;nbsp;Gestor&amp;nbsp;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="-308" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-2" value="Efetuar CRUD de alunos" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="304" y="-233" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-3" value="" style="endArrow=none;html=1;rounded=0;entryX=0.021;entryY=0.657;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-1" target="BG_Dscxmu_ziVbKPON2t-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="-103" as="sourcePoint" />
+            <mxPoint x="210" y="-153" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-4" value="Efetuar CRUD de instrumentos" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="283" y="-148" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-5" value="" style="endArrow=none;html=1;rounded=0;entryX=0.064;entryY=0.286;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-1" target="BG_Dscxmu_ziVbKPON2t-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="-103" as="sourcePoint" />
+            <mxPoint x="210" y="-153" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-6" value="Gerir empréstimos" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-17" y="-230" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-7" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-6" target="BG_Dscxmu_ziVbKPON2t-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="-103" as="sourcePoint" />
+            <mxPoint x="210" y="-153" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-8" value="Gerir contribuições" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-47" y="-323" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-9" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.571;exitY=0.029;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-8" target="BG_Dscxmu_ziVbKPON2t-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="-103" as="sourcePoint" />
+            <mxPoint x="210" y="-153" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-10" value="Listar Dados de alunos" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="344" y="-318" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-11" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-1" target="BG_Dscxmu_ziVbKPON2t-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="-103" as="sourcePoint" />
+            <mxPoint x="210" y="-153" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-12" value="Efetuar CRUD de classes de aula" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="-150" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-13" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-1" target="BG_Dscxmu_ziVbKPON2t-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="77" as="sourcePoint" />
+            <mxPoint x="460" y="27" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-14" value="Visualizar Dashboard com Dados Gerais" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="304" y="-402" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-15" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-1" target="BG_Dscxmu_ziVbKPON2t-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="-373" as="sourcePoint" />
+            <mxPoint x="250" y="-423" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-18" value="Listar agendas de aulas e lotação" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="28" y="-410" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-19" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-1" target="BG_Dscxmu_ziVbKPON2t-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80.125" y="-373" as="sourcePoint" />
+            <mxPoint x="90" y="-443" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-20" value="Listar disponibilidade de instrumentos" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="164" y="-456" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="BG_Dscxmu_ziVbKPON2t-21" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="BG_Dscxmu_ziVbKPON2t-1" target="BG_Dscxmu_ziVbKPON2t-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="-359.37254901960785" as="sourcePoint" />
+            <mxPoint x="280" y="-423" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
