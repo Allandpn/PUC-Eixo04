@@ -9,14 +9,7 @@ export class CreateAdminController {
         const createAdminUseCase = new CreateAdminUseCase();
 
         const result = await createAdminUseCase.execute({nome, email, telefone, dataNascimento, senha})
-            .then(async () => {
-                await prisma.$disconnect()
-            })
-            .catch(async (e) => {
-                console.error(e)
-                await prisma.$disconnect()
-                
-            });
+
             
         return res.status(201).json(result);
     }

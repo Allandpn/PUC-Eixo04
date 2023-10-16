@@ -8,5 +8,5 @@ export interface CreateCoordenadorDTO{
     dataNascimento: Date,
     salario: number;
     endereco: Endereco;
-    instrumentoLeciona: string;
+    instrumentosLeciona: string[];
 }
