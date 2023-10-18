@@ -121,7 +121,7 @@ html, body{
 .tela-add-aluno {
    width: 600px;
    position: relative;
-   max-height: 800px;
+   max-height: 700px;
    overflow-y: auto; 
 }
 
