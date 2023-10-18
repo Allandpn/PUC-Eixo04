@@ -31,6 +31,7 @@ $(function () {
 });
 
 
+
 // exibe tabela com informacoes da escola selecionada
 $(function () {
   $(".open-info-escola").click(function (e) {
@@ -61,6 +62,16 @@ $(function () {
 // exibe tabela com informacoes da perfil selecionada
 $(function () {
   $(".btn-dados-usuario").click(function (e) {
+      e.preventDefault();
+      const el = $(this).data('element');
+      $(el).toggle();       
+  });
+});
+
+
+// exibe criar usuario
+$(function () {
+  $(".btn-criar-usuario").click(function (e) {
       e.preventDefault();
       const el = $(this).data('element');
       $(el).toggle();       
@@ -162,6 +173,33 @@ $(function () {
 // exibe tabela com informacoes do membro da equipe selecionado
 $(function () {
   $(".open-info-aluno").click(function (e) {
+      e.preventDefault();
+      const el = $(this).data('element');
+      $(el).toggle();       
+  });
+});
+
+
+
+
+
+
+
+// ----------- TELA INSTRUMENTO --------------
+
+// exibe modal com cadastro instrumento
+$(function () {
+  $(".btn-add-instrumento").click(function (e) {
+      e.preventDefault();
+      const el = $(this).data('element');
+      $(el).toggle();        
+  });
+});
+
+
+// exibe tabela com informacoes do membro da equipe selecionado
+$(function () {
+  $(".open-info-instrumento").click(function (e) {
       e.preventDefault();
       const el = $(this).data('element');
       $(el).toggle();       

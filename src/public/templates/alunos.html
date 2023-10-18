@@ -55,7 +55,7 @@
                     <i class='bx bxs-user-detail nav_icon'></i>
                     <span class="nav-name">Alunos</span>
                 </a>
-                <a href="#" class="nav_link " >
+                <a href="acervo.html" class="nav_link " >
                     <i class='bx bxs-playlist nav_icon' ></i>
                     <span class="nav-name">Acervo</span>
                 </a> 
@@ -74,10 +74,10 @@
 
 <!--Conteudo Principal de Cada Pagina-->
 <div class="main">
-    <div class="wrapper wrapper-tab container border p-4 rounded shadow bg-white" style="overflow-x: auto;">
+    <div class="wrapper wrapper-tab border p-4 rounded shadow bg-white" style="overflow-x: auto;">
 
         <!--Painel referente aos dados da Equipe da organização-->        
-        <div class="container-fluid" style="min-width: 1090px;">
+        <div class="container-fluid" >
             <div class="row mt-1">
                 <div class="text-muted">
                     <h5>Alunos Orquestra Escola Criarte</h5>
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <table class="table table-hover text-center">
+                <table class="table table-hover">
                     <thead class="bg-gray">
                         <tr>
                             <th scope="col"><span class="mr-3 ">Matricula</span><a href="#" ><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
@@ -144,7 +144,7 @@
 
 
 <!--Tabela com os dados do Aluno selecionada-->
-<div class="wrapper wrapper-dados-item wrapper-dados-aluno container border my-5 pr-4 pl-4  rounded shadow hidden hide-toggle-tab" id="dataInfoAluno">
+<div class="wrapper wrapper-dados-item wrapper-dados-aluno border my-5 pr-4 pl-4  rounded shadow hidden hide-toggle-tab" id="dataInfoAluno">
     <div class="container-fluid py-3 mb-2">
         <form >
             <div class="row">
@@ -363,6 +363,7 @@
 
 
 
+
 <!--Modal para Perfil do Usuario-->
 <div class="perfil-menu float-right" id="id-perfil-menu-box">
     <div id="perfil-nomeUsuario" class="m-3">@Nome Usuario</div>
@@ -370,7 +371,10 @@
     <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link text-dark btn-dados-usuario" data-element="#telaDadosUsuario">Perfil</a>
-        </li>            
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark btn-criar-usuario" data-element="#telaCriarUsuario">Criar Novo Usuário</a>
+          </li>             
         <li class="nav-item">
           <a class="nav-link text-muted" href="#">Sair</a>
         </li>
@@ -422,6 +426,53 @@
                 <div class="text-center  mt-5">
                     <button type="submit" class="btn btn-primary ">Salvar</button>
                     <button type="button" class="btn btn-secondary ml-4  btn-dados-usuario" data-element="#telaDadosUsuario">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--Modal editar dados Usuario-->
+<div class="hidden hide-container" id="telaCriarUsuario">
+    <div class="bg-container justify-content-center" >
+        <div class="background-dark">
+        </div>
+        <div class="tela-criar-usuario tela-add-item border rounded shadow  p-4 bg-white">
+            <!--Cria formulario para acesso ao sistema-->
+            <form class="bg-white " action="#" method="POST">
+                <div class="mb-5 text-center">
+                    <h3 class="text-info">Orquestra Criarte Digital</h3>
+                </div>
+                <div class="mb-3 text-center">
+                    <h4 class="text-info">Criar Conta</h4>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nome de usuário</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nome" value="" required />
+                </div>
+                <div class="form-group mb-2 text-dark">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" value=""
+                        required />
+                </div>
+                <div class="form-group mb-2 text-dark">
+                    <label for="inputEmail">Confirme seu Email</label>
+                    <input type="email" class="form-control" id="ConfirmarEmail" placeholder="Email" value=""
+                        required />
+                </div>
+                <div class="form-group mb-2 text-dark">
+                    <label for="inputPassword">Senha</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Senha" value=""
+                        required />
+                </div>
+                <div class="form-group mb-2 text-dark">
+                    <label for="inputPassword">Confirme sua Senha</label>
+                    <input type="password" class="form-control" id="ConfirmarPassword"
+                        placeholder="Confirme sua Senha" value="" required />
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-primary" type="submit">Registrar</button>
                 </div>
             </form>
         </div>

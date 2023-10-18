@@ -89,7 +89,11 @@ html, body{
    position: relative;
 }
 
-
+/*Define tela para criar usuario*/
+.tela-criar-usuario {
+   width: 600px;
+   position: relative; 
+}
 
 /*Define tela para cadastro de Curso*/
 .tela-add-curso{
@@ -101,7 +105,7 @@ html, body{
 .tela-add-equipe{
    width: 600px;
    position: relative;
-   max-height: 1000px;
+   max-height: 800px;
    overflow-y: auto;
 }
 
@@ -117,11 +121,17 @@ html, body{
 .tela-add-aluno {
    width: 600px;
    position: relative;
-   max-height: 1000px;
+   max-height: 800px;
    overflow-y: auto; 
 }
 
 
+/*Define tela para cadastro de Instrumento*/
+.tela-add-instrumento{
+   width: 600px;
+   position: relative;
+   overflow-y: auto; 
+}
 
 
 
