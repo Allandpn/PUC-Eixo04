@@ -14,6 +14,8 @@
     <!--Arquivo css local para configuracoes slidebar responsivo-->
     <link rel="stylesheet" href="../static/layout-slidebar.css" />
     <link rel="stylesheet" href="../static/main.css" />
+    <!--Plugin para campo de pesquiza dentro do menu de seleçao-->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />    
     <title>Orquestra Criarte Digital</title>
 </head>
 <body  id="body-pd">
@@ -88,7 +90,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <button class="btn btn-info ml-auto" type="button" >Novo Empréstimo</button> 
+                <button class="btn btn-info ml-auto btn-emp-instrumento" type="button" data-element="#telaEmprestimoInstrumento">Novo Empréstimo</button> 
             </div>
             <div class="row mt-2">
                 <table class="table table-hover">
@@ -149,10 +151,10 @@
     </div>
 </div>   
 
-///hidden hide-toggle-tab
+
 
 <!--Tabela com os dados do Instrumento selecionada-->
-<div class="wrapper wrapper-dados-item wrapper-dados-instrumento border my-5 pr-4 pl-4  rounded shadow ..." id="dataInfoInstrumento">
+<div class="wrapper wrapper-dados-item wrapper-dados-instrumento border my-5 pr-4 pl-4  rounded shadow hidden hide-toggle-tab" id="dataInfoInstrumento">
     <div class="container-fluid py-3 mb-2">
         <form >
             <div class="row">
@@ -199,14 +201,18 @@
                         <tr>
                             <th scope="row">Data Empréstimo</th>
                             <th scope="row">Responsável</th>
-                            <th scope="row">Data da Devolução</th>
+                            <th scope="row">Observações</th>
+                            <th scope="row">Editar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>15/10/2021</td>
                             <td>Felipe de Paula</td>
-                            <td>01/12/2022</td>
+                            <td>-</td>
+                            <td>
+                                <a href="#" class="mb-auto btn-emp-instrumento toogle-hide ml-1" data-element="#telaDevolucaoInstrumento"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>    
@@ -293,7 +299,7 @@
                 </div>                                   
                 <div class="form-group">
                     <label for="anotacoesInstrumento">Anotações</label>
-                    <textarea class="form-control bg-white" id="anotacoesInstrumento" rows="3" disabled></textarea>
+                    <textarea class="form-control bg-white" id="anotacoesInstrumento" rows="3" ></textarea>
                 </div>  
                 <div class="text-center mt-3">
                     <button type="submit" class="btn btn-primary ">Salvar</button>
@@ -304,6 +310,107 @@
     </div>
 </div>
 
+ 
+<br>
+
+
+<!--Modal para Emprestimo Instrumento-->
+<div class="hidden hide-container" id="telaEmprestimoInstrumento">
+    <div class="bg-container justify-content-center" >
+        <div class="background-dark">
+        </div>
+        <div class="tela-emp-instrumento tela-add-item border rounded shadow  p-4 bg-white">
+            <form>
+                <div class="text-center mb-3">
+                    <span class="h5 text-info font-weight-bold">Empréstimo de Instrumento</span>
+                    <button  class="close btn-emp-instrumento " data-element="#telaCadastroInstrumento" data-dismiss="tela-emp-instrumento" aria-label="Fechar">
+                        <span class="btn-emp-instrumento m-3" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label for="">Código:  </label>
+                    <select class="custom-select codigoInstrumento" id="codigoInstrumento-s" >
+                        <option value="1">vln01</option>
+                        <option value="2">vlo01</option>
+                        <option value="3">sxf01</option>
+                    </select>
+                </div>                 
+                <div class="form-group">
+                    <label for="nomeInstrumento">Nome do Instrumento</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeInstrumento" placeholder="Nome do Instrumento" disabled>
+                </div>
+                <div class="form-group ">
+                    <label for="marcaInstrumento">Marca</label>
+                    <input value="" id="marcaInstrumento" type="text" class="form-control bg-white" placeholder="marca" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="dataEmprestimo">Data Empréstimo</label>
+                    <input value="" id="dataEmprestimo" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
+                </div>   
+                <div class="form-group">
+                    <label for="estadoConserv">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConserv" placeholder="estado de conservação">
+                </div>                       
+                <div class="form-group">
+                    <label for="anotacoesInstrumento">Anotações</label>
+                    <textarea class="form-control bg-white" id="anotacoesInstrumento" rows="1"></textarea>
+                </div>  
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary ">Salvar</button>
+                    <button type="button" class="btn btn-secondary ml-4  btn-emp-instrumento" data-element="#telaEmprestimoInstrumento">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Modal para Devolução Instrumento-->
+<div class="hidden hide-container" id="telaDevolucaoInstrumento">
+    <div class="bg-container justify-content-center" >
+        <div class="background-dark">
+        </div>
+        <div class="tela-dev-instrumento tela-add-item border rounded shadow  p-4 bg-white">
+            <form>
+                <div class="text-center mb-3">
+                    <span class="h5 text-info font-weight-bold">Devolução de Instrumento</span>
+                    <button  class="close btn-dev-instrumento " data-element="#telaCadastroInstrumento" data-dismiss="tela-dev-instrumento" aria-label="Fechar">
+                        <span class="btn-dev-instrumento m-3" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label for="codigoInstrumento-e">Código:  </label>
+                    <input value="" type="text" class="form-control bg-white" id="codigoInstrumento-e" placeholder="vln01" disabled>
+                </div>                 
+                <div class="form-group">
+                    <label for="nomeInstrumento-e">Nome do Instrumento</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeInstrumento-e" placeholder="Nome do Instrumento" disabled>
+                </div>
+                <div class="form-group ">
+                    <label for="marcaInstrumento-e">Marca</label>
+                    <input value="" id="marcaInstrumento-e" type="text" class="form-control bg-white" placeholder="marca" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="dataDevolucao-e">Data Devolução</label>
+                    <input value="" id="dataDevolucao-e" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
+                </div>   
+                <div class="form-group">
+                    <label for="estadoConserv-e">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConserv-e" placeholder="estado de conservação">
+                </div>                       
+                <div class="form-group">
+                    <label for="anotacoesInstrumento-e">Anotações</label>
+                    <textarea class="form-control bg-white" id="anotacoesInstrumento-e" rows="1"></textarea>
+                </div>  
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary ">Salvar</button>
+                    <button type="button" class="btn btn-secondary ml-4  btn-dev-instrumento" data-element="#telaDevolucaoInstrumento">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 
@@ -432,7 +539,19 @@
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script type='text/javascript' src="../static/layout-slidebar.js"></script>    
-<script type='text/javascript' src="../static/main.js"></script>  
+<script type='text/javascript' src="../static/layout-slidebar.js"></script>
+
+<!--Plugin para caixa de pesquiza dentro do menu de selecao-->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+        $('.codigoInstrumento').select2();
+    });
+</script>
+<script type='text/javascript' src="../static/main.js"></script>
+
 </body>
 </html>

@@ -105,7 +105,7 @@ html, body{
 .tela-add-equipe{
    width: 600px;
    position: relative;
-   max-height: 800px;
+   max-height: 700px;
    overflow-y: auto;
 }
 
@@ -133,7 +133,19 @@ html, body{
    overflow-y: auto; 
 }
 
+/*Define tela para cadastro de emprestimo Instrumento*/
+.tela-emp-instrumento{
+   width: 600px;
+   position: relative;
+   overflow-y: auto;
+}
 
+/*Define tela para devolucao Instrumento*/
+.tela-dev-instrumento{
+   width: 600px;
+   position: relative;
+   overflow-y: auto;
+}
 
 
 
