@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-24T21:45:14.017Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="prywjMtQg0XM1526nrYj" version="22.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-24T21:54:56.905Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="CbQncFv4YicvE-ZQxQdX" version="22.0.6" type="github">
   <diagram name="Página-1" id="OuaDPxV6vWgWIFLeQTGV">
-    <mxGraphModel dx="4921" dy="2089" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="12851" dy="5079" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1135,7 +1135,7 @@
           <mxGeometry x="-2107" y="1058" width="903" height="940" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-1" value="dim_time" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="73" y="1998" width="215" height="164" as="geometry" />
+          <mxGeometry x="2465" y="1082" width="215" height="164" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-2" value="id_tempo: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-1">
           <mxGeometry y="26" width="215" height="26" as="geometry" />
@@ -1156,7 +1156,7 @@
           <mxGeometry y="138" width="215" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-13" value="fat_emprestimo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="370" y="2146" width="218" height="164" as="geometry" />
+          <mxGeometry x="2762" y="1230" width="218" height="164" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-14" value="id_tempo: INT NOT NULL [PFK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-13">
           <mxGeometry y="26" width="218" height="26" as="geometry" />
@@ -1177,7 +1177,7 @@
           <mxGeometry y="138" width="218" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-19" value="dim_unidade" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="662" y="2285" width="204" height="86" as="geometry" />
+          <mxGeometry x="3054" y="1369" width="204" height="86" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-20" value="id_unidade: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-19">
           <mxGeometry y="26" width="204" height="26" as="geometry" />
@@ -1192,7 +1192,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-31" value="dim_instrumento" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="59" y="2285" width="231" height="190" as="geometry" />
+          <mxGeometry x="2451" y="1369" width="231" height="190" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-32" value="id_instrumento: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-31">
           <mxGeometry y="26" width="231" height="26" as="geometry" />
@@ -1222,7 +1222,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-44" value="fat_alunos" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="-589" y="2544" width="218" height="190" as="geometry" />
+          <mxGeometry x="2785" y="2902" width="218" height="190" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-45" value="id_curso: INT NOT NULL [PFK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-44">
           <mxGeometry y="26" width="218" height="26" as="geometry" />
@@ -1246,7 +1246,7 @@
           <mxGeometry y="164" width="218" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-51" value="dim_instrumento" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-895" y="2416" width="204" height="138" as="geometry" />
+          <mxGeometry x="2479" y="2774" width="204" height="138" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-52" value="id_instrumento: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-51">
           <mxGeometry y="26" width="204" height="26" as="geometry" />
@@ -1264,7 +1264,7 @@
           <mxGeometry y="112" width="204" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-57" value="dim_unidade" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-273" y="2724" width="204" height="86" as="geometry" />
+          <mxGeometry x="3063" y="3197" width="204" height="86" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-58" value="id_unidade: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-57">
           <mxGeometry y="26" width="204" height="26" as="geometry" />
@@ -1276,7 +1276,7 @@
           <mxGeometry y="60" width="204" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-61" value="dim_curso" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-273" y="2416" width="204" height="86" as="geometry" />
+          <mxGeometry x="3094" y="2944" width="204" height="86" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-62" value="id_curso: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-61">
           <mxGeometry y="26" width="204" height="26" as="geometry" />
@@ -1297,7 +1297,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-68" value="dim_perfil" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-930" y="2623" width="204" height="138" as="geometry" />
+          <mxGeometry x="2444" y="2981" width="204" height="138" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-69" value="id_perfil: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-68">
           <mxGeometry y="26" width="204" height="26" as="geometry" />
@@ -1318,7 +1318,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-76" value="fat_turmas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="536" y="2742" width="218" height="164" as="geometry" />
+          <mxGeometry x="2792" y="2014" width="218" height="164" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-78" value="id_instrumento: INT NOT NULL [PFK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-76">
           <mxGeometry y="26" width="218" height="26" as="geometry" />
@@ -1339,7 +1339,7 @@
           <mxGeometry y="138" width="218" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-83" value="dim_instrumento" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="215" y="2630" width="204" height="138" as="geometry" />
+          <mxGeometry x="2471" y="1902" width="204" height="138" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-84" value="id_instrumento: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-83">
           <mxGeometry y="26" width="204" height="26" as="geometry" />
@@ -1357,7 +1357,7 @@
           <mxGeometry y="112" width="204" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-93" value="dim_unidade" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="210" y="2905" width="204" height="86" as="geometry" />
+          <mxGeometry x="2466" y="2177" width="204" height="86" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-94" value="id_unidade: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-93">
           <mxGeometry y="26" width="204" height="26" as="geometry" />
@@ -1375,7 +1375,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-103" value="dim_time" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-900.5" y="2836" width="215" height="164" as="geometry" />
+          <mxGeometry x="2473.5" y="3194" width="215" height="164" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-104" value="id_tempo: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-103">
           <mxGeometry y="26" width="215" height="26" as="geometry" />
@@ -1399,7 +1399,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-111" value="dim_perfil" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="866" y="2592" width="204" height="138" as="geometry" />
+          <mxGeometry x="2816" y="1798" width="204" height="138" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-112" value="id_perfil: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-111">
           <mxGeometry y="26" width="204" height="26" as="geometry" />
@@ -1417,7 +1417,7 @@
           <mxGeometry y="112" width="204" height="26" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-117" value="dim_time" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="852" y="2905" width="215" height="164" as="geometry" />
+          <mxGeometry x="3102" y="2143" width="215" height="164" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-118" value="id_tempo: INT NOT NULL [PK]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-117">
           <mxGeometry y="26" width="215" height="26" as="geometry" />
@@ -1437,23 +1437,23 @@
         <mxCell id="lAKjv9YLIrflB9gxmrIk-123" value="ano: INTEGER NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lAKjv9YLIrflB9gxmrIk-117">
           <mxGeometry y="138" width="215" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="lAKjv9YLIrflB9gxmrIk-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERzeroToMany;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="lAKjv9YLIrflB9gxmrIk-112" target="lAKjv9YLIrflB9gxmrIk-126">
+        <mxCell id="lAKjv9YLIrflB9gxmrIk-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERzeroToMany;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="lAKjv9YLIrflB9gxmrIk-112" target="lAKjv9YLIrflB9gxmrIk-126">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERzeroToMany;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="lAKjv9YLIrflB9gxmrIk-118" target="lAKjv9YLIrflB9gxmrIk-125">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="lAKjv9YLIrflB9gxmrIk-130" value="&lt;h1 style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;TABELA FATO: EMPRESTIMO&lt;/font&gt;&lt;/h1&gt;&lt;h1&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Perguntas:&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;- Quantos empréstimos foram feitos no último semestre?&lt;/p&gt;&lt;p&gt;- Qual a Unidade que concede mais empréstimos?&lt;/p&gt;&lt;p&gt;- Em cada unidade, qual instrumento é mais solicitado?&lt;/p&gt;&lt;p&gt;- Qual o período médio dos empréstimos?&lt;/p&gt;&lt;p&gt;- Qual a procentagem de instrumentos devolvidos com avaria?&lt;/p&gt;" style="text;html=1;fillColor=#f9f7ed;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#36393d;" vertex="1" parent="1">
-          <mxGeometry x="704" y="1860" width="254" height="287" as="geometry" />
+          <mxGeometry x="3096" y="944" width="254" height="287" as="geometry" />
         </mxCell>
-        <mxCell id="lAKjv9YLIrflB9gxmrIk-134" value="&lt;h1&gt;Perguntas:&lt;/h1&gt;&lt;p&gt;- Quantos alunos são matriculados por ano?&lt;/p&gt;&lt;p&gt;- Qual a procentagem de alunos que desistem do curso?&lt;/p&gt;&lt;p&gt;- Qual o curso que tem maior taxa de retenção dos alunos?&lt;/p&gt;&lt;p&gt;- Qual a Unidade com maior taxa de desistência?&lt;/p&gt;&lt;p&gt;- Quais os intrumentos com maior e menor número de alunos aprendendo?&lt;/p&gt;" style="text;html=1;fillColor=#f9f7ed;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#36393d;" vertex="1" parent="1">
-          <mxGeometry x="-939.5" y="2119" width="254" height="256" as="geometry" />
+        <mxCell id="lAKjv9YLIrflB9gxmrIk-136" value="&lt;h1 style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;TABELA FATO: ALUNOS&lt;/font&gt;&lt;/h1&gt;&lt;h1&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Perguntas:&lt;/font&gt;&lt;/h1&gt;&lt;p style=&quot;border-color: var(--border-color);&quot;&gt;- Quantos alunos são matriculados por ano?&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color);&quot;&gt;Qual a média de alunos por turma?&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color);&quot;&gt;- Qual a procentagem de alunos que desistem do curso?&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color);&quot;&gt;- Qual o curso que tem maior taxa de retenção dos alunos?&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color);&quot;&gt;- Qual a Unidade com maior taxa de desistência?&lt;/p&gt;&lt;p style=&quot;border-color: var(--border-color);&quot;&gt;- Quais os intrumentos com maior e menor número de alunos aprendendo?&lt;/p&gt;" style="text;html=1;fillColor=#f9f7ed;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="3096" y="2543" width="254" height="323" as="geometry" />
         </mxCell>
-        <mxCell id="lAKjv9YLIrflB9gxmrIk-135" value="&lt;h1&gt;Perguntas:&lt;/h1&gt;&lt;p&gt;- Quantos alunos são matriculados por ano?&lt;/p&gt;&lt;p&gt;- Qual a procentagem de alunos que desistem do curso?&lt;/p&gt;&lt;p&gt;- Qual o curso que tem maior taxa de retenção dos alunos?&lt;/p&gt;&lt;p&gt;- Qual a Unidade com maior taxa de desistência?&lt;/p&gt;&lt;p&gt;- Quais os intrumentos com maior e menor número de alunos aprendendo?&lt;/p&gt;" style="text;html=1;fillColor=#f9f7ed;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#36393d;" vertex="1" parent="1">
-          <mxGeometry x="1153" y="2533" width="254" height="256" as="geometry" />
+        <mxCell id="lAKjv9YLIrflB9gxmrIk-137" value="&lt;h1 style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;TABELA FATO: TURMAS&lt;/font&gt;&lt;/h1&gt;&lt;h1&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Perguntas:&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;- Qual a Unidade com o maior número de turmas?&lt;/p&gt;&lt;p&gt;- Qual turma possui a melhor taxa de retensão dos alunos?&lt;/p&gt;&lt;p&gt;- Qual a média de idade dos alunos em cada turma?&lt;/p&gt;&lt;p&gt;- Qual instrumento possui maior número de turmas em cada Unidade?&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;fillColor=#f9f7ed;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="3096" y="1686" width="254" height="287" as="geometry" />
         </mxCell>
-        <mxCell id="lAKjv9YLIrflB9gxmrIk-136" value="&lt;h1 style=&quot;text-align: center;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;TABELA FATO: EMPRESTIMO&lt;/font&gt;&lt;/h1&gt;&lt;h1&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Perguntas:&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;- Quantos empréstimos foram feitos no último semestre?&lt;/p&gt;&lt;p&gt;- Qual a Unidade que concede mais empréstimos?&lt;/p&gt;&lt;p&gt;- Em cada unidade, qual instrumento é mais solicitado?&lt;/p&gt;&lt;p&gt;- Qual o período médio dos empréstimos?&lt;/p&gt;&lt;p&gt;- Qual a procentagem de instrumentos devolvidos com avaria?&lt;/p&gt;" style="text;html=1;fillColor=#f9f7ed;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#36393d;" vertex="1" parent="1">
-          <mxGeometry x="-596" y="1936.5" width="254" height="287" as="geometry" />
+        <mxCell id="lAKjv9YLIrflB9gxmrIk-141" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Modelo Multimensional&lt;/font&gt;&lt;/b&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=202;height=39;" vertex="1" parent="1">
+          <mxGeometry x="2383" y="836" width="1070" height="2814" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
