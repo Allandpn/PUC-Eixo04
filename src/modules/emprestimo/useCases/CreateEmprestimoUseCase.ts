@@ -63,6 +63,11 @@ export class CreateEmprestimoUseCase {
             }
         })
 
+        if (!updateInstrumento){
+            //erro
+            throw new AppError("Estado de empréstimo não atualizado no banco de dados");
+        }
+
         const result = await prisma.emprestimoInstrumento.findUnique({
             where: {
                 id: createEmprestimo.id,
