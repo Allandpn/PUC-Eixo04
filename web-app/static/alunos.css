@@ -1,0 +1,39 @@
+
+
+/*Define tela para cadastro de Aluno*/
+.tela-add-aluno {
+    margin: auto;
+    z-index: 1100;
+    max-width: 600px;
+    position: relative;
+}
+
+/*Define tela para edição de Aluno*/
+.tela-edit-aluno {
+    margin: auto;
+    z-index: 1100;
+    max-width: 600px;
+    position: relative;
+}
+
+/*Define tela para adicionar de Istrumento*/
+.tela-add-instrumento {
+    max-width: 600px;
+    margin: auto;
+    position: absolute;
+    z-index: 1060;
+    top: 0px;
+    left: calc(60% - 300px);
+    display: none;
+}
+
+/*Define tela para editar de Istrumento*/
+.tela-edit-instrumento {
+    max-width: 600px;
+    margin: auto;
+    position: absolute;
+    z-index: 1060;
+    top: 0px;
+    left: calc(60% - 300px);
+    display: none;
+}

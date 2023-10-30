@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Arquivo Bootstrap versao 4.1-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Arquivo para icones Boxicons ultima versao-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Arquivo para icones FontAwesome ultima versao-->
+    <link href="../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/brands.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
+    <!--Arquivo css local para configuracoes slidebar responsivo-->
+    <link rel="stylesheet" href="../static/layout-slidebar.css" />
+    <link rel="stylesheet" href="../static/admin.css" />
+    <title>Orquestra Criarte Digital</title>
+</head>
+<body  id="body-pd">
+<header class="header " id="header">    
+        <div class="header_toggle">
+            <i class="bx bx-menu" id="header-toggle"></i>
+        </div>   
+        <div class="title-page ml-4 mr-auto ">
+           <span class="text-secondary" style="font-size: 22px;">Administração</span>
+        </div>      
+        <div >
+            <ul class="nav">
+                <li class="nav-item">                    
+                    <div class="perfil-icon text-secondary" data-element="#id-perfil-menu-box">
+                        <i class="bx bx-user nav_icon " style="font-size: 2.2rem"></i>
+                        <i class='bx bx-chevron-down nav_icon'></i>   
+                    </div>                                    
+                </div> 
+            </ul> 
+        </div>
+        
+</header>
+<aside class="l-navbar" id="nav-bar">
+    <nav class="nav nav-slidebar">        
+            <a href="#" class="nav_logo">
+                <i class="bx bx-layer nav_logo-icon"></i>
+                <span class="nav_logo-name">Orq. Criarte Digital</span>
+            </a>
+            <div class="nav_list mb-auto">
+                <a href="#" class="nav_link " >
+                    <i class='bx bx-tachometer nav_icon'></i>
+                    <span class="nav-name">Dashboard</span>
+                </a>
+                <a href="admin.html" class="nav_link " >
+                    <i class='bx bxs-cog nav_icon'></i>
+                    <span class="nav-name">Administração</span>
+                </a>
+                <a href="alunos.html" class="nav_link " >
+                    <i class='bx bxs-user-detail nav_icon'></i>
+                    <span class="nav-name">Alunos</span>
+                </a>
+                <a href="#" class="nav_link " >
+                    <i class='bx bxs-playlist nav_icon' ></i>
+                    <span class="nav-name">Inventário</span>
+                </a> 
+                <a href="#" class="nav_link ">
+                    <i class='bx bx-dollar-circle nav_icon'></i>
+                    <span class="nav-name">Financeiro</span>
+                </a>                               
+            </div>
+            <div class="text-center" id="id-system-version" style="color: #ebebeb; display: none; position: absolute; bottom: 10px;">
+                <small class="d-block">Desenvolvido por alunos do curso de S.I. da PUC Minas Virtual</small> 
+                <small>Versão 1.1</small>
+            </div>
+    </nav>
+</aside>
+
+<!--Conteudo Principal de Cada Pagina-->
+<div class="main" >
+    <div class="wrapper wrapper-tab container border p-4 rounded shadow bg-white">        
+        <div>
+            <!--NavTab para os dados das Escolas / Equipe / Alunos-->
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link nav_link_table toogle-hide text-dark active" id="nav-escolas-tab" data-toggle="tab" href="#nav-escolas" role="tab" aria-controls="nav-escolas" aria-selected="false" data-element=".hide-toggle-tab">Unidades</a>
+                <a class="nav-item nav-link nav_link_table toogle-hide text-dark " id="nav-cursos-tab" data-toggle="tab" href="#nav-cursos" role="tab" aria-controls="nav-cursos" aria-selected="false">Turmas</a>
+                <a class="nav-item nav-link nav_link_table toogle-hide text-dark" id="nav-equipe-tab" data-toggle="tab" href="#nav-equipe" role="tab" aria-controls="nav-equipe" aria-selected="true">Equipe</a>             
+            </div>
+        </div>
+        <div class="tab-content" id="nav-tabContent">
+            <!--Painel referente aos dados das Unidades da Ensino-->
+        <div class="tab-pane fade  show active" id="nav-escolas" role="tabpanel" aria-labelledby="nav-escolas-tab">
+            <div class="container-fluid">
+                <div class="row mt-1">
+                    <div class="ml-auto mr-3">                                
+                        <a class="btn-add-escola toogle-hide " id="addEscolaBtn" href="#" data-element="#telaCadastroEscola"><i class="fa fa-2x fa-plus-circle text-primary m-2" aria-hidden="true"></i></a>                   
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="container-fluid border-top ">
+                        <div class="row">
+                            <div class="col-3 text-center pr-0">
+                                <table class="table mb-0">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Unidades</th>
+                                        </tr>
+                                    </thead>
+                                </table>         
+                            </div>
+                            <div class="col-8 text-center pl-0 pr-0 ">
+                                <table class="table mb-0">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Cursos</th>
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Alunos</th>
+                                            <th scope="col">Acervo</th>
+                                          </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="col-1">
+                              
+                            </div>
+                        </div>
+
+                        <!--Linha de dados de cada unidade inserido dinamicamente-->
+                        <div class="row border-bottom">
+                            <div class="col-3 my-auto d-flex justify-content-center">
+                                <table class="table table-borderless pt-3 mb-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>
+                                                <button type="button" class="py-2 open-info-escola toogle-hide open-info-escola-btn rounded" data-element="#dataInfoEscola">
+                                                    Unidade de Belo Horizonte
+                                                </button> 
+                                            </td>
+                                        </tbody>
+                                    </table>               
+                            </div>
+                            <div class="col-8 text-center px-0 mx-0 py-0 my-0 d-flex align-items-center">
+                                <table class="table table-borderless mb-0 my-0 py-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                          </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-1 px-0 d-flex  my-auto">
+                                <a href="#" class="mb-auto btn-add-escola toogle-hide ml-1" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                <a href="#" class="open-info-escola toogle-hide ml-auto" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>  
+                            </div>
+                        </div>
+
+                        <!--Linha de dados de cada unidade inserido dinamicamente-->
+                        <div class="row border-bottom">
+                            <div class="col-3 my-auto d-flex justify-content-center">
+                                <table class="table table-borderless pt-3 mb-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>
+                                                <button type="open-info-escola" class="py-2 open-info-escola toogle-hide open-info-escola-btn rounded" data-element="#dataInfoEscola">
+                                                    Unidade de Betim
+                                                </button> 
+                                            </td>
+                                        </tbody>
+                                    </table>               
+                            </div>
+                            <div class="col-8 text-center px-0 mx-0 py-0 my-0 d-flex align-items-center">
+                                <table class="table table-borderless mb-0 my-0 py-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                          </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-1 px-0 d-flex  my-auto">
+                                <a href="#" class="mb-auto btn-add-escola toogle-hide ml-1" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                <a href="#" class="open-info-escola toogle-hide ml-auto" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>  
+                            </div>
+                        </div>
+
+                        <!--Linha de dados de cada unidade inserido dinamicamente-->
+                        <div class="row border-bottom">
+                            <div class="col-3 my-auto d-flex justify-content-center">
+                                <table class="table table-borderless pt-3 mb-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>
+                                                <button type="open-info-escola" class="py-2 open-info-escola toogle-hide open-info-escola-btn rounded" data-element="#dataInfoEscola">
+                                                    Unidade de Contagem
+                                                </button> 
+                                            </td>
+                                        </tbody>
+                                    </table>               
+                            </div>
+                            <div class="col-8 text-center px-0 mx-0 py-0 my-0 d-flex align-items-center">
+                                <table class="table table-borderless mb-0 my-0 py-0">
+                                    <tbody class="">
+                                        <tr>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                            <td>10</td>
+                                          </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-1 px-0 d-flex  my-auto">
+                                <a href="#" class="mb-auto btn-add-escola toogle-hide ml-1" data-element="#telaCadastroEscola"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                                <a href="#" class="open-info-escola toogle-hide ml-auto" data-element="#dataInfoEscola"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <!--Painel referente aos dados dos Cursos da organização-->
+        <div class="tab-pane fade " id="nav-cursos" role="tabpanel" aria-labelledby="nav-cursos-tab">
+            <div class="container-fluid">
+                <div class="row mt-1">
+                    <div class="ml-auto mr-3">                                
+                        <a class="btn-add-curso toogle-hide" id="addCursoBtn" href="#" data-element="#telaCadastroCurso"><i class="fa fa-2x fa-plus-circle text-primary m-2" aria-hidden="true"></i></a>                   
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="container-fluid wrapper-cards-cursos">
+                        <div class="row d-flex justify-content-around align-items-around">
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violao.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title">Curso de Violão</h5>
+                                  <p class="card-text">Unidade de Belo Horizonte</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-flauta.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title ">Curso para Iniciante</h5>
+                                  <p class="card-text">Unidade de Belo Horizonte</p>
+                                  <a href="#" class="btn btn-info mb-0 pb-0">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violino.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center mt-auto">
+                                  <h5 class="card-title">Curso de Violino</h5>
+                                  <p class="card-text">Unidade de Belo Horizonte</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violino-2.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title">Curso de Violino</h5>
+                                  <p class="card-text">Unidade de Betim</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-violoncelo.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title">Curso de Violoncelo</h5>
+                                  <p class="card-text">Unidade de Contagem</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style="width: 18rem;">
+                                <img class="card-img-top card-img-edit" src="../assets/pictures/img-saxofone-2.jpg" alt="Imagem de capa do card">
+                                <div class="card-body text-center">
+                                  <h5 class="card-title">Curso de Saxofone</h5>
+                                  <p class="card-text">Unidade de Contagem</p>
+                                  <a href="#" class="btn btn-info">Abrir</a>
+                                </div>
+                            </div>
+                        </div>
+
+               
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--Painel referente aos dados da Equipe da organização-->
+        <div class="tab-pane fade " id="nav-equipe" role="tabpanel" aria-labelledby="nav-equipe-tab">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, fugiat repudiandae necessitatibus dolorum natus saepe, similique officiis nostrum consequuntur asperiores adipisci corporis atque excepturi sequi aspernatur aliquam esse vitae! Enim ea fugiat aperiam sunt totam accusantium ipsam, a laboriosam vero laborum quibusdam? Fuga recusandae earum culpa doloribus! Libero voluptatibus magnam nihil aliquam ea commodi aperiam laboriosam, a unde. Totam debitis dolorem modi eligendi numquam odit saepe sequi ex quis quos id distinctio dolorum ducimus natus corporis quidem, aliquid eaque blanditiis illum explicabo voluptate, esse vel dicta. Fugit sint, deleniti, in vitae ex voluptates laboriosam tempore dolorem, et ducimus sequi error?
+
+        </div>
+        <!--Painel referente aos dados dos Alunos-->
+        <div class="tab-pane fade" id="nav-acervo" role="tabpanel" aria-labelledby="nav-acervo-tab">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, culpa? Reiciendis ab, recusandae explicabo, voluptate mollitia tenetur assumenda iure earum magni quibusdam quia quasi. Saepe voluptates minus excepturi pariatur. Illo amet cum perspiciatis sunt voluptas, error labore. Distinctio neque commodi, nihil temporibus quibusdam cum nesciunt et animi voluptate enim eaque!
+        </div>
+        <!--Painel referente aos dados do Acervo-->
+        <div class="tab-pane fade" id="nav-acervo" role="tabpanel" aria-labelledby="nav-acervo-tab">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, culpa? Reiciendis ab, recusandae explicabo, voluptate mollitia tenetur assumenda iure earum magni quibusdam quia quasi. Saepe voluptates minus excepturi pariatur. Illo amet cum perspiciatis sunt voluptas, error labore. Distinctio neque commodi, nihil temporibus quibusdam cum nesciunt et animi voluptate enim eaque!
+        </div>
+            
+            
+
+
+
+            
+        </div>
+    </div>
+
+    <!--Tabela com os dados da escola selecionada-->
+    <div class="wrapper wrapper-dados-item wrapper-dados-escola container border my-5 pr-4 pl-4  rounded shadow hidden hide-toggle-tab" id="dataInfoEscola">
+        <div class="container-fluid py-3 mb-2">
+            <div class="col">
+                <div class="row justify-content-center">
+                    <span class="h5 mb-1">Unidade de Belo Horizonte</span>
+                </div>
+                <div class="row justify-content-center">
+                    <small><span>Endereço: Rua Xv de Novembro, 100, Centro, Belo Horizonte, 31030-100</span></small>
+                </div>
+                <div class="row justify-content-center">
+                    <small>
+                        <span class="mr-2">Gestor: Fulano de Tal</span>
+                        <span class="mr-2">Telefone: (31) 98300-3040</span>
+                        <span class="mr-2">email: fulanodetal@email.com</span>
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <!--Coluna com a lista dos membros da Equipe-->
+            <div class="col mr-2">
+                <div class="row justify-content-center bg-info text-white">
+                    <span>Cursos</span>                    
+                </div>
+                <div class="row  mb-4" >     
+                    <div class="container-fluid px-0" style="max-height: 500px; overflow-y: auto;">
+                         <ul class="list-group list-group-flush m-2">
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Violão Básico</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Saxofone Básico</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Violino Básico</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>                             
+                           </ul> 
+                    </div>         
+                 </div>
+            </div>
+            <!--Coluna com a lista dos membros da Equipe-->
+            <div class="col mr-2">
+                <div class="row justify-content-center bg-info text-white">
+                    <span>Equipe</span>                    
+                </div>
+                <div class="row  mb-4" >     
+                    <div class="container-fluid px-0" style="max-height: 500px; overflow-y: auto;">
+                         <ul class="list-group list-group-flush m-2">
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                           </ul> 
+                    </div>         
+                 </div>
+            </div>
+            <!--Coluna com a lista dos alunos-->
+            <div class="col mr-2">
+                <div class="row justify-content-center bg-info text-white">
+                    <span>Alunos</span>                    
+                </div>
+                <div class="row" >     
+                    <div class="container-fluid px-0" style="max-height: 500px; overflow-y: auto;">
+                         <ul class="list-group list-group-flush m-2">
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                           </ul> 
+                    </div>         
+                 </div>
+            </div>
+            <!--Coluna com a lista dos items do Acervo da escola-->
+            <div class="col mr-2">
+                <div class="row justify-content-center bg-info text-white">
+                    <span>Acervo</span>                    
+                </div>
+                <div class="row" >     
+                    <div class="container-fluid px-0" style="max-height: 500px; overflow-y: auto;">
+                         <ul class="list-group list-group-flush m-2">
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                             <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-1">
+                                <span>Lorem ipsum dolorLoremr</span>
+                                <a href="#"><i class="fa fa-eye text-info" aria-hidden="true" style="font-size: 1.25rem"></i></a>                                
+                             </li>
+                           </ul> 
+                    </div>         
+                 </div>
+            </div>            
+        </div>
+    </div>
+
+
+
+
+
+   
+    <!--Modal para adicional Escola-->
+    <div class="hidden hide-container" id="telaCadastroEscola">
+        <div class="bg-container justify-content-center" >
+                <div class="background-dark">
+                </div>
+                <div class="tela-add-escola tela-add-item border rounded shadow p-4 bg-white" >
+                    <form>
+                        <div class="text-center mb-3">
+                            <span class="h5 text-info font-weight-bold">Cadastro de Escola</span>
+                            <button  class="close btn-add-escola toogle-hide " data-element="#telaCadastroEscola" data-dismiss="tela-add-escola" aria-label="Fechar">
+                                <span class="btn-add-escola toogle-hide m-3" aria-hidden="true">&times;</span>
+                              </button>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomeEscola">Nome da Escola</label>
+                        <input type="text" class="form-control" id="nomeEscola" placeholder="Nome da Escola">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Endereço</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Rua XV de Novembro, nº 0">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                            <label for="inputBairro">Bairro</label>
+                            <input type="text" class="form-control" id="inputBairro">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="inputTelefone">Cidade</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-3">
+                            <label for="inputCEP">CEP</label>
+                            <input type="text" class="form-control" id="inputCEP">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputGestor">Gestor</label>
+                            <input type="text" class="form-control" id="inputGestor" placeholder="Nome do Gestor">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                            <label for="inputDDD">DDD</label>
+                            <input type="text" class="form-control" id="inputDDD">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputTelefone">Telefone</label>
+                                <input type="text" class="form-control" id="inputTelefone">
+                            </div>
+                            <div class="form-group col-md-6">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail">
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                            <button type="submit" class="btn btn-secondary ml-4  btn-add-escola toogle-hide" data-element="#telaCadastroEscola">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+
+
+    
+    <!--Modal para adicional Curso-->
+    <div class="hidden hide-container" id="telaCadastroCurso">
+        <div class="bg-container justify-content-center" >
+            <div class="background-dark">
+            </div>
+            <div class="tela-add-curso tela-add-item border rounded shadow  p-4 bg-white">
+                <form>
+                    <div class="text-center mb-3">
+                        <span class="h5 text-info font-weight-bold">Cadastro de Curso</span>
+                        <button  class="close btn-add-curso " data-element="#telaCadastroCurso" data-dismiss="tela-add-curso" aria-label="Fechar">
+                            <span class="btn-add-curso m-3" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeCurso">Nome do Curso</label>
+                    <input type="text" class="form-control" id="nomeCurso" placeholder="Nome do Curso">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputUnidade">Unidade de Ensino</label>
+                        <select class="custom-select">
+                            <option selected disabled>Nome da Unidade</option>
+                            <option value="1">Belo Horizonte</option>
+                            <option value="2">Betim</option>
+                            <option value="3">Contagem</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputUnidade">Instrumento</label>
+                        <select class="custom-select">
+                            <option selected disabled>Nome do Instrumento</option>
+                            <option value="1">Flauta Doce</option>
+                            <option value="2">Violão</option>
+                            <option value="3">Violino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCoordenador">Coordenador do Curso</label>
+                        <input type="text" class="form-control" id="inputCoordenador" placeholder="Nome do Coordenador">
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary ">Salvar</button>
+                        <button type="button" class="btn btn-secondary ml-4  btn-add-curso" data-element="#telaCadastroCurso">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--Modal para Perfil do Usuario-->
+<div class="perfil-menu float-right" id="id-perfil-menu-box">
+    <div class="m-3">@Nome Usuario</div>
+    <div class="dropdown-divider"></div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-dark btn-dados-usuario" data-element="#telaDadosUsuario">Perfil</a>
+        </li>            
+        <li class="nav-item">
+          <a class="nav-link text-muted" href="#">Sair</a>
+        </li>
+      </ul>
+ </div> 
+
+
+ <!--Modal editar dados Usuario-->
+ <div class="hidden hide-container" id="telaDadosUsuario">
+    <div class="bg-container justify-content-center" >
+        <div class="background-dark">
+        </div>
+        <div class="tela-dados-usuario tela-add-item border rounded shadow  p-4 bg-white">
+            <form>
+                <div class="text-center mb-3">
+                    <span class="h5 text-info font-weight-bold">Perfil</span>
+                    <button  class="close btn-dados-usuario " data-element="#telaDadosUsuario" data-dismiss="" aria-label="Fechar">
+                        <span class="btn-dados-usuario m-3" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label for="nomeUsuario">Nome de Usuario</label>
+                <input type="text" class="form-control" id="nomeUsuario" placeholder="usuario">
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" placeholder="nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="senha">
+                </div>
+                <div class="form-group">
+                    <label for="confirmSenha">Confirmar Senha</label>
+                <input type="password" class="form-control" id="confirmSenha" placeholder="confirmar senha">
+                </div>                
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                <input type="text" class="form-control" id="telefone" placeholder="telefone">
+                </div>
+                <div class="form-group">
+                    <label class="text-center">Data Nascimento</label>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="mesNas">Mês</label>
+                            <select class="custom-select">                            
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="anoNasc">Ano</label>
+                            <select class="custom-select">
+                                <option value="1">2000</option>
+                                <option value="2">2001</option>
+                                <option value="3">2002</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary ">Salvar</button>
+                    <button type="button" class="btn btn-secondary ml-4  btn-dados-usuario" data-element="#telaDadosUsuario">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type='text/javascript' src="../static/layout-slidebar.js"></script>    
+<script type='text/javascript' src="../static/admin.js"></script>  
+</body>
+</html>
