@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.routes = void 0;
+const express_1 = require("express");
+const admin_routes_1 = require("./admin.routes");
+const aluno_routes_1 = require("./aluno.routes");
+const coordenador_routes_1 = require("./coordenador.routes");
+const curso_routes_1 = require("./curso.routes");
+const instrumento_routes_1 = require("./instrumento.routes");
+const turma_routes_1 = require("./turma.routes");
+const unidade_routes_1 = require("./unidade.routes");
+const emprestimo_routes_1 = require("./emprestimo.routes");
+const routes = (0, express_1.Router)();
+exports.routes = routes;
+routes.use("/admin", admin_routes_1.adminRoutes);
+routes.use("/aluno", aluno_routes_1.alunoRoutes);
+routes.use("/coordenador", coordenador_routes_1.coordenadorRoutes);
+routes.use("/curso", curso_routes_1.cursoRoutes);
+routes.use("/instrumento", instrumento_routes_1.instrumentoRoutes);
+routes.use("/turma", turma_routes_1.turmaRoutes);
+routes.use("/unidade", unidade_routes_1.unidadeRoutes);
+routes.use("/emprestimo", emprestimo_routes_1.emprestimoRoutes);
+//# sourceMappingURL=index.js.map
