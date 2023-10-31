@@ -49,7 +49,8 @@ html, body{
    width: 100%;
    height: 100vh;
    position: absolute;
-   z-index: 1050;   
+   z-index: 1050; 
+   color: rgba(255, 0, 0, 0.863);  
 }
 
 
