@@ -1,1 +1,0 @@
-Projeto de extensão universitária para criação de solução digital para uma organização social.
