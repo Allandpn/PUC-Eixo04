@@ -25,7 +25,7 @@ const ctx4 = document.getElementById('model04');
     data: {
       datasets: [
         {
-          label: 'Belo Horizonte',
+          label: 'BH - Acervo',
           data: dataEmpUnd,
           backgroundColor: "#EB7766",
           parsing: {
@@ -34,7 +34,7 @@ const ctx4 = document.getElementById('model04');
           stack: 1
         },
         {
-          label: 'Belo Horizonte',
+          label: 'BH - Emprestimo',
           data: dataInstUnd,
           backgroundColor: "#EBBCA9",
           parsing: {
@@ -43,7 +43,7 @@ const ctx4 = document.getElementById('model04');
           stack: 1
         },
         {
-          label: 'Contagem',
+          label: 'Contagem - Acervo',
           data: dataEmpUnd,
           backgroundColor: "#6E8BEA",
           parsing: {
@@ -52,7 +52,7 @@ const ctx4 = document.getElementById('model04');
           stack: 3
         },
         {
-          label: 'Contagem',
+          label: 'Contagem - Emprestimo',
           data: dataInstUnd,
           backgroundColor: "#C0D2EB",
           parsing: {
@@ -61,7 +61,7 @@ const ctx4 = document.getElementById('model04');
           stack: 3
         },   
         {
-          label: 'Betim',
+          label: 'Betim - Acervo',
           data: dataEmpUnd,
           backgroundColor: "#EBB571",
           parsing: {
@@ -70,7 +70,7 @@ const ctx4 = document.getElementById('model04');
           stack: 2
         },
         {
-          label: 'Betim',
+          label: 'Betim - Emprestimo',
           data: dataInstUnd,
           backgroundColor: "#EBDAA9",
           parsing: {
