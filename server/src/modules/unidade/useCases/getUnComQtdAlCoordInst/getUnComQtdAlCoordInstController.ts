@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase } from "./getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase";
+import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase } from "./getUnComQtdAlCoordInstUseCase";
 
 
 export class GetUnidadesComQtdAlunosCoordenadoresInstrumentosController {
