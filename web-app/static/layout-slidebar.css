@@ -181,38 +181,3 @@ a {
     background-color: var(--white-color);
 }
 
-
-/*define area de wrapper da pagina onde ficarao contidos as elementos principais do sistema*/
-.wrapper-tab {
-    margin-top: calc(var(--header-height) + 50px);
-}
-
-
-
-/*Esconde o elemento*/
-.hidden {
-    display: none;
-}
-
-
-
-/*Define background para as janelas centralizadas na pagina*/
-.bg-container {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-}
-
-.background-dark {
-    background-color: rgba(0, 0, 0, 0.415);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1050;   
-}

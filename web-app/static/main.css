@@ -10,3 +10,166 @@ html, body{
  }
 
 
+ 
+/*define area de wrapper da pagina onde ficarao contidos as elementos principais do sistema*/
+.wrapper-tab {
+   margin-top: calc(var(--header-height) + 50px);
+}
+
+
+
+/*Esconde o elemento*/
+.hidden {
+   display: none;
+}
+
+
+
+/*Define background para as janelas centralizadas na pagina*/
+.bg-container {
+   display: flex;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   max-height: 100%;
+   z-index: 1000;
+   justify-content: center;
+   align-items: center;
+}
+
+
+/*Define background dark para as janelas centralizadas na pagina*/
+.background-dark {
+   background-color: rgba(0, 0, 0, 0.415);
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100vh;
+   position: absolute;
+   z-index: 1050;   
+}
+
+
+
+
+
+
+ /* Deine estilo modal perfil usuario */
+.perfil-menu {   
+   position: absolute;
+   background-color: #ffffff;
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+   z-index: 900;
+   top: -33px;
+   right: 10px;
+   border-radius: 5px;
+   width: 200px;
+   display: none;
+  }
+.perfil-menu li:hover {
+   background-color: var(--white-color); 
+}
+
+
+/*define area de wrapper da pagina onde ficarao contidos as elementos principais do sistema*/
+.wrapper-tab {
+   margin-top: calc(var(--header-height) + 50px);       
+}
+
+
+/*define area de wrapper da pagina onde ficarao contidos as elementos principais do sistema*/
+.wrapper-dados-item {
+   background-color: rgba(255, 255, 255, 0.801);       
+}
+
+/*Define tela para cadastro comum a todos*/
+.tela-add-item{
+   z-index: 1100;   
+   max-height: inherit;
+   overflow-y: auto;
+   position: relative;
+   height: 100%;
+   max-height: 700px;
+}
+
+/*Define tela para cadastro de Escola*/
+.tela-add-escola{
+   max-width: 600px;
+   
+}
+
+/*Define tela para criar usuario*/
+.tela-criar-usuario {
+   width: 600px;
+    
+}
+
+/*Define tela para cadastro de Curso*/
+.tela-add-curso{
+   width: 600px;
+   
+}
+
+/*Define tela para cadastro de Aluno*/
+.tela-add-equipe{
+   width: 600px;
+   
+}
+
+
+/*Define tela para exibir membro Equipe*/
+.tela-dados-usuario {
+   width: 600px;
+   
+   
+}
+
+
+/*Define tela para cadastro de Aluno*/
+.tela-add-aluno {
+   width: 600px;
+   
+}
+
+
+/*Define tela para cadastro de Instrumento*/
+.tela-add-instrumento{
+   width: 600px;
+   
+}
+
+/*Define tela para cadastro de emprestimo Instrumento*/
+.tela-emp-instrumento{
+   width: 600px;
+   
+}
+
+/*Define tela para devolucao Instrumento*/
+.tela-dev-instrumento{
+   width: 600px;
+   
+}
+
+
+
+/*Define efeito em Nome da Escola na tabela Escolas*/
+
+.bg-gray {
+   background-color: #d6d8da;
+}
+
+
+
+
+/*Define tamnho da imagem no card da tabela Cursos*/
+.card-img-edit {
+  height: 190.5px;
+  width: auto; 
+}
+
+
+
+
