@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Projeto de implantação de sistema para a escola de musica Criarte",
   "main": "index.js",
-  "repository": "https://github.com/Allandpn/PUC-Eixo04.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allandpn/PUC-Eixo04.git"
+  },
   "author": "rapa2302 <rafael.alves.587605@sga.pucminas.br>",
   "license": "MIT",
   "private": true,
@@ -18,8 +21,16 @@
   },
   "devDependencies": {
     "@prisma/client": "^5.3.1",
+    "@types/cors": "^2.8.15",
     "@types/express": "^4.17.18",
+    "@types/node": "^20.8.10",
+    "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Allandpn/PUC-Eixo04/issues"
+  },
+  "homepage": "https://github.com/Allandpn/PUC-Eixo04#readme",
+  "keywords": []
 }

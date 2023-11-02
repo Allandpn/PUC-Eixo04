@@ -2,15 +2,23 @@ import "express-async-errors";
 import express, { NextFunction, Request, Response } from 'express';
 import { routes } from './routes';
 import { AppError } from "./errors/AppError";
-const cors = require("cors");
+import cors from 'cors'
+
 const app = express();
 
 const PORT = 3333;
 
+app.use(cors())
 app.use(express.json());
+<<<<<<< HEAD
 app.use(cors({
     origin: "http://localhost:3001"
 }));
+||||||| merged common ancestors
+app.use(cors());
+=======
+
+>>>>>>> 7d329c7f0d63a2f085c7b3fd3fb3a15d3da7b6cb
 
 app.use("/api", routes);
 

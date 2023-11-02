@@ -7,6 +7,7 @@ import { instrumentoRoutes } from "./instrumento.routes";
 import { turmaRoutes } from "./turma.routes";
 import { unidadeRoutes } from "./unidade.routes";
 import { emprestimoRoutes } from "./emprestimo.routes";
+import { chartRoutes } from "./chart.routes";
 
 const routes = Router();
 
@@ -18,5 +19,6 @@ routes.use("/instrumento", instrumentoRoutes);
 routes.use("/turma", turmaRoutes);
 routes.use("/unidade", unidadeRoutes);
 routes.use("/emprestimo", emprestimoRoutes);
+routes.use("/chart", chartRoutes)
 
 export { routes };

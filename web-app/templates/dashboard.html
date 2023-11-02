@@ -73,24 +73,62 @@
 <!--Conteudo Principal de Cada Pagina-->
 
 
-<div class="main" >
-    <div class="wrapper wrapper-tab border p-4 rounded shadow bg-white">        
+<div class="main justify-content-center" >
+    <div class="container wrapper wrapper-tab border p-4 rounded shadow bg-white justify-content-center">        
         <div class="row mb-5">
-            <div class="col-md mr-5">
+            <div class="col-md justify-content-center">
+                <div class="">
+                    <label class="text-secondary h5">Acervo/Empréstimos Por Unidade</label>
+                </div>
                 <div>
                     <canvas id="model01"></canvas>
                 </div>
+                <div class=" justify-content-start">
+                    <div class="col">
+                        <div>
+                            <button class="btn" style="background-color: #4472C4; pointer-events: none;"></button>
+                            <label>Belo Horizonte</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <button class="btn" style="background-color: #ED7D31;pointer-events: none;"></button>
+                            <label>Contagem</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <button class="btn" style="background-color: #A5A5A5; pointer-events: none;"> </button>
+                            <label>Betim</label>
+                        </div>
+                    </div>                   
+                </div>
             </div>
             <div class="col-md">
-                <canvas id="model02"></canvas>
+                <div class="">
+                    <label class="text-secondary h5">Alunos Por Unidade</label>
+                </div>
+                <div>
+                    <canvas id="model02"></canvas>
+                </div>               
             </div>
         </div>
         <div class="row">
-            <div class="col-md mr-5">
-                <canvas id="model03"></canvas>
+            <div class="col-md justify-content-center">
+                <div class="">
+                    <label class="text-secondary h5">Matrículas Por Unidade</label>
+                </div>
+                <div>
+                    <canvas id="model03"></canvas>
+                </div>
             </div>
             <div class="col-md">
-                <canvas id="model04"></canvas>
+                <div class="">
+                    <label class="text-secondary h5">Popularidade Instrumentos por Unidade</label>
+                </div>
+                <div>
+                    <canvas id="model04"></canvas>
+                </div>               
             </div>
         </div>
     </div>
