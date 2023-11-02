@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
-import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase } from "./getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase";
+import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase } from "./getUnComQtdAlCoordInstUseCase";
 
 
 export class GetUnidadesComQtdAlunosCoordenadoresInstrumentosController {
     async handle(req: Request, res: Response){
         
 
-        const getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase = new GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase();
+        const getUnidComQtdAluCoordInstrUseCase = new GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase();
 
-        const result = await getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase.execute();
+        const result = await getUnidComQtdAluCoordInstrUseCase.execute();
 
         return res.status(200).json(result);
     }

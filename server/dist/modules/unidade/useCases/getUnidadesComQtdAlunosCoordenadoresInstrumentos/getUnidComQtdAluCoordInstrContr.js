@@ -10,15 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetUnidadesComQtdAlunosCoordenadoresInstrumentosController = void 0;
-const getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase_1 = require("./getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase");
+const getUnidComQtdAluCoordInstrUseCase_1 = require("./getUnidComQtdAluCoordInstrUseCase");
 class GetUnidadesComQtdAlunosCoordenadoresInstrumentosController {
     handle(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase = new getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase_1.GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase();
-            const result = yield getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase.execute();
+            const getUnidComQtdAluCoordInstrUseCase = new getUnidComQtdAluCoordInstrUseCase_1.getUnidComQtdAluCoordInstrUseCase();
+            const result = yield getUnidComQtdAluCoordInstrUseCase.execute();
             return res.status(200).json(result);
         });
     }
 }
 exports.GetUnidadesComQtdAlunosCoordenadoresInstrumentosController = GetUnidadesComQtdAlunosCoordenadoresInstrumentosController;
-//# sourceMappingURL=getUnidadesComQtdAlunosCoordenadoresInstrumentosController.js.map
+//# sourceMappingURL=getUnidComQtdAluCoordInstrContr.js.map

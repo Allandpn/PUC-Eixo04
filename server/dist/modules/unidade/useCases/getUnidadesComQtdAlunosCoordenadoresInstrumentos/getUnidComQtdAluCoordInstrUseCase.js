@@ -37,4 +37,4 @@ class GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase {
     }
 }
 exports.GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase = GetUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase;
-//# sourceMappingURL=getUnidadesComQtdAlunosCoordenadoresInstrumentosUseCase.js.map
+//# sourceMappingURL=getUnidComQtdAluCoordInstrUseCase.js.map

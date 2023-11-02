@@ -1,13 +1,13 @@
 import { Router } from "express";
 import { CreateUnidadeController } from "../modules/unidade/useCases/createUnidade/createUnidadeController";
-import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosController } from "../modules/unidade/useCases/getUnidadesComQtdAlunosCoordenadoresInstrumentos/getUnidadesComQtdAlunosCoordenadoresInstrumentosController";
+import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosController } from "../modules/unidade/useCases/getUnComQtdAlCoordInst/getUnComQtdAlCoordInstController";
 
 const createUnidadeController = new CreateUnidadeController();
-const getUnidadesComQtdAlunosCoordenadoresInstrumentosController = new GetUnidadesComQtdAlunosCoordenadoresInstrumentosController();
+const getUnidComQtdAluCoordInstrContr = new GetUnidadesComQtdAlunosCoordenadoresInstrumentosController();
 
 const unidadeRoutes = Router();
 
-unidadeRoutes.get("/qtdAlunosCursosCoordenadoresInstrumentos", getUnidadesComQtdAlunosCoordenadoresInstrumentosController.handle)
+unidadeRoutes.get("/qtdAlunosCursosCoordenadoresInstrumentos", getUnidComQtdAluCoordInstrContr.handle)
 unidadeRoutes.post("/", createUnidadeController.handle)
 
 export { unidadeRoutes }
