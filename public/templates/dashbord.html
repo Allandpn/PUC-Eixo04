@@ -114,6 +114,125 @@
 
 
 
+    <!--Modal para Perfil do Usuario-->
+    <div class="perfil-menu float-right" id="id-perfil-menu-box">
+        <div id="perfil-nomeUsuario" class="m-3">@Nome Usuario</div>
+        <div class="dropdown-divider"></div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link text-dark btn-dados-usuario" data-element="#telaDadosUsuario">Perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark btn-criar-usuario" data-element="#telaCriarUsuario">Criar Novo Usuário</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-muted" href="#">Sair</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!--Modal editar dados Usuario-->
+    <div class="hidden hide-container" id="telaDadosUsuario">
+        <div class="bg-container justify-content-center">
+            <div class="background-dark">
+            </div>
+            <div class="tela-dados-usuario tela-add-item border rounded shadow  p-4 bg-white">
+                <form>
+                    <div class="text-center mb-3">
+                        <span class="h5 text-info font-weight-bold">Perfil</span>
+                        <button class="close btn-dados-usuario " data-element="#telaDadosUsuario" data-dismiss=""
+                            aria-label="Fechar">
+                            <span class="btn-dados-usuario m-3" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeUsuario">Nome de Usuario</label>
+                        <input type="text" class="form-control" id="nomeUsuario" placeholder="usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome" placeholder="nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" class="form-control" id="senha" placeholder="senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmSenha">Confirmar Senha</label>
+                        <input type="password" class="form-control" id="confirmSenha" placeholder="confirmar senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" placeholder="telefone">
+                    </div>
+                    <div class="form-group">
+                        <label for="dataNascimento">Data Nascimento</label>
+                        <input id="dataNascimento" type="date" class="form-control ml-2 p-1 date rounded  "
+                            style="border-color: gray;" />
+                    </div>
+                    <div class="text-center  mt-5">
+                        <button type="submit" class="btn btn-primary ">Salvar</button>
+                        <button type="button" class="btn btn-secondary ml-4  btn-dados-usuario"
+                            data-element="#telaDadosUsuario">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal editar dados Usuario-->
+    <div class="hidden hide-container" id="telaCriarUsuario">
+        <div class="bg-container justify-content-center">
+            <div class="background-dark">
+            </div>
+            <div class="tela-criar-usuario tela-add-item border rounded shadow  p-4 bg-white">
+                <!--Cria formulario para acesso ao sistema-->
+                <form class="bg-white " action="#" method="POST">
+                    <div class="mb-5 text-center">
+                        <h3 class="text-info">Orquestra Criarte Digital</h3>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <h4 class="text-info">Criar Conta</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nome de usuário</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nome" value="" required />
+                    </div>
+                    <div class="form-group mb-2 text-dark">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" value=""
+                            required />
+                    </div>
+                    <div class="form-group mb-2 text-dark">
+                        <label for="inputEmail">Confirme seu Email</label>
+                        <input type="email" class="form-control" id="ConfirmarEmail" placeholder="Email" value=""
+                            required />
+                    </div>
+                    <div class="form-group mb-2 text-dark">
+                        <label for="inputPassword">Senha</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Senha" value=""
+                            required />
+                    </div>
+                    <div class="form-group mb-2 text-dark">
+                        <label for="inputPassword">Confirme sua Senha</label>
+                        <input type="password" class="form-control" id="ConfirmarPassword"
+                            placeholder="Confirme sua Senha" value="" required />
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-primary" type="submit">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
