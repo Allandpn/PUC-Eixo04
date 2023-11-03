@@ -10,12 +10,15 @@ const chartRoutes = Router()
 
 
 //consulta de quantidade de instrumentos por unidade menos a quantidade emprestada
-const dataInstUnd = [
-  { x: "violão", BHorizonte: 34, Betim: 45, Contagem: 20 },
-  { x: "violino", BHorizonte: 45, Betim: 34, Contagem: 17 },
-  { x: "saxofone", BHorizonte: 37, Betim: 45, Contagem: 20 },
-  { x: "flauta", BHorizonte: 20, Betim: 20, Contagem: 34 }
-]
+// const dataInstUnd = [
+//   { x: "violão", BHorizonte: 34, Betim: 45, Contagem: 20 },
+//   { x: "violino", BHorizonte: 45, Betim: 34, Contagem: 17 },
+//   { x: "saxofone", BHorizonte: 37, Betim: 45, Contagem: 20 },
+//   { x: "flauta", BHorizonte: 20, Betim: 20, Contagem: 34 }
+// ]
+
+
+//Foi efetuada a criação desta saída no modules/chartData/getInstrumentoLocalidadeController
 chartRoutes.get("/data1", getInstrumentoLocalidade.handle);
 
 

@@ -47,6 +47,8 @@ export class GetInstrumentoLocalidadeController {
             }
         });
 
+
+        //consolidar os dados por unidade
         const result : any = {}
         
         outputArray.forEach(item => {
@@ -60,7 +62,8 @@ export class GetInstrumentoLocalidadeController {
             }
             result[x][unidadeId] = contagem;
           });
-
+        
+        //tranformar dados para formato requerido pelo chartJs
         const result2 : any = []
 
         for (const x in result) {
