@@ -10,15 +10,9 @@ const PORT = 3333;
 
 app.use(cors())
 app.use(express.json());
-<<<<<<< HEAD
 app.use(cors({
     origin: "http://localhost:3001"
 }));
-||||||| merged common ancestors
-app.use(cors());
-=======
-
->>>>>>> 7d329c7f0d63a2f085c7b3fd3fb3a15d3da7b6cb
 
 app.use("/api", routes);
 

@@ -1,7 +1,11 @@
+import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosController } from '../modules/unidade/useCases/getUnComQtdAlCoordInst/getUnComQtdAlCoordInstController';
+import { GetInstrumentoLocalidadeController } from './../modules/chartData/getIntrumentoLocalidadeController';
 import { Router } from 'express'
 
-export const chartRoutes = Router()
 
+const dados  = new GetUnidadesComQtdAlunosCoordenadoresInstrumentosController();
+const getInstrumentoLocalidade = new GetInstrumentoLocalidadeController();
+const chartRoutes = Router()
 
 
 
@@ -12,9 +16,7 @@ const dataInstUnd = [
   { x: "saxofone", BHorizonte: 37, Betim: 45, Contagem: 20 },
   { x: "flauta", BHorizonte: 20, Betim: 20, Contagem: 34 }
 ]
-chartRoutes.get("/data1", (req, res) => {
-  res.json(dataInstUnd)
-})
+chartRoutes.get("/data1", getInstrumentoLocalidade.handle);
 
 
 //consulta de emprestimo de instrumentos por unidade
@@ -69,5 +71,7 @@ chartRoutes.get("/data5", (req, res) => {
 res.json(prefInstUnidade)
 })
 
+
+export {chartRoutes}
 
 
