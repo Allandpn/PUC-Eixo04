@@ -1,16 +1,16 @@
-
-html, body{
-    height: 100%;
- }
-
-
- /* define imagem de background em modo responsivo */
- .background-login {
-    background-size: cover;
- }
+html,
+body {
+   height: 100%;
+}
 
 
- 
+/* define imagem de background em modo responsivo */
+.background-login {
+   background-size: cover;
+}
+
+
+
 /*define area de wrapper da pagina onde ficarao contidos as elementos principais do sistema*/
 .wrapper-tab {
    margin-top: calc(var(--header-height) + 50px);
@@ -49,7 +49,7 @@ html, body{
    width: 100%;
    height: 100vh;
    position: absolute;
-   z-index: 1050;   
+   z-index: 1050;
 }
 
 
@@ -57,8 +57,8 @@ html, body{
 
 
 
- /* Deine estilo modal perfil usuario */
-.perfil-menu {   
+/* Deine estilo modal perfil usuario */
+.perfil-menu {
    position: absolute;
    background-color: #ffffff;
    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -68,26 +68,27 @@ html, body{
    border-radius: 5px;
    width: 200px;
    display: none;
-  }
+}
+
 .perfil-menu li:hover {
-   background-color: var(--white-color); 
+   background-color: var(--white-color);
 }
 
 
 /*define area de wrapper da pagina onde ficarao contidos as elementos principais do sistema*/
 .wrapper-tab {
-   margin-top: calc(var(--header-height) + 50px);       
+   margin-top: calc(var(--header-height) + 50px);
 }
 
 
 /*define area de wrapper da pagina onde ficarao contidos as elementos principais do sistema*/
 .wrapper-dados-item {
-   background-color: rgba(255, 255, 255, 0.801);       
+   background-color: rgba(255, 255, 255, 0.801);
 }
 
 /*Define tela para cadastro comum a todos*/
-.tela-add-item{
-   z-index: 1100;   
+.tela-add-item {
+   z-index: 1100;
    max-height: inherit;
    overflow-y: auto;
    position: relative;
@@ -96,61 +97,61 @@ html, body{
 }
 
 /*Define tela para cadastro de Escola*/
-.tela-add-escola{
+.tela-add-escola {
    max-width: 600px;
-   
+
 }
 
 /*Define tela para criar usuario*/
 .tela-criar-usuario {
    width: 600px;
-    
+
 }
 
 /*Define tela para cadastro de Curso*/
-.tela-add-curso{
+.tela-add-curso {
    width: 600px;
-   
+
 }
 
 /*Define tela para cadastro de Aluno*/
-.tela-add-equipe{
+.tela-add-equipe {
    width: 600px;
-   
+
 }
 
 
 /*Define tela para exibir membro Equipe*/
 .tela-dados-usuario {
    width: 600px;
-   
-   
+
+
 }
 
 
 /*Define tela para cadastro de Aluno*/
 .tela-add-aluno {
    width: 600px;
-   
+
 }
 
 
 /*Define tela para cadastro de Instrumento*/
-.tela-add-instrumento{
+.tela-add-instrumento {
    width: 600px;
-   
+
 }
 
 /*Define tela para cadastro de emprestimo Instrumento*/
-.tela-emp-instrumento{
+.tela-emp-instrumento {
    width: 600px;
-   
+
 }
 
 /*Define tela para devolucao Instrumento*/
-.tela-dev-instrumento{
+.tela-dev-instrumento {
    width: 600px;
-   
+
 }
 
 
@@ -166,10 +167,15 @@ html, body{
 
 /*Define tamnho da imagem no card da tabela Cursos*/
 .card-img-edit {
-  height: 190.5px;
-  width: auto; 
+   height: 190.5px;
+   width: auto;
 }
 
+.box {
+   width: 175px;
 
+}
 
-
+.BoxDesh {
+   width: 625px;
+}
