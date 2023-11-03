@@ -19,21 +19,21 @@ export class CreateUnidadeUseCase {
             throw new AppError("Existe unidade com este nome no bd");
         }
 
-        let unidade: Prisma.UnidadeCreateInput
+        let unidade: Prisma.UnidadeCreateInput;
 
-        unidade = {
-            nome,
-            endereco: {  
-                create: {
-                    rua: endereco.rua,
-                    numero: endereco.numero,
-                    complemento: endereco.complemento,
-                    bairro: endereco.bairro,
-                    cidade: endereco.cidade,
-                    CEP: endereco.CEP,
-                }                 
-            },
-        }
+            unidade = {
+                nome,
+                endereco: {  
+                    create: {
+                        rua: endereco.rua,
+                        numero: endereco.numero,
+                        complemento: endereco.complemento,
+                        bairro: endereco.bairro,
+                        cidade: endereco.cidade,
+                        CEP: endereco.CEP,
+                    }                 
+                },
+            }
 
         const createUnidade = await prisma.unidade.create({
             data: unidade
