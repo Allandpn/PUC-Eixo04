@@ -5,6 +5,9 @@ const ctx2 = document.getElementById('model02');
 const ctx3 = document.getElementById('model03');
 const ctx4 = document.getElementById('model04');
 
+
+Chart.defaults.scales.linear.min = 0;
+
 //consulta de quantidade de instrumentos e quantidade emprestada por unidade
 (async function () {
   const dataEmpUnd = await fetch('http://localhost:3333/api/chart/data2').then(response => {
@@ -88,7 +91,7 @@ const ctx4 = document.getElementById('model04');
           display: false
         }
       },   
-      aspectRatio: 1
+      
     }
   })
 })();
@@ -179,7 +182,6 @@ const ctx4 = document.getElementById('model04');
           beginAtZero: true
         }
       },
-      aspectRatio: 1
     }
   })
 })();
@@ -245,7 +247,7 @@ const ctx4 = document.getElementById('model04');
     options: {
       elements: {
         line: {
-          borderWidth: 3
+          borderWidth: 1
         }
       },
       plugins: {
@@ -253,6 +255,11 @@ const ctx4 = document.getElementById('model04');
           position: "bottom"
         }
       },
+      scales: {
+        r: {
+          beginAtZero: true
+        }
+      }
     }
   })
 })();
