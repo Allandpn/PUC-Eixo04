@@ -1,6 +1,7 @@
 import { GetAlunosLocalidadeController } from '../modules/chartData/getAlunosLocalidadeController';
 import { GetInstrumentoLocalidadeEmprestadoController } from '../modules/chartData/getIntrumentoLocalidadeEmprestadoController';
 import { GetInstrumentoLocalidadeNaoEmprestadoController } from '../modules/chartData/getIntrumentoLocalidadeNaoEmprestadoController';
+import { GetAlunosDataMatriculaController } from '../modules/chartData/GetAlunosDataMatriculaController';
 import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosController } from '../modules/unidade/useCases/getUnComQtdAlCoordInst/getUnComQtdAlCoordInstController';
 import { GetInstrumentoLocalidadeController } from './../modules/chartData/getIntrumentoLocalidadeController';
 import { Router } from 'express'
@@ -62,9 +63,10 @@ const matriculasUnidade = [
     { ano: 2022, BHorizonte: 10, Betim: 12, Contagem: 9 },
     { ano: 2023, BHorizonte: 13, Betim: 10, Contagem: 5 }
     ]
-chartRoutes.get("/data4", (req, res) => {
-res.json(matriculasUnidade)
-})
+
+const getMatriculasAno = new GetAlunosDataMatriculaController();
+
+chartRoutes.get("/data4", getMatriculasAno.handle)
   
 
 
