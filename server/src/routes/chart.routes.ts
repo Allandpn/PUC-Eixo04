@@ -1,3 +1,4 @@
+import { GetAlunosLocalidadeController } from '../modules/chartData/getAlunosLocalidadeController';
 import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosController } from '../modules/unidade/useCases/getUnComQtdAlCoordInst/getUnComQtdAlCoordInstController';
 import { GetInstrumentoLocalidadeController } from './../modules/chartData/getIntrumentoLocalidadeController';
 import { Router } from 'express'
@@ -39,14 +40,16 @@ chartRoutes.get("/data2", (req, res) => {
 
 
 //consulta de alunos por unidade
+
+const getAlunosLocalidadeController= new GetAlunosLocalidadeController();
+
+
 const alunoUnidade = [
   { unidade: "BHorizonte", alunos: 28 },
   { unidade: "Betim", alunos: 45 },
   { unidade: "Contagem", alunos: 57 },
 ]
-chartRoutes.get("/data3", (req, res) => {
-  res.json(alunoUnidade)
-})
+chartRoutes.get("/data3", getAlunosLocalidadeController.handle)
 
 
 
