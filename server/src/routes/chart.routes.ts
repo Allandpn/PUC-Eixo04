@@ -1,11 +1,13 @@
 import { GetAlunosLocalidadeController } from '../modules/chartData/getAlunosLocalidadeController';
+import { GetInstrumentoLocalidadeEmprestadoController } from '../modules/chartData/getIntrumentoLocalidadeEmprestadoController';
+import { GetInstrumentoLocalidadeNaoEmprestadoController } from '../modules/chartData/getIntrumentoLocalidadeNaoEmprestadoController';
 import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosController } from '../modules/unidade/useCases/getUnComQtdAlCoordInst/getUnComQtdAlCoordInstController';
 import { GetInstrumentoLocalidadeController } from './../modules/chartData/getIntrumentoLocalidadeController';
 import { Router } from 'express'
 
 
-const dados  = new GetUnidadesComQtdAlunosCoordenadoresInstrumentosController();
-const getInstrumentoLocalidade = new GetInstrumentoLocalidadeController();
+
+
 const chartRoutes = Router()
 
 
@@ -18,21 +20,21 @@ const chartRoutes = Router()
 //   { x: "flauta", BHorizonte: 20, Betim: 20, Contagem: 34 }
 // ]
 
-
+const getInstrumentoLocalidadeNaoEmprestado = new GetInstrumentoLocalidadeNaoEmprestadoController();
 //Foi efetuada a criação desta saída no modules/chartData/getInstrumentoLocalidadeController
-chartRoutes.get("/data1", getInstrumentoLocalidade.handle);
+chartRoutes.get("/data1", getInstrumentoLocalidadeNaoEmprestado.handle);
 
 
 //consulta de emprestimo de instrumentos por unidade
-const dataEmpUnd = [
-  { x: "violão", BHorizonte: 12, Betim: 10, Contagem: 17 },
-  { x: "violino", BHorizonte: 12, Betim: 10, Contagem: 17 },
-  { x: "saxofone", BHorizonte: 12, Betim: 10, Contagem: 17 },
-  { x: "flauta", BHorizonte: 12, Betim: 10, Contagem: 17 }
-]
-chartRoutes.get("/data2", (req, res) => {
-  res.json(dataEmpUnd)
-})
+// const dataEmpUnd = [
+//   { x: "violão", BHorizonte: 12, Betim: 10, Contagem: 17 },
+//   { x: "violino", BHorizonte: 12, Betim: 10, Contagem: 17 },
+//   { x: "saxofone", BHorizonte: 12, Betim: 10, Contagem: 17 },
+//   { x: "flauta", BHorizonte: 12, Betim: 10, Contagem: 17 }
+// ]
+
+const getInstrumentoLocalidadeEmprestado = new GetInstrumentoLocalidadeEmprestadoController();
+chartRoutes.get("/data2", getInstrumentoLocalidadeEmprestado.handle);
 
 
 
@@ -44,11 +46,11 @@ chartRoutes.get("/data2", (req, res) => {
 const getAlunosLocalidadeController= new GetAlunosLocalidadeController();
 
 
-const alunoUnidade = [
-  { unidade: "BHorizonte", alunos: 28 },
-  { unidade: "Betim", alunos: 45 },
-  { unidade: "Contagem", alunos: 57 },
-]
+// const alunoUnidade = [
+//   { unidade: "BHorizonte", alunos: 28 },
+//   { unidade: "Betim", alunos: 45 },
+//   { unidade: "Contagem", alunos: 57 },
+// ]
 chartRoutes.get("/data3", getAlunosLocalidadeController.handle)
 
 
@@ -67,15 +69,15 @@ res.json(matriculasUnidade)
 
 
 //consultas popularidade instrumentos por unidade 
-const prefInstUnidade = [
-    { instrumento: "violão", BHorizonte: 12, Betim: 15, Contagem: 6 },
-    { instrumento: "violino", BHorizonte: 7, Betim: 10, Contagem: 11 },
-    { instrumento: "saxofone", BHorizonte: 10, Betim: 12, Contagem: 9 },
-    { instrumento: "flauta", BHorizonte: 13, Betim: 10, Contagem: 5 }
-    ]
-chartRoutes.get("/data5", (req, res) => {
-res.json(prefInstUnidade)
-})
+// const prefInstUnidade = [
+//     { instrumento: "violão", BHorizonte: 12, Betim: 15, Contagem: 6 },
+//     { instrumento: "violino", BHorizonte: 7, Betim: 10, Contagem: 11 },
+//     { instrumento: "saxofone", BHorizonte: 10, Betim: 12, Contagem: 9 },
+//     { instrumento: "flauta", BHorizonte: 13, Betim: 10, Contagem: 5 }
+//     ]
+
+const getInstrumentoLocalidade = new GetInstrumentoLocalidadeController();    
+chartRoutes.get("/data5", getInstrumentoLocalidade.handle)
 
 
 export {chartRoutes}

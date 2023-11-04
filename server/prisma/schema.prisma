@@ -76,7 +76,7 @@ model Instrumento {
   nomeInstrumento                String
   marcaInstrumento               String
   estadoConservacaoDoInstrumento String
-  isEmprestado                   Boolean?
+  isEmprestado                   Boolean                 @default(false)
   emprestimoInstrumento          EmprestimoInstrumento[]
   unidade                        Unidade                 @relation(fields: [unidadeId], references: [id])
   unidadeId                      Int
