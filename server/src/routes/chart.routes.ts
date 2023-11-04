@@ -68,7 +68,7 @@ res.json(matriculasUnidade)
   
 
 
-//consultas popularidade instrumentos por unidade 
+// consultas popularidade instrumentos por unidade 
 // const prefInstUnidade = [
 //     { instrumento: "violão", BHorizonte: 12, Betim: 15, Contagem: 6 },
 //     { instrumento: "violino", BHorizonte: 7, Betim: 10, Contagem: 11 },
@@ -78,6 +78,53 @@ res.json(matriculasUnidade)
 
 const getInstrumentoLocalidade = new GetInstrumentoLocalidadeController();    
 chartRoutes.get("/data5", getInstrumentoLocalidade.handle)
+
+
+
+
+
+//consulta de matriculas por unidade
+const qntAlunos = [
+    { x: 154 }    
+    ]
+chartRoutes.get("/data6", (req, res) => {
+res.json(qntAlunos)
+})
+
+
+
+const mediaIdade = [
+    { x: 14.5 }    
+    ]
+chartRoutes.get("/data7", (req, res) => {
+res.json(mediaIdade)
+})
+
+
+const qntInstrumentos = [
+    { x: 14.5 }    
+    ]
+chartRoutes.get("/data8", (req, res) => {
+res.json(qntInstrumentos)
+})
+
+
+const qntTurmas = [
+    { x: 14.5 }    
+    ]
+chartRoutes.get("/data9", (req, res) => {
+res.json(qntTurmas)
+})
+
+
+const popInstrumento = [
+    { x: 14.5 }    
+    ]
+chartRoutes.get("/data10", (req, res) => {
+res.json(popInstrumento)
+})
+
+
 
 
 export {chartRoutes}
