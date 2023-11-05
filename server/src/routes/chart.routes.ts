@@ -9,6 +9,8 @@ import { GetInstMatriculasUnidadeController } from '../modules/chartData/getInst
 import { GetAlunosIdadeMediaController } from '../modules/chartData/GetAlunosIdadeMediaController';
 import { GetQuantidadeAlunosController } from '../modules/chartData/GetQuantidadeAlunosController';
 import { GetQuantidadeInstrumentosController } from '../modules/chartData/GetQuantidadeInstrumentosController';
+import { GetQuantidadeTurmasController } from '../modules/chartData/GetQuantidadeTurmasController';
+import { GetInstrumentoMaisPopularController } from '../modules/chartData/GetInstrumentoMaisPopularController';
 
 
 
@@ -106,27 +108,26 @@ const getAlunosIdadeMediaController= new GetAlunosIdadeMediaController();
 chartRoutes.get("/data7", getAlunosIdadeMediaController.handle);
 
 
-const qntInstrumentos = [
-    { x: 14.5 }    
-    ]
+// const qntInstrumentos = [
+//     { x: 14.5 }    
+//     ]
 const getQuantidadeInstrumentosController = new GetQuantidadeInstrumentosController();
 chartRoutes.get("/data8", getQuantidadeInstrumentosController.handle)
 
 
-const qntTurmas = [
-    { x: 14.5 }    
-    ]
-chartRoutes.get("/data9", (req, res) => {
-res.json(qntTurmas)
-})
+// const qntTurmas = [
+//     { x: 14.5 }    
+//     ]
+
+const getQuantidadeTurmasController = new GetQuantidadeTurmasController();
+chartRoutes.get("/data9", getQuantidadeTurmasController.handle)
 
 
 const popInstrumento = [
     { x: 14.5 }    
     ]
-chartRoutes.get("/data10", (req, res) => {
-res.json(popInstrumento)
-})
+const getInstrumentoMaisPopularController = new GetInstrumentoMaisPopularController();
+chartRoutes.get("/data10", getInstrumentoMaisPopularController.handle)
 
 
 
