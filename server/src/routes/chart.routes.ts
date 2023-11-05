@@ -6,6 +6,7 @@ import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosController } from '../m
 import { GetInstrumentoLocalidadeController } from './../modules/chartData/getIntrumentoLocalidadeController';
 import { Router } from 'express'
 import { GetInstMatriculasUnidadeController } from '../modules/chartData/getInstMatriculasUnidadeController';
+import { GetAlunosIdadeMediaController } from '../modules/chartData/GetAlunosIdadeMediaController';
 
 
 
@@ -96,13 +97,11 @@ res.json(qntAlunos)
 })
 
 
-
+const getAlunosIdadeMediaController= new GetAlunosIdadeMediaController();
 const mediaIdade = [
     { x: 14.5 }    
     ]
-chartRoutes.get("/data7", (req, res) => {
-res.json(mediaIdade)
-})
+chartRoutes.get("/data7", getAlunosIdadeMediaController.handle);
 
 
 const qntInstrumentos = [

@@ -11,9 +11,9 @@ export class GetAlunosDataMatriculaController {
      const alunosDataMatricula = await getAlunosDataMatriculaUseCase.execute()
 
      const transformSelecionarAno = alunosDataMatricula.map(item => {
-        const date = new Date(item.created_at);
+        const date = new Date(item.dataAdmissao);
         const year = date.getFullYear();
-        item.created_at = year.toString();
+        item.dataAdmissao = year.toString();
         return item;
       });
 
@@ -23,7 +23,7 @@ export class GetAlunosDataMatriculaController {
 
         // Iterate over the data and perform the aggregation
         transformSelecionarAno.forEach(item  => {
-        const year = item.created_at;
+        const year = item.dataAdmissao;
         const nomeUnidade = item.nomeUnidade;
 
         // Initialize the year if it doesn't exist
