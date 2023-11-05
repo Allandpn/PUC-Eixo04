@@ -5,6 +5,7 @@ import { GetAlunosDataMatriculaController } from '../modules/chartData/GetAlunos
 import { GetUnidadesComQtdAlunosCoordenadoresInstrumentosController } from '../modules/unidade/useCases/getUnComQtdAlCoordInst/getUnComQtdAlCoordInstController';
 import { GetInstrumentoLocalidadeController } from './../modules/chartData/getIntrumentoLocalidadeController';
 import { Router } from 'express'
+import { GetInstMatriculasUnidadeController } from '../modules/chartData/getInstMatriculasUnidadeController';
 
 
 
@@ -57,12 +58,12 @@ chartRoutes.get("/data3", getAlunosLocalidadeController.handle)
 
 
 //consulta de matriculas por unidade
-const matriculasUnidade = [
-    { ano: 2020, BHorizonte: 12, Betim: 15, Contagem: 6 },
-    { ano: 2021, BHorizonte: 7, Betim: 10, Contagem: 11 },
-    { ano: 2022, BHorizonte: 10, Betim: 12, Contagem: 9 },
-    { ano: 2023, BHorizonte: 13, Betim: 10, Contagem: 5 }
-    ]
+// const matriculasUnidade = [
+//     { ano: 2020, BHorizonte: 12, Betim: 15, Contagem: 6 },
+//     { ano: 2021, BHorizonte: 7, Betim: 10, Contagem: 11 },
+//     { ano: 2022, BHorizonte: 10, Betim: 12, Contagem: 9 },
+//     { ano: 2023, BHorizonte: 13, Betim: 10, Contagem: 5 }
+//     ]
 
 const getMatriculasAno = new GetAlunosDataMatriculaController();
 
@@ -70,7 +71,7 @@ chartRoutes.get("/data4", getMatriculasAno.handle)
   
 
 
-// consultas popularidade instrumentos por unidade 
+//consultas popularidade instrumentos por unidade 
 // const prefInstUnidade = [
 //     { instrumento: "violão", BHorizonte: 12, Betim: 15, Contagem: 6 },
 //     { instrumento: "violino", BHorizonte: 7, Betim: 10, Contagem: 11 },
@@ -78,8 +79,9 @@ chartRoutes.get("/data4", getMatriculasAno.handle)
 //     { instrumento: "flauta", BHorizonte: 13, Betim: 10, Contagem: 5 }
 //     ]
 
-const getInstrumentoLocalidade = new GetInstrumentoLocalidadeController();    
-chartRoutes.get("/data5", getInstrumentoLocalidade.handle)
+//const getInstrumentoLocalidadeController = new GetInstrumentoLocalidadeController();    
+const getInstMatriculasUnidadeController = new GetInstMatriculasUnidadeController();
+chartRoutes.get("/data5", getInstMatriculasUnidadeController.handle)
 
 
 
