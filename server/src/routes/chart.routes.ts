@@ -7,6 +7,8 @@ import { GetInstrumentoLocalidadeController } from './../modules/chartData/getIn
 import { Router } from 'express'
 import { GetInstMatriculasUnidadeController } from '../modules/chartData/getInstMatriculasUnidadeController';
 import { GetAlunosIdadeMediaController } from '../modules/chartData/GetAlunosIdadeMediaController';
+import { GetQuantidadeAlunosController } from '../modules/chartData/GetQuantidadeAlunosController';
+import { GetQuantidadeInstrumentosController } from '../modules/chartData/GetQuantidadeInstrumentosController';
 
 
 
@@ -89,27 +91,26 @@ chartRoutes.get("/data5", getInstMatriculasUnidadeController.handle)
 
 
 //consulta de matriculas por unidade
-const qntAlunos = [
-    { x: 154 }    
-    ]
-chartRoutes.get("/data6", (req, res) => {
-res.json(qntAlunos)
-})
+// const qntAlunos = [
+//     { x: 154 }    
+//     ]
+const getQuantidadeAlunosController = new GetQuantidadeAlunosController();
+chartRoutes.get("/data6",getQuantidadeAlunosController.handle);
 
 
-const getAlunosIdadeMediaController= new GetAlunosIdadeMediaController();
+
 // const mediaIdade = [
 //     { x: 14.5 }    
 //     ]
+const getAlunosIdadeMediaController= new GetAlunosIdadeMediaController();
 chartRoutes.get("/data7", getAlunosIdadeMediaController.handle);
 
 
 const qntInstrumentos = [
     { x: 14.5 }    
     ]
-chartRoutes.get("/data8", (req, res) => {
-res.json(qntInstrumentos)
-})
+const getQuantidadeInstrumentosController = new GetQuantidadeInstrumentosController();
+chartRoutes.get("/data8", getQuantidadeInstrumentosController.handle)
 
 
 const qntTurmas = [
