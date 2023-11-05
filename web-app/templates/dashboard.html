@@ -38,29 +38,29 @@
 </header>
 <aside class="l-navbar" id="nav-bar">
     <nav class="nav nav-slidebar">        
-            <a href="#" class="nav_logo">
-                <i class="bx bx-layer nav_logo-icon"></i>
+            <a href="" class="nav_logo">
+                <i class="bx bx-layer nav_logo-icon" disabled></i>
                 <span class="nav_logo-name">Orq. Criarte Digital</span>
             </a>
             <div class="nav_list mb-auto">
-                <a href="dashboard.html" class="nav_link " >
+                <a href="/dashboard" class="nav_link " >
                     <i class='bx bx-tachometer nav_icon'></i>
                     <span class="nav-name">Dashboard</span>
                 </a>
-                <a href="admin.html" class="nav_link " >
+                <a href="/admin" class="nav_link " >
                     <i class='bx bxs-cog nav_icon'></i>
                     <span class="nav-name">Administração</span>
                 </a>
-                <a href="alunos.html" class="nav_link " >
+                <a href="/alunos" class="nav_link " >
                     <i class='bx bxs-user-detail nav_icon'></i>
                     <span class="nav-name">Alunos</span>
                 </a>
-                <a href="acervo.html" class="nav_link " >
+                <a href="/acervo" class="nav_link " >
                     <i class='bx bxs-playlist nav_icon' ></i>
                     <span class="nav-name">Acervo</span>
                 </a> 
-                <a href="#" class="nav_link " style="color: gray; pointer-events: none;">
-                    <i class='bx bx-dollar-circle nav_icon'></i>
+                <a href="" class="nav_link " style="color: gray; pointer-events: none;">
+                    <i class='bx bx-dollar-circle nav_icon' disabled></i>
                     <span class="nav-name">Financeiro</span>
                 </a>                               
             </div>
@@ -78,11 +78,11 @@
         <div class="row mb-4 justify-content-between" style="height: 130px;">
             <div class="col  border p-2  mr-3  rounded shadow text-white" style="background-color: #4472C4;">
                 <div class="row justify-content-between mr-1 ml-1">
-                    <label class="text-left  h6">Alunos</label>
+                    <label  class="text-left  h6">Alunos</label>
                     <i class="fa fa-user" aria-hidden="true" style="font-size: 1.6rem"></i>
                 </div>               
                 <div class="text-center mt-3">
-                    <span class="h1  font-weight-bold">143</span>
+                    <span id="totalAlunosdash" class="h1  font-weight-bold">-</span>
                 </div>
             </div>
             <div class="col  border p-2  mr-3  rounded shadow text-white" style="background-color: #4472C4;">
@@ -91,7 +91,7 @@
                     <i class="fa fa-child" aria-hidden="true" style="font-size: 1.6rem"></i>
                 </div>               
                 <div class="text-center mt-3">
-                    <span class="h1  font-weight-bold">16,7</span>
+                    <span id="mediaIdadedash" class="h1  font-weight-bold">-</span>
                 </div>
             </div>
             <div class="col  border p-2  mr-3  rounded shadow text-white" style="background-color: #4472C4;">
@@ -100,7 +100,7 @@
                     <i class="fa fa-music" aria-hidden="true" style="font-size: 1.6rem"></i>
                 </div>               
                 <div class="text-center mt-3">
-                    <span class="h1  font-weight-bold">97</span>
+                    <span id="totalInstrdash" class="h1  font-weight-bold">-</span>
                 </div>
             </div>
             <div class="col  border p-2  mr-3  rounded shadow text-white" style="background-color: #4472C4;">
@@ -109,7 +109,7 @@
                     <i class="fa fa-users" aria-hidden="true" style="font-size: 1.6rem"></i>
                 </div>               
                 <div class="text-center mt-3">
-                    <span class="h1  font-weight-bold">14</span>
+                    <span id="totalTurmasdash" class="h1  font-weight-bold">-</span>
                 </div>
             </div>
             <div class="col  border p-2  rounded shadow text-white" style="background-color: #4472C4;">
@@ -118,7 +118,7 @@
                     <i class="fa fa-line-chart" aria-hidden="true"  style="font-size: 1.6rem"></i>
                 </div>               
                 <div class="text-center mt-3">
-                    <span class="h1  font-weight-bold">Violão</span>
+                    <span id="popInstrdash" class="h1  font-weight-bold">-</span>
                 </div>
             </div>
         </div>
@@ -137,21 +137,15 @@
                     <div class="ml-3">
                         <div class="mr-2">
                             <button class="btn" style="background-color: #4472C4; pointer-events: none;"></button>
-                            <label style="font-size: smaller;">Belo Horizonte</label>
+                            <spam id="unidadeId0" style="font-size: smaller;">-</spam>
                         </div>
                     </div>
                     <div class="">
                         <div class="mr-2">
                             <button class="btn" style="background-color: #ED7D31;pointer-events: none;"></button>
-                            <label style="font-size: smaller;">Contagem</label>
+                            <spam id="unidadeId1" style="font-size: smaller;">-</spam>
                         </div>
-                    </div>
-                    <div class="">
-                        <div class="mr-2">
-                            <button class="btn" style="background-color: #A5A5A5; pointer-events: none;"> </button>
-                            <label style="font-size: smaller;">Betim</label>
-                        </div>
-                    </div>                   
+                    </div>              
                 </div>
             </div>
             <div class="col-md">

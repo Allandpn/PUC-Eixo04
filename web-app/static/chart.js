@@ -6,7 +6,7 @@ const ctx3 = document.getElementById('model03');
 const ctx4 = document.getElementById('model04');
 
 
-Chart.defaults.scales.linear.min = 0;
+
 
 //consulta de quantidade de instrumentos e quantidade emprestada por unidade
 (async function () {
@@ -22,63 +22,51 @@ Chart.defaults.scales.linear.min = 0;
     }
     return response.json()
   })
+  const unidadesId = await fetch('http://localhost:3333/api/chart/data11').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
 
   const data = {
     datasets: [
       {
-        label: 'BH - Acervo',
+        label: unidadesId[0].unidade,
         data: dataEmpUnd,
         backgroundColor: "#4472C4",
         parsing: {
-          yAxisKey: "BHorizonte"
+          yAxisKey: unidadesId[0].unidade
         },
         stack: 1
       },
       {
-        label: 'BH - Emprestimo',
+        label: unidadesId[0].unidade,
         data: dataInstUnd,
         backgroundColor: "#4473c496",
         parsing: {
-          yAxisKey: "BHorizonte"
+          yAxisKey: unidadesId[0].unidade
         },
         stack: 1
       },
       {
-        label: 'Contagem - Acervo',
+        label: unidadesId[1].unidade,
         data: dataEmpUnd,
         backgroundColor: "#ED7D31",
         parsing: {
-          yAxisKey: "Contagem"
+          yAxisKey: unidadesId[1].unidade
         },
         stack: 3
       },
       {
-        label: 'Contagem - Emprestimo',
+        label: unidadesId[1].unidade,
         data: dataInstUnd,
         backgroundColor: "#ed7c318e",
         parsing: {
-          yAxisKey: "Contagem"
+          yAxisKey: unidadesId[1].unidade
         },
         stack: 3
       },   
-      {
-        label: 'Betim - Acervo',
-        data: dataEmpUnd,
-        backgroundColor: "#A5A5A5",
-        parsing: {
-          yAxisKey: "Betim"
-        },
-        stack: 2
-      },
-      {
-        label: 'Betim - Emprestimo',
-        data: dataInstUnd,
-        backgroundColor: "#a5a5a583",
-        parsing: {
-          yAxisKey: "Betim"
-        },
-        stack: 2
-      }             
     ]
   }
 
@@ -90,10 +78,22 @@ Chart.defaults.scales.linear.min = 0;
         legend: {
           display: false
         }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        }
       },   
       
     }
   })
+
+  document.getElementById("unidadeId0").textContent = unidadesId[0].unidade
+  document.getElementById("unidadeId1").textContent = unidadesId[1].unidade
+
 })();
 
 
@@ -107,6 +107,7 @@ Chart.defaults.scales.linear.min = 0;
     }
     return response.json()
   })
+  
 
 
    const data = {
@@ -142,27 +143,27 @@ Chart.defaults.scales.linear.min = 0;
     }
     return response.json()
   })
+  const unidadesId = await fetch('http://localhost:3333/api/chart/data11').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
 
- 
+  
   const data = {
     labels: dataMatUnd.map(x => x.ano),
     datasets: [
       {
-        label: 'Belo Horizonte',
-        data: dataMatUnd.map(x=>x.BHorizonte),
+        label: unidadesId[0].unidade,
+        data: dataMatUnd.map(x=>x[unidadesId[0].unidade]),
         backgroundColor: "#4472C4",
         tension: 0.1,
       },
       {
-        label: 'Contagem',
-        data: dataMatUnd.map(x=>x.Betim),
+        label: unidadesId[1].unidade,
+        data: dataMatUnd.map(x=>x[unidadesId[1].unidade]),
         backgroundColor: "#ED7D31",
-        tension: 0.1
-      },
-      {
-        label: 'Betim',
-        data: dataMatUnd.map(x=>x.Contagem),
-        backgroundColor: "#A5A5A5",
         tension: 0.1
       },
     ]
@@ -179,7 +180,10 @@ Chart.defaults.scales.linear.min = 0;
       },
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
         }
       },
     }
@@ -199,14 +203,21 @@ Chart.defaults.scales.linear.min = 0;
     }
     return response.json()
   })
+  const unidadesId = await fetch('http://localhost:3333/api/chart/data11').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
 
  
   const data = {
     labels: dataPrefInstUnd.map(x => x.instrumento),
     datasets: [
       {
-        label: "Belo Horizonte",
-        data: dataPrefInstUnd.map(x=>x.BHorizonte),
+        label: unidadesId[0].unidade,
+        data: dataPrefInstUnd.map(x=>x[unidadesId[0].unidade]),
         backgroundColor: "#4473c43b",
         fill: true,
         borderColor: '#4473c491',
@@ -216,8 +227,8 @@ Chart.defaults.scales.linear.min = 0;
         pointHoverBorderColor: '#4473c491'
       },
       {
-        label: "Betim",
-        data: dataPrefInstUnd.map(x=>x.Betim),
+        label: unidadesId[1].unidade,
+        data: dataPrefInstUnd.map(x=>x[unidadesId[1].unidade]),
         backgroundColor: "#a5a5a54f",        
         fill: true,
         borderColor: '#a5a5a5b4',
@@ -226,20 +237,9 @@ Chart.defaults.scales.linear.min = 0;
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: '#a5a5a5b4'
       },
-      {
-        label: "Contagem",
-        data: dataPrefInstUnd.map(x=>x.Contagem),
-        backgroundColor: "#ed7c3149",        
-        fill: true,
-        borderColor: '#ed7c31ab',
-        pointBackgroundColor: '#ed7c31ab',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: '#ed7c31ab'
-      },
     ]
   }
-  console.log(data)
+ 
 
   const maps = new Chart(ctx4, {
     type: 'radar',
@@ -257,10 +257,82 @@ Chart.defaults.scales.linear.min = 0;
       },
       scales: {
         r: {
-          beginAtZero: true
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
         }
       }
     }
   })
 })();
+
+
+
+
+//preenche quadros superiores do dashboard
+(async function() {
+  //retorna total de alunos
+  const totalAlunos = await fetch('http://localhost:3333/api/chart/data6').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
+  //retorna media de idade
+  const mdIdaAlunos = await fetch('http://localhost:3333/api/chart/data7').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
+  //retorna total de instrumentos
+  const totalInstrumentos = await fetch('http://localhost:3333/api/chart/data8').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
+   //retorna total de turmas
+   const totalTurmas = await fetch('http://localhost:3333/api/chart/data9').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
+  //retorna instrumento mais popular
+  const popInstrumento = await fetch('http://localhost:3333/api/chart/data10').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
+
+
+ 
+  const element1 = document.getElementById("totalAlunosdash")
+  element1.textContent = totalAlunos
+
+  const element2 = document.getElementById("mediaIdadedash")
+  element2.textContent = mdIdaAlunos.x
+
+  const element3 = document.getElementById("totalInstrdash")
+  element3.textContent = totalInstrumentos
+
+  const element4 = document.getElementById("totalTurmasdash")
+  element4.textContent = totalTurmas
+
+  const element5 = document.getElementById("popInstrdash")
+  element5.textContent = popInstrumento
+
+  
+
+
+})();
+
 
