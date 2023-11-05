@@ -76,13 +76,6 @@ chartRoutes.get("/data4", getMatriculasAno.handle)
   
 
 
-//consultas popularidade instrumentos por unidade 
-// const prefInstUnidade = [
-//     { instrumento: "violão", BHorizonte: 12, Betim: 15, Contagem: 6 },
-//     { instrumento: "violino", BHorizonte: 7, Betim: 10, Contagem: 11 },
-//     { instrumento: "saxofone", BHorizonte: 10, Betim: 12, Contagem: 9 },
-//     { instrumento: "flauta", BHorizonte: 13, Betim: 10, Contagem: 5 }
-//     ]
 
 //const getInstrumentoLocalidadeController = new GetInstrumentoLocalidadeController();    
 const getInstMatriculasUnidadeController = new GetInstMatriculasUnidadeController();
@@ -91,8 +84,7 @@ chartRoutes.get("/data5", getInstMatriculasUnidadeController.handle)
 
 
 
-
-//consulta de matriculas por unidade
+//consulta de matriculas
 // const qntAlunos = [
 //     { x: 154 }    
 //     ]
@@ -123,11 +115,24 @@ const getQuantidadeTurmasController = new GetQuantidadeTurmasController();
 chartRoutes.get("/data9", getQuantidadeTurmasController.handle)
 
 
-const popInstrumento = [
-    { x: 14.5 }    
-    ]
+// const popInstrumento = [
+//     { x: 14.5 }    
+//     ]
 const getInstrumentoMaisPopularController = new GetInstrumentoMaisPopularController();
 chartRoutes.get("/data10", getInstrumentoMaisPopularController.handle)
+
+
+
+// TODO
+// retorna unidades e id
+const unidadesId = [
+    {unidade: "Unidade 01 - Barreiro"},
+    {unidade: "Unidade 02 - Floresta"}
+]
+
+chartRoutes.get('/data11', (req, res)=> {
+    res.json(unidadesId)
+})
 
 
 
