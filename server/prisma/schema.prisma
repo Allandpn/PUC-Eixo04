@@ -76,7 +76,7 @@ model Instrumento {
   nomeInstrumento                String
   marcaInstrumento               String
   estadoConservacaoDoInstrumento String
-  isEmprestado                   Boolean?
+  isEmprestado                   Boolean                 @default(false)
   emprestimoInstrumento          EmprestimoInstrumento[]
   unidade                        Unidade                 @relation(fields: [unidadeId], references: [id])
   unidadeId                      Int
@@ -97,10 +97,11 @@ model EmprestimoInstrumento {
 }
 
 model Curso {
-  id                Int                  @id @default(autoincrement())
-  nomeCurso         String               @unique
-  instrumentosCurso TiposDeInstrumento[]
-  turma             Turma[]
+  id                    Int                 @id @default(autoincrement())
+  nomeCurso             String              @unique
+  instrumentosCurso     TiposDeInstrumento? @relation(fields: [instrumentosCursoNome], references: [nomeInstrumento])
+  instrumentosCursoNome String?
+  turma                 Turma[]
   //coordenador       Coordenador          @relation(fields: [coordenadorId], references: [id]) //Fiquei na dúvida, pois as turmas estão ligadas a cursos, não sei se faz sentido ligar coordenador a turmas e também a cursos
   //coordenadorId     Int
 

@@ -13,6 +13,7 @@ export class CreateInstrumentoUseCase {
             nomeInstrumento,
             marcaInstrumento,
             estadoConservacaoDoInstrumento,
+            isEmprestado: false,
             unidade :{
                 connect: {
                     id: unidadeId
