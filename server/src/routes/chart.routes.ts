@@ -98,9 +98,9 @@ res.json(qntAlunos)
 
 
 const getAlunosIdadeMediaController= new GetAlunosIdadeMediaController();
-const mediaIdade = [
-    { x: 14.5 }    
-    ]
+// const mediaIdade = [
+//     { x: 14.5 }    
+//     ]
 chartRoutes.get("/data7", getAlunosIdadeMediaController.handle);
 
 
