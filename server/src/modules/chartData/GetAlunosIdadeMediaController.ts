@@ -29,7 +29,7 @@ export class GetAlunosIdadeMediaController {
             return average;
           }
 
-          const mediaDeIdade = calculateAverage(idades);
+          const mediaDeIdade = calculateAverage(idades).toFixed(1);
           const json = { x : mediaDeIdade}
 
         return res.status(200).json(json);

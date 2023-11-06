@@ -11,6 +11,7 @@ import { GetQuantidadeAlunosController } from '../modules/chartData/GetQuantidad
 import { GetQuantidadeInstrumentosController } from '../modules/chartData/GetQuantidadeInstrumentosController';
 import { GetQuantidadeTurmasController } from '../modules/chartData/GetQuantidadeTurmasController';
 import { GetInstrumentoMaisPopularController } from '../modules/chartData/GetInstrumentoMaisPopularController';
+import { GetUnidadesFormatadasController } from '../modules/chartData/GetUnidadesFormatadasController';
 
 
 
@@ -125,14 +126,13 @@ chartRoutes.get("/data10", getInstrumentoMaisPopularController.handle)
 
 // TODO
 // retorna unidades e id
-const unidadesId = [
-    {unidade: "Unidade 01 - Barreiro"},
-    {unidade: "Unidade 02 - Floresta"}
-]
+// const unidadesId = [
+//     {unidade: "Unidade 01 - Barreiro"},
+//     {unidade: "Unidade 02 - Floresta"}
+// ]
 
-chartRoutes.get('/data11', (req, res)=> {
-    res.json(unidadesId)
-})
+const getUnidadesFormatadasController = new GetUnidadesFormatadasController()
+chartRoutes.get('/data11', getUnidadesFormatadasController.handle)
 
 
 
