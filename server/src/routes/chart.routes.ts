@@ -123,9 +123,9 @@ const getQuantidadeTurmasController = new GetQuantidadeTurmasController();
 chartRoutes.get("/data9", getQuantidadeTurmasController.handle)
 
 
-const popInstrumento = [
-    { x: 14.5 }    
-    ]
+// const popInstrumento = [
+//     { x: 14.5 }    
+//     ]
 const getInstrumentoMaisPopularController = new GetInstrumentoMaisPopularController();
 chartRoutes.get("/data10", getInstrumentoMaisPopularController.handle)
 
