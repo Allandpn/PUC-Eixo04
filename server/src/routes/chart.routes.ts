@@ -124,7 +124,7 @@ chartRoutes.get("/data10", getInstrumentoMaisPopularController.handle)
 
 
 
-// TODO
+
 // retorna unidades e id
 // const unidadesId = [
 //     {unidade: "Unidade 01 - Barreiro"},
@@ -133,6 +133,38 @@ chartRoutes.get("/data10", getInstrumentoMaisPopularController.handle)
 
 const getUnidadesFormatadasController = new GetUnidadesFormatadasController()
 chartRoutes.get('/data11', getUnidadesFormatadasController.handle)
+
+
+
+
+
+//TODO
+// retorna unidades e id
+const turmasDados = [
+    {turma: "Turma de Guitarra - 01", unidade: "Unidade 01 - Barreiro", alunos: 15},
+    {turma: "Turma de Guitarra - 02", unidade: "Unidade 02 - Floresta", alunos: 22},
+    {turma: "Turma de Guitarra - 03", unidade: "Unidade 01 - Barreiro", alunos: 16},
+    {turma: "Turma de Violino - 02", unidade: "Unidade 01 - Barreiro", alunos: 29},
+    {turma: "Turma de Guitarra - 02", unidade: "Unidade 02 - Floresta", alunos: 17},
+    {turma: "Turma de Violino - 01", unidade: "Unidade 01 - Barreiro", alunos: 23},
+    {turma: "Turma de Violino - 01", unidade: "Unidade 02 - Floresta", alunos: 11},   
+    {turma: "Turma de Violão - 01", unidade: "Unidade 02 - Floresta", alunos: 10}
+]
+
+
+chartRoutes.get('/data12', (req,res)=> {
+    res.send(turmasDados)
+})
+
+
+
+
+
+
+
+
+
+
 
 
 
