@@ -4,6 +4,8 @@ const ctx1 = document.getElementById('model01');
 const ctx2 = document.getElementById('model02');
 const ctx3 = document.getElementById('model03');
 const ctx4 = document.getElementById('model04');
+const ctx5 = document.getElementById('model05');
+const ctx6 = document.getElementById('model06');
 
 
 
@@ -157,12 +159,14 @@ const ctx4 = document.getElementById('model04');
       {
         label: unidadesId[0].unidade,
         data: dataMatUnd.map(x=>x[unidadesId[0].unidade]),
+        borderColor: "#4472C4",
         backgroundColor: "#4472C4",
         tension: 0.1,
       },
       {
         label: unidadesId[1].unidade,
         data: dataMatUnd.map(x=>x[unidadesId[1].unidade]),
+        borderColor: "#ED7D31",
         backgroundColor: "#ED7D31",
         tension: 0.1
       },
@@ -266,6 +270,86 @@ const ctx4 = document.getElementById('model04');
     }
   })
 })();
+
+
+//consulta de quantidade de instrumentos e quantidade emprestada por unidade
+(async function () {
+  const dataTurAlun = await fetch('http://localhost:3333/api/chart/data12').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+  const dataInstUnd = await fetch('http://localhost:3333/api/chart/data1').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+  const unidadesId = await fetch('http://localhost:3333/api/chart/data11').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
+    console.log(dataTurAlun.map(x=>{
+      return x.unidade === unidadesId[0].unidade ? x.turma : null
+    }
+      ))
+
+
+
+
+  const data = {
+    labels: dataTurAlun.map(x=> x.turma),
+    datasets: [
+      {
+        label: unidadesId[0].unidade,
+        data: dataTurAlun.map(x=>{
+          return x.unidade === unidadesId[0].unidade ? x.alunos : null
+        }),
+        backgroundColor: "#4472C4",
+      },
+      {
+        label: unidadesId[1].unidade,
+        data: dataTurAlun.map(x=>{
+          return x.unidade === unidadesId[1].unidade ? x.alunos : null
+        }),
+        backgroundColor: "#ED7D31",
+      },
+    ]
+  }
+
+  console.log(data)
+
+  const maps = new Chart(ctx5, {
+    type: 'bar',
+    data: data,
+    options: {
+      plugins: {
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        }
+      },   
+      
+    }
+  })
+
+
+
+
+
+  document.getElementById("unidadeId0").textContent = unidadesId[0].unidade
+  document.getElementById("unidadeId1").textContent = unidadesId[1].unidade
+
+})();
+
 
 
 
