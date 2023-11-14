@@ -141,12 +141,12 @@ chartRoutes.get('/data11', getUnidadesFormatadasController.handle)
 //TODO
 // retorna unidades e id
 const turmasDados = [
-    {turma: "Turma de Guitarra - 01", unidade: "Unidade 01 - Barreiro", alunos: 15},
-    {turma: "Turma de Guitarra - 02", unidade: "Unidade 02 - Floresta", alunos: 22},
-    {turma: "Turma de Guitarra - 03", unidade: "Unidade 01 - Barreiro", alunos: 16},
     {turma: "Turma de Violino - 02", unidade: "Unidade 01 - Barreiro", alunos: 29},
+    {turma: "Turma de Violino - 01", unidade: "Unidade 01 - Barreiro", alunos: 23},    
+    {turma: "Turma de Guitarra - 02", unidade: "Unidade 02 - Floresta", alunos: 22},
     {turma: "Turma de Guitarra - 02", unidade: "Unidade 02 - Floresta", alunos: 17},
-    {turma: "Turma de Violino - 01", unidade: "Unidade 01 - Barreiro", alunos: 23},
+    {turma: "Turma de Guitarra - 03", unidade: "Unidade 01 - Barreiro", alunos: 16},
+    {turma: "Turma de Guitarra - 01", unidade: "Unidade 01 - Barreiro", alunos: 15}, 
     {turma: "Turma de Violino - 01", unidade: "Unidade 02 - Floresta", alunos: 11},   
     {turma: "Turma de Violão - 01", unidade: "Unidade 02 - Floresta", alunos: 10}
 ]
@@ -158,7 +158,78 @@ chartRoutes.get('/data12', (req,res)=> {
 
 
 
+//TODO
 
+
+//consulta de uma unidade
+const idadeTurmas1 = [
+    {idade: 14, quantidade: 35},
+    {idade: 15, quantidade: 22},
+    {idade: 16, quantidade: 18},
+    {idade: 17, quantidade: 11},
+    {idade: 18, quantidade: 9},
+    {idade: 20, quantidade: 8},
+    {idade: 23, quantidade: 7},
+    {idade: 25, quantidade: 4},
+    {idade: 30, quantidade: 2},
+    {idade: 35, quantidade: 1},   
+    ]
+
+    //consulta de uma unidade
+const idadeTurmas2 = [
+    {idade: 14, quantidade: 35},
+    {idade: 15, quantidade: 22},
+    {idade: 16, quantidade: 18},
+    {idade: 17, quantidade: 11},
+    {idade: 18, quantidade: 9},
+    {idade: 20, quantidade: 8},
+    {idade: 23, quantidade: 7},
+    {idade: 25, quantidade: 4},
+    {idade: 30, quantidade: 2},
+    {idade: 35, quantidade: 1},   
+    ]
+
+
+chartRoutes.get('/data13', (req,res)=> {
+    res.send(idadeTurmas1)
+})
+
+chartRoutes.get('/data14', (req,res)=> {
+    res.send(idadeTurmas2)
+})
+
+
+
+
+//retorna instrumentos disponiveis
+const tiposInstrumentos = [
+    {instrumento: "violão"},
+    {instrumento: "violino"},    
+    {instrumento: "saxofone"},
+    {instrumento: "guitarra"},
+    {instrumento: "violoncelo"},
+    {instrumento: "flauta doce"},
+]
+
+
+chartRoutes.get('/data15', (req,res)=> {
+    res.send(tiposInstrumentos)
+})
+
+
+//retorna instrumentos disponiveis
+const estadoInstrumentos = [
+    {instrumento: "violão", estado: "Novo", quantidade: 50},
+    {instrumento: "violino", estado: "Regular", quantidade: 30},    
+    {instrumento: "saxofone", estado: "Pequena avaria", quantidade: 20},
+    {instrumento: "guitarra", estado: "Avaria severa", quantidade: 35},
+    {instrumento: "violoncelo", estado: "Quebrado", quantidade: 10},
+]
+
+
+chartRoutes.get('/data16', (req,res)=> {
+    res.send(estadoInstrumentos)
+})
 
 
 

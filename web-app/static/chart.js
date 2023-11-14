@@ -6,6 +6,7 @@ const ctx3 = document.getElementById('model03');
 const ctx4 = document.getElementById('model04');
 const ctx5 = document.getElementById('model05');
 const ctx6 = document.getElementById('model06');
+const ctx7 = document.getElementById('model07');
 
 
 
@@ -272,15 +273,9 @@ const ctx6 = document.getElementById('model06');
 })();
 
 
-//consulta de quantidade de instrumentos e quantidade emprestada por unidade
+//consulta de quantidade de alunos por turma
 (async function () {
   const dataTurAlun = await fetch('http://localhost:3333/api/chart/data12').then(response => {
-    if (!response.ok) {
-      throw new Error(response.statusText)
-    }
-    return response.json()
-  })
-  const dataInstUnd = await fetch('http://localhost:3333/api/chart/data1').then(response => {
     if (!response.ok) {
       throw new Error(response.statusText)
     }
@@ -293,10 +288,6 @@ const ctx6 = document.getElementById('model06');
     return response.json()
   })
 
-    console.log(dataTurAlun.map(x=>{
-      return x.unidade === unidadesId[0].unidade ? x.turma : null
-    }
-      ))
 
 
 
@@ -305,6 +296,7 @@ const ctx6 = document.getElementById('model06');
     labels: dataTurAlun.map(x=> x.turma),
     datasets: [
       {
+        axis: "y",
         label: unidadesId[0].unidade,
         data: dataTurAlun.map(x=>{
           return x.unidade === unidadesId[0].unidade ? x.alunos : null
@@ -312,6 +304,7 @@ const ctx6 = document.getElementById('model06');
         backgroundColor: "#4472C4",
       },
       {
+        axis: "y",
         label: unidadesId[1].unidade,
         data: dataTurAlun.map(x=>{
           return x.unidade === unidadesId[1].unidade ? x.alunos : null
@@ -321,16 +314,17 @@ const ctx6 = document.getElementById('model06');
     ]
   }
 
-  console.log(data)
+
 
   const maps = new Chart(ctx5, {
     type: 'bar',
     data: data,
     options: {
+      indexAxis: "y",
       plugins: {
       },
       scales: {
-        y: {
+        x: {
           beginAtZero: true,
           ticks: {
             stepSize: 1
@@ -340,16 +334,115 @@ const ctx6 = document.getElementById('model06');
       
     }
   })
-
-
-
-
-
-  document.getElementById("unidadeId0").textContent = unidadesId[0].unidade
-  document.getElementById("unidadeId1").textContent = unidadesId[1].unidade
-
 })();
 
+
+
+//consulta de idade de alunos por
+(async function () {
+  const idadeTurmas1 = await fetch('http://localhost:3333/api/chart/data13').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+  const idadeTurmas2 = await fetch('http://localhost:3333/api/chart/data13').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+  const unidadesId = await fetch('http://localhost:3333/api/chart/data11').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
+
+  const data = {
+    labels: idadeTurmas1.map(x=> x.idade),
+    datasets: [
+      {
+        label: unidadesId[0].unidade,
+        data:  idadeTurmas1.map(x=>x.quantidade),
+        backgroundColor: "#4472C4",
+      },
+      {
+        label: unidadesId[1].unidade,
+        data:  idadeTurmas2.map(x=>x.quantidade),
+        backgroundColor: "#ED7D31",
+      },
+    ]
+  }
+
+  console.log(data)
+
+
+  const maps = new Chart(ctx6, {
+    type: 'bar',
+    data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          type: "linear",
+        }
+      },   
+      
+    }
+  })
+})();
+
+
+
+
+//consulta estado dos instrumentos
+(async function () {
+  const estadoInstrumentos = await fetch('http://localhost:3333/api/chart/data16').then(response => {
+    if (!response.ok) {
+      throw new Error(response.statusText)
+    }
+    return response.json()
+  })
+
+
+  const data = {
+    labels: estadoInstrumentos.map(x=> x.estado),
+    datasets: [
+      {
+        label: "Violão",
+        data:  estadoInstrumentos.map(x=>x.quantidade),
+        backgroundColor:
+        [
+          'rgb(54, 162, 235)',
+          'rgb(75, 192, 192)',
+          'rgb(255, 205, 86)',
+          'rgb(201, 203, 207)',          
+          'rgb(255, 99, 132)',
+          
+        ],
+      },
+    ]
+  }
+
+  console.log(data)
+
+
+  const maps = new Chart(ctx7, {
+    type: 'polarArea',
+    data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          type: "linear",
+        }
+      },   
+      
+    }
+  })
+})();
 
 
 
