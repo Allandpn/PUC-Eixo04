@@ -71,7 +71,8 @@ function PopulateTable(dados) {
     //console.log(!(dados[i].emprestimoInstrumento == "" || undefined || null));
 
     var isEmprestimo = "";
-    if (dados[i].isEmprestado == true) {
+    // O correto é essa validação ser dados[i].isEmprestado == true, porém no bd não foi seguida essa ordem
+    if (!(dados[i].emprestimoInstrumento == "" || undefined || null)) {
       isEmprestimo = "<i class='fa fa-check text-info' aria-hidden='true'></i>";
     } else {
       isEmprestimo = " - ";
