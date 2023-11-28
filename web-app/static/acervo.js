@@ -1,6 +1,9 @@
 import { getInstrumentosComEmprestimos } from "./instrumentosAPI.js";
 import { getAlunos, getAlunoId } from "./alunosAPI.js";
 
+
+
+
 const fetchAlunos = async () => {
   try {
     const alunos = await getAlunos();
@@ -157,7 +160,8 @@ function scriptJS() {
   $(".btn-add-instrumento").click(function (e) {
       e.preventDefault();
       const el = $(this).data('element');
-      $(el).toggle();        
+      $(el).toggle();
+          
   });
 
 
@@ -166,7 +170,11 @@ function scriptJS() {
   $(".open-info-instrumento").click(function (e) {
       e.preventDefault();
       const el = $(this).data('element');
-      $(el).toggle();       
+      $(el).toggle();
+      if($(el).is(':visible')){
+        console.log("visibel")
+        PopulateTableSelect();
+      }           
   });
 
 
@@ -187,6 +195,44 @@ function scriptJS() {
       $(el).toggle();        
   });
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Preenche tabela com o os dados do instrumento selecionado
+function PopulateTableSelect() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
