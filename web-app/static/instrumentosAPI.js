@@ -1,4 +1,4 @@
-import { apiBase } from "./api";
+import { apiBase } from "./api.js";
 
 export const getInstrumentos = async () => {
   try {
@@ -18,6 +18,7 @@ export const getInstrumentosComEmprestimos = async () => {
     if (response.status >= 200 || response.status < 300) {
       return response.data;
     }
+    return response.data;
   } catch (error) {
     console.error("Erro ao buscar instrumentos", error);
     throw error;
