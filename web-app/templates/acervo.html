@@ -93,34 +93,7 @@
                 <button class="btn btn-info ml-auto btn-emp-instrumento" type="button" data-element="#telaEmprestimoInstrumento">Novo Empréstimo</button> 
             </div>
             <div class="row mt-2 tela-wrapper-table" id="tabela-instrumentos-geral">
-                <table class="table table-hover">
-                    <thead class="bg-gray">
-                        <tr>
-                            <th scope="col"><span class="mr-3 ">Cód.</span><a href="#" ><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Instrumento</span><a href="#" ><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Marca</span><a href="#"><i class="fa fa-sm fa-sort text-muted mr-0" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Data Aquisição</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Empréstimo</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Responsável</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Data Empr.</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Info</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>  
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>                            
-                            <td>-</td>
-                            <td>-</td>                              
-                            <td>-</td>                             
-                            <td>-</td>
-                            <td ><i class="fa fa-check text-info" aria-hidden="true"></i></td> 
-                            <td>-</td>
-                            <td>-</td>                          
-                            <td> 
-                                <a href="#" class="open-info-instrumento toogle-hide ml-auto" data-element="#dataInfoInstrumento"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
-                            </td>
-                        </tr>                                                                                               
-                    </tbody>
-                </table>
+                <!--Tabela a ser populado com os instrumentos-->
             </div>                
         </div>
         
@@ -241,7 +214,7 @@
         <div class="background-dark">
         </div>
         <div class="tela-add-instrumento tela-add-item border rounded shadow  p-4 bg-white">
-            <form>
+            <form id="post-Instrumento-Form">
                 <div class="text-center mb-3">
                     <span class="h5 text-info font-weight-bold">Cadastro de Instrumento</span>
                     <button  class="close btn-add-instrumento " data-element="#telaCadastroInstrumento" data-dismiss="tela-add-instrumento" aria-label="Fechar">
@@ -250,35 +223,27 @@
                 </div>
                 <div class="form-group">
                     <label for="nomeInstrumento">Nome do Instrumento</label>
-                <input value="" type="text" class="form-control" id="nomeInstrumento" placeholder="Nome do Instrumento">
+                <input value="" type="text" class="form-control" id="nomeInstrumento" placeholder="Nome do Instrumento" name="nomeInstrumento">
                 </div>
                 <div class="form-group ">
                     <label for="marcaInstrumento">Marca</label>
-                    <input value="" id="marcaInstrumento" type="text" class="form-control" placeholder="marca"/>
+                    <input value="" id="marcaInstrumento" type="text" class="form-control" placeholder="marca" name="marcaInstrumento"/>
                 </div>
                 <div class="form-group">
-                    <label for="dataAquisicao">Data Aquisição</label>
-                    <input value="" id="dataAquisicao" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
-                </div>   
-                <div class="form-group">
-                    <label for="estadoConserv">Estado de Conservação</label>
-                <input value="" type="text" class="form-control" id="estadoConserv" placeholder="estado de conservação">
+                    <label for="estadoConservacaoDoInstrumento">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConservacaoDoInstrumento" name="estadoConservacaoDoInstrumento" placeholder="estado de conservação">
                 </div>
                 <div class="form-group ">
-                    <label for="unidadeAcervo">Unidade do Instrumento</label>
-                    <select class="custom-select" id="unidadeAcervo">
+                    <label for="unidadeId">Unidade do Instrumento</label>
+                    <select class="custom-select" id="unidadeId" name="unidadeId">
                         <option selected disabled>Nome da Unidade</option>
-                        <option value="1">Belo Horizonte</option>
-                        <option value="2">Betim</option>
-                        <option value="3">Contagem</option>
+                        <option value="1">Unidade 01 - Floresta</option>
+                        <option value="2">Unidade 02 - Barreiro</option>
+                        <option value="3">Unidade 03 - California</option>
                     </select>
                 </div>                                   
-                <div class="form-group">
-                    <label for="anotacoesInstrumento">Anotações</label>
-                    <textarea class="form-control bg-white" id="anotacoesInstrumento" rows="3" ></textarea>
-                </div>  
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary ">Salvar</button>
+                    <button type="submit" class="btn btn-primary" id="post-intrumento-btn">Salvar</button>
                     <button type="button" class="btn btn-secondary ml-4  btn-add-instrumento" data-element="#telaCadastroInstrumento">Cancelar</button>
                 </div>
             </form>

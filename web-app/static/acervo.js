@@ -1,8 +1,8 @@
-import { getInstrumentosComEmprestimos } from "./instrumentosAPI.js";
+import {
+  getInstrumentosComEmprestimos,
+  postInstrumentoApi,
+} from "./instrumentosAPI.js";
 import { getAlunos, getAlunoId } from "./alunosAPI.js";
-
-
-
 
 const fetchAlunos = async () => {
   try {
@@ -49,23 +49,17 @@ async function GetDataAndPopulateTable() {
   }
 }
 
-
 async function InserDataPageHtml() {
   try {
-    await GetDataAndPopulateTable();;
-    
+    await GetDataAndPopulateTable();
+
     scriptJS();
   } catch (error) {
     console.error("Error get data and populate table", error);
   }
 }
 
-
 InserDataPageHtml();
-
-
-
-
 
 function PopulateTable(dados) {
   var tabela = document.querySelector("#tabela-instrumentos-geral");
@@ -150,150 +144,65 @@ function PopulateTable(dados) {
   tabela.innerHTML = registro;
 }
 
-
-
-
 // ----------- TELA INSTRUMENTO --------------
 
 // exibe modal com cadastro instrumento
 function scriptJS() {
   $(".btn-add-instrumento").click(function (e) {
-      e.preventDefault();
-      const el = $(this).data('element');
-      $(el).toggle();
-          
+    e.preventDefault();
+    const el = $(this).data("element");
+    $(el).toggle();
   });
 
-
-
-// exibe tabela com informacoes do membro da equipe selecionado
+  // exibe tabela com informacoes do membro da equipe selecionado
   $(".open-info-instrumento").click(function (e) {
-      e.preventDefault();
-      const el = $(this).data('element');
-      $(el).toggle();
-      if($(el).is(':visible')){
-        console.log("visibel")
-        PopulateTableSelect();
-      }           
+    e.preventDefault();
+    const el = $(this).data("element");
+    $(el).toggle();
+    if ($(el).is(":visible")) {
+      console.log("visibel");
+      PopulateTableSelect();
+    }
   });
 
-
-
-// exibe modal com cadastro emprestimo
+  // exibe modal com cadastro emprestimo
   $(".btn-emp-instrumento").click(function (e) {
-      e.preventDefault();
-      const el = $(this).data('element');
-      $(el).toggle();        
+    e.preventDefault();
+    const el = $(this).data("element");
+    $(el).toggle();
   });
 
-
-
-// exibe modal com devolucao instrumento
+  // exibe modal com devolucao instrumento
   $(".btn-dev-instrumento").click(function (e) {
-      e.preventDefault();
-      const el = $(this).data('element');
-      $(el).toggle();        
+    e.preventDefault();
+    const el = $(this).data("element");
+    $(el).toggle();
   });
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Preenche tabela com o os dados do instrumento selecionado
-function PopulateTableSelect() {
-
 }
 
+//Função de adicionar instrumento
+//Adiciona função ao submit do form
+document
+  .getElementById("post-Instrumento-Form")
+  .addEventListener("submit", async function (e) {
+    //e.preventDefault();
 
+    const formData = new FormData(e.target);
 
+    // Convert FormData to a JSON object
+    const formDataJSON = {};
+    formData.forEach((value, key) => {
+      formDataJSON[key] = value;
+    });
 
+    formDataJSON.unidadeId = Number(formDataJSON.unidadeId);
 
+    //console.log(formDataJSON);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function populaTabela() {
-  // /*html*/
-  // tabela = `<table class="table table-hover">
-  // <thead class="bg-gray">
-  //     <tr>
-  //         <th scope="col"><span class="mr-3 ">Cód.</span><a href="#" ><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-  //         <th scope="col"><span class="mr-3 ">Instrumento</span><a href="#" ><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-  //         <th scope="col"><span class="mr-3 ">Marca</span><a href="#"><i class="fa fa-sm fa-sort text-muted mr-0" aria-hidden="true"></i></a></th>
-  //         <th scope="col"><span class="mr-3 ">Data Aquisição</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-  //         <th scope="col"><span class="mr-3 ">Empréstimo</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-  //         <th scope="col"><span class="mr-3 ">Responsável</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-  //         <th scope="col"><span class="mr-3 ">Data Empr.</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-  //         <th scope="col"><span class="mr-3 ">Info</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-  //     </tr>
-  // </thead>
-  // <tbody>`
-  // /*html*/
-  // tabela += `         <tr>
-  //                         <td>vlo01</td>
-  //                         <td>Violão</td>
-  //                         <td>Serenata</td>
-  //                         <td>12/05/21</td>
-  //                         <td ><i class="fa fa-check text-info" aria-hidden="true"></i></td>
-  //                         <td>Leide Nunes</td>
-  //                         <td>12/05/22</td>
-  //                         <td>
-  //                             <a href="#" class="open-info-aluno toogle-hide ml-auto" data-element="#dataInfoInstrumento"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>
-  //                         </td>
-  //                     </tr>
-  //                     <tr>
-  //                         <td>vln01</td>
-  //                         <td>Violino</td>
-  //                         <td>Serenata</td>
-  //                         <td>12/05/22</td>
-  //                         <td>-</td>
-  //                         <td>-</td>
-  //                         <td>-</td>
-  //                         <td>
-  //                             <a href="#" class="open-info-aluno toogle-hide ml-auto" data-element="#dataInfoInstrumento"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>
-  //                         </td>
-  //                     </tr>
-  //                     <tr>
-  //                         <td>sxf01</td>
-  //                         <td>Saxofone</td>
-  //                         <td>Serenata</td>
-  //                         <td>12/05/23</td>
-  //                         <td><i class="fa fa-check text-info" aria-hidden="true"></i></td>
-  //                         <td>Caique Brito</td>
-  //                         <td>12/05/22</td>
-  //                         <td>
-  //                             <a href="#" class="open-info-instrumento toogle-hide ml-auto" data-element="#dataInfoInstrumento"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>
-  //                         </td>
-  //                     </tr>
-  //                 </tbody>
-  //             </table>`
-}
+    try {
+      const responseData = await postInstrumentoApi(formDataJSON);
+      console.log("Response: ", responseData);
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  });
