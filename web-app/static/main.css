@@ -88,8 +88,6 @@ html, body{
 
 /*Define tela para cadastro comum a todos*/
 .tela-wrapper-table{
-   z-index: 1100;   
-   max-height: inherit;
    overflow-y: auto;
    position: relative;
    height: 100%;

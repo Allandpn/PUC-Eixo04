@@ -146,14 +146,8 @@ function PopulateTable(dados) {
 
 // ----------- TELA INSTRUMENTO --------------
 
-// exibe modal com cadastro instrumento
-function scriptJS() {
-  $(".btn-add-instrumento").click(function (e) {
-    e.preventDefault();
-    const el = $(this).data("element");
-    $(el).toggle();
-  });
 
+function scriptJS() {
   // exibe tabela com informacoes do membro da equipe selecionado
   $(".open-info-instrumento").click(function (e) {
     e.preventDefault();
@@ -163,14 +157,7 @@ function scriptJS() {
       console.log("visibel");
       PopulateTableSelect();
     }
-  });
-
-  // exibe modal com cadastro emprestimo
-  $(".btn-emp-instrumento").click(function (e) {
-    e.preventDefault();
-    const el = $(this).data("element");
-    $(el).toggle();
-  });
+  });  
 
   // exibe modal com devolucao instrumento
   $(".btn-dev-instrumento").click(function (e) {
@@ -179,6 +166,9 @@ function scriptJS() {
     $(el).toggle();
   });
 }
+
+
+
 
 //Função de adicionar instrumento
 //Adiciona função ao submit do form
