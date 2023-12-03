@@ -269,37 +269,28 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <label for="">Código:  </label>
-                    <select class="custom-select codigoInstrumento" id="codigoInstrumento-s" >
-                        <option value="1">vln01</option>
-                        <option value="2">vlo01</option>
-                        <option value="3">sxf01</option>
+                    <label for="codigoInstrumento-s">Código:  </label>
+                    <select class="custom-select codigoInstrumento" id="codigoInstrumento-s">
+                        
                     </select>
                 </div>                 
                 <div class="form-group">
-                    <label for="nomeInstrumento">Nome do Instrumento</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeInstrumento" placeholder="Nome do Instrumento" disabled>
+                    <label for="nomeInstrumentoEmprestimo">Nome do Instrumento</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeInstrumentoEmprestimo" placeholder="Nome do Instrumento" disabled>
                 </div>
                 <div class="form-group ">
-                    <label for="marcaInstrumento">Marca</label>
-                    <input value="" id="marcaInstrumento" type="text" class="form-control bg-white" placeholder="marca" disabled>
+                    <label for="marcaInstrumentoEmprestimo">Marca</label>
+                    <input value="" id="marcaInstrumentoEmprestimo" type="text" class="form-control bg-white" placeholder="marca" disabled>
+                </div>
+                <div class="form-group ">
+                    <label for="dataInstrumentoEmprestimo">Data Empréstimo</label>
+                    <input value="" id="dataInstrumentoEmprestimo" type="text" class="form-control bg-white" placeholder="marca" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="dataEmprestimo">Data Empréstimo</label>
-                    <input value="" id="dataEmprestimo" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
-                </div>
-                <div class="form-group">
-                    <label for="nomeResponsavel">Nome do Responsável</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeResponsavel" placeholder="Nome do Responsável">
-                </div>   
-                <div class="form-group">
-                    <label for="estadoConserv">Estado de Conservação</label>
-                <input value="" type="text" class="form-control" id="estadoConserv" placeholder="estado de conservação">
-                </div>                       
-                <div class="form-group">
-                    <label for="anotacoesInstrumento">Anotações</label>
-                    <textarea class="form-control bg-white" id="anotacoesInstrumento" rows="1"></textarea>
-                </div>  
+                    <label for="estadoConservEmprestimo">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConservEmprestimo" placeholder="estado de conservação">
+                </div>                 
+ 
                 <div class="text-center mt-3">
                     <button type="submit" class="btn btn-primary ">Salvar</button>
                     <button type="button" class="btn btn-secondary ml-4  btn-emp-instrumento" data-element="#telaEmprestimoInstrumento">Cancelar</button>
