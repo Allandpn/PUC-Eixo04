@@ -206,14 +206,14 @@ document
 
 //Emprestimo instrumento - funcao de popular valores ao alterar indice
 
-document.addEventListener("DOMContentLoaded", function () {
+
   document
-    .getElementById("codigoInstrumento-s")
+    .querySelector(".codigoInstrumento")
     .addEventListener("change", updateFieldInstrumentos);
-});
+
 
 function updateFieldInstrumentos() {
-  console.log(dataInstrumentosComEmprestimos);
+ 
 
   let dados = dataInstrumentosComEmprestimos;
 
