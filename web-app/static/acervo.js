@@ -95,7 +95,7 @@ function PopulateTable(dados) {
 
     var isEmprestimo = "";
     // O correto é essa validação ser dados[i].isEmprestado == true, porém no bd não foi seguida essa ordem
-    if (!(dados[i].emprestimoInstrumento == "" || undefined || null)) {
+    if (dados[i].isEmprestado == true) {
       isEmprestimo = "<i class='fa fa-check text-info' aria-hidden='true'></i>";
     } else {
       isEmprestimo = " - ";
@@ -192,8 +192,6 @@ document
 
     formDataJSON.unidadeId = Number(formDataJSON.unidadeId);
 
-    //console.log(formDataJSON);
-
     try {
       const responseData = await postInstrumentoApi(formDataJSON);
       console.log("Response: ", responseData);
@@ -202,24 +200,34 @@ document
     }
   });
 
+//Adiciona função de criar empréstimos ao botão salvar
+document
+  .getElementById("post-instrumento-emprestimo")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    // Convert FormData to a JSON object
+    const formDataJSON = {};
+    formData.forEach((value, key) => {
+      formDataJSON[key] = value;
+    });
+
+    console.log(formDataJSON);
+  });
+
 //-------TELA DE EMPRÉSTIMOS------
 
 //Emprestimo instrumento - funcao de popular valores ao alterar indice
 
-
-  document
-    .querySelector(".codigoInstrumento")
-    .addEventListener("change", updateFieldInstrumentos);
-
+document
+  .querySelector(".codigoInstrumento")
+  .addEventListener("change", updateFieldInstrumentos);
 
 function updateFieldInstrumentos() {
- 
-
   let dados = dataInstrumentosComEmprestimos;
 
   var idInstrumento = document.getElementById("codigoInstrumento-s").value;
-  var counter = 0;
-  counter++;
 
   //popula os dados dos campos conforme o select é alterado
   document.getElementById("nomeInstrumentoEmprestimo").value =
@@ -227,28 +235,32 @@ function updateFieldInstrumentos() {
   document.getElementById("marcaInstrumentoEmprestimo").value =
     dados[idInstrumento - 1].marcaInstrumento;
 
-  const dataInicioEmprestimoString =
-    dados[idInstrumento - 1].emprestimoInstrumento[
-      dados[idInstrumento - 1].emprestimoInstrumento.length - 1
-    ].dataInicialEmprestimo;
-  //console.log(dataInicioEmprestimoString);
-  const dataInicioEmprestimoObjeto = new Date(dataInicioEmprestimoString);
-  //console.log(dataInicioEmprestimoObjeto);
-  const dataInicioEmprestimoFormatada =
-    dataInicioEmprestimoObjeto.toLocaleDateString("pt-br", {
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-    });
+  //popula campo de data
+  var dataInicioEmprestimoString = "";
+  var dataInicioEmprestimoFormatada = " - ";
+
+  if (dados[idInstrumento - 1].emprestimoInstrumento.length > 0) {
+    dataInicioEmprestimoString =
+      dados[idInstrumento - 1].emprestimoInstrumento[
+        dados[idInstrumento - 1].emprestimoInstrumento.length - 1
+      ].dataInicialEmprestimo;
+    const dataInicioEmprestimoObjeto = new Date(dataInicioEmprestimoString);
+    dataInicioEmprestimoFormatada =
+      dataInicioEmprestimoObjeto.toLocaleDateString("pt-br", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+      });
+  } else {
+    dataInicioEmprestimoFormatada = " - ";
+  }
 
   document.getElementById("dataInstrumentoEmprestimo").value =
     dataInicioEmprestimoFormatada;
+
+  //popula campo de estado de conservação
   document.getElementById("estadoConservEmprestimo").value =
     dados[idInstrumento - 1].estadoConservacaoDoInstrumento;
-
-  //document.getElementById("nomeInstrumentoEmprestimo").value = "testes";
-
-  console.log(counter);
 }
 
 function listaIdInstrumentos(dados) {
