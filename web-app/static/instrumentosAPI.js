@@ -46,7 +46,7 @@ export const postInstrumentoApi = async (formData) => {
 export const postEmprestimoIntrumentoApi = async (formData) => {
   try {
     console.log(formData);
-    const response = await apiBase.patch("api/instrumento", formData);
+    const response = await apiBase.post("api/emprestimo", formData);
     if (response.status >= 200 || response.status < 300) {
       return response.data;
     } else {

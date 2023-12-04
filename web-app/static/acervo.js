@@ -1,6 +1,7 @@
 import {
   getInstrumentosComEmprestimos,
   postInstrumentoApi,
+  postEmprestimoIntrumentoApi,
 } from "./instrumentosAPI.js";
 import { getAlunos, getAlunoId } from "./alunosAPI.js";
 
@@ -205,15 +206,27 @@ document
   .getElementById("post-instrumento-emprestimo")
   .addEventListener("submit", async function (e) {
     e.preventDefault();
-    const formData = new FormData(e.target);
 
     // Convert FormData to a JSON object
     const formDataJSON = {};
-    formData.forEach((value, key) => {
-      formDataJSON[key] = value;
-    });
+    formDataJSON.alunoId = document.getElementById(
+      "matriculaUsuarioEmprestimo"
+    ).value;
+    formDataJSON.instrumentoId = document.getElementById(
+      "codigoInstrumento-s"
+    ).value;
 
-    console.log(formDataJSON);
+    //Parse string para int
+    formDataJSON.alunoId = Number(formDataJSON.alunoId);
+    formDataJSON.instrumentoId = Number(formDataJSON.instrumentoId);
+    //console.log(formDataJSON);
+
+    try {
+      const responseData = await postEmprestimoIntrumentoApi(formDataJSON);
+      console.log("Response: ", responseData);
+    } catch (error) {
+      console.log("Error: ", error);
+    }
   });
 
 //-------TELA DE EMPRÉSTIMOS------
