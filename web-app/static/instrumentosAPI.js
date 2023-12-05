@@ -12,6 +12,18 @@ export const getInstrumentos = async () => {
   }
 };
 
+export const getInstrumentoId = async (id) => {
+  try {
+    const response = await apiBase.get(`api/instrumento/${id}`);
+    if (response.status >= 200 || response.status < 300) {
+      return response.data;
+    }
+  } catch (error) {
+    console.error("Erro ao buscar instrumento", error);
+    throw error;
+  }
+};
+
 export const getInstrumentosComEmprestimos = async () => {
   try {
     const response = await apiBase.get("api/instrumento/emprestimo");
@@ -45,13 +57,22 @@ export const postInstrumentoApi = async (formData) => {
 
 export const postEmprestimoIntrumentoApi = async (formData) => {
   try {
-    console.log(formData);
-    const response = await apiBase.post("api/emprestimo", formData);
-    if (response.status >= 200 || response.status < 300) {
-      return response.data;
+    //console.log(formData.instrumentoId);
+    //console.log(formData[0].isEmprestado);Number(formData.instrumentoId)
+    var instrumento = await getInstrumentoId(Number(formData.instrumentoId));
+
+    console.log(instrumento);
+
+    if (!instrumento.isEmprestado) {
+      const response = await apiBase.post("api/emprestimo", formData);
+      if (response.status >= 200 || response.status < 300) {
+        return response.data;
+      } else {
+        console.log("Erro de status, valor retornado acima de 300");
+        return response.data;
+      }
     } else {
-      console.log("Erro de status, valor retornado acima de 300");
-      return response.data;
+      return -1;
     }
   } catch (error) {
     console.error("Erro ao criar empréstimo: ", error);

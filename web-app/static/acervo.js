@@ -4,6 +4,7 @@ import {
   postEmprestimoIntrumentoApi,
 } from "./instrumentosAPI.js";
 import { getAlunos, getAlunoId } from "./alunosAPI.js";
+import { getEmprestimoIdInstrumento } from "./emprestimosAPI.js";
 
 const fetchAlunos = async () => {
   try {
@@ -140,7 +141,7 @@ function PopulateTable(dados) {
                 <td>${dataEmp}</td>
                 <td>${alunoEmp}</td>                          
                 <td> 
-                    <a href="#" class="open-info-instrumento toogle-hide ml-auto" data-element="#dataInfoInstrumento" value="${i.id}"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
+                    <a href="#" class="open-info-instrumento toogle-hide ml-auto" data-element="#dataInfoInstrumento" value="${dados[i].id}"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
                 </td>
             </tr>
             `;

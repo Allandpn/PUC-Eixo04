@@ -7,7 +7,7 @@ export const getAlunoId = async (id) => {
       return response.data;
     }
   } catch (error) {
-    console.error("Erro ao buscar instrumentos", error);
+    console.error("Erro ao buscar aluno", error);
     throw error;
   }
 };
@@ -19,7 +19,7 @@ export const getAlunos = async () => {
       return response.data;
     }
   } catch (error) {
-    console.error("Erro ao buscar instrumentos", error);
+    console.error("Erro ao buscar alunos", error);
     throw error;
   }
 };
