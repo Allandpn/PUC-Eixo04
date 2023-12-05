@@ -7,6 +7,7 @@ import { getAlunos, getAlunoId } from "./alunosAPI.js";
 import {
   getEmprestimoIdInstrumento,
   getEmprestimos,
+  patchDevolverEmprestimo,
 } from "./emprestimosAPI.js";
 import { getUnidades } from "./unidadesAPI.js";
 

@@ -23,3 +23,19 @@ export const getEmprestimos = async () => {
     throw error;
   }
 };
+
+export const patchDevolverEmprestimo = async (formData) => {
+  try {
+    console.log(formData);
+    const response = await apiBase.patch("api/emprestimo", formData);
+    if (response.status >= 200 || response.status < 300) {
+      return response.data;
+    } else {
+      console.log("Erro de status, valor retornado acima de 300");
+      return response.data;
+    }
+  } catch (error) {
+    console.error("Erro ao devolver instrumento", error);
+    throw error;
+  }
+};
