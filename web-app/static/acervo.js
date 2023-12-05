@@ -163,8 +163,9 @@ function scriptJS() {
     const el = $(this).data("element");
     $(el).toggle();
     if ($(el).is(":visible")) {
-      console.log("visibel");
-      PopulateTableSelect();
+      var td = e.target.parentNode.parentNode.parentNode;
+      var id = td.children[0].textContent
+      PopulateTableSelect(id);
     }
   });
 
@@ -175,6 +176,46 @@ function scriptJS() {
     $(el).toggle();
   });
 }
+
+
+
+// Popula tabela com os dados do instrumento selecionado
+function PopulateTableSelect(id){
+  var dadosinstrumento
+  dataInstrumentosComEmprestimos.forEach(e => {
+    if (e.id == id) {
+      dadosinstrumento = e
+    }
+  });
+  console.log(dadosinstrumento)
+  document.getElementById("codigoInstrumento").value = dadosinstrumento.id
+  document.getElementById("nomeInstrumento").value = dadosinstrumento.nomeInstrumento
+  document.getElementById("marcaInstrumento").value = dadosinstrumento.marcaInstrumento
+  document.getElementById("estadoConserv-e").value = dadosinstrumento.estadoConservacaoDoInstrumento
+
+  var emprestimos = dadosinstrumento.emprestimoInstrumento
+  var tabela = document.querySelector(".tabela-instrumento-historico");
+  var registro = ""
+
+  emprestimos.forEach(e => {
+    registro +=     
+            `
+            <tr>                            
+                <td>${e.dataInicialEmprestimo}</td>
+                <td> - </td>                          
+                <td>${e.dataFinalEmprestimo}</td>
+                <td> - </td> 
+            </tr>
+            `;    
+  });
+
+  tabela.innerHTML = registro;
+
+  
+
+}
+
+
 
 //Função de adicionar instrumento
 //Adiciona função ao submit do form
