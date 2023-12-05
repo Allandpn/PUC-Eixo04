@@ -4,7 +4,11 @@ import {
   postEmprestimoIntrumentoApi,
 } from "./instrumentosAPI.js";
 import { getAlunos, getAlunoId } from "./alunosAPI.js";
-import { getEmprestimoIdInstrumento } from "./emprestimosAPI.js";
+import {
+  getEmprestimoIdInstrumento,
+  getEmprestimos,
+} from "./emprestimosAPI.js";
+import { getUnidades } from "./unidadesAPI.js";
 
 const fetchAlunos = async () => {
   try {
@@ -31,26 +35,35 @@ function retornaNomeAluno(id) {
 const fetchData = async () => {
   try {
     const instrumentosComEmprestimos = await getInstrumentosComEmprestimos();
+    const emprestimos = await getEmprestimos();
+    const alunos = await getAlunos();
+    const unidades = await getUnidades();
     //console.log(JSON.stringify(instrumentosComEmprestimos));
-    return instrumentosComEmprestimos;
+    return [instrumentosComEmprestimos, emprestimos, alunos, unidades];
   } catch (error) {
     console.error("Error fetching instrumentos", error);
   }
 };
 
 var dataInstrumentosComEmprestimos = {};
+var emprestimos = {};
+var alunos = {};
+var unidades = {};
 
 async function GetDataAndPopulateTable() {
   try {
-    const result = await fetchData();
+    const [result, getEmprestimos, getAlunos, getUnidades] = await fetchData();
     //console.log(result);
     //console.log(result[0].emprestimoInstrumento);
 
     //console.log(result[0].emprestimoInstrumento.length);
 
     //console.log(dataInstrumentosComEmprestimos);
+    unidades = getUnidades;
+    alunos = getAlunos;
+    emprestimos = getEmprestimos;
     dataInstrumentosComEmprestimos = result;
-    PopulateTable(result);
+    PopulateTable(result, unidades);
     listaIdInstrumentos(result);
     updateFieldInstrumentos(result);
   } catch (error) {
@@ -72,7 +85,7 @@ InserDataPageHtml();
 
 // ----------- TELA INSTRUMENTO --------------
 
-function PopulateTable(dados) {
+function PopulateTable(dados, unidades) {
   var tabela = document.querySelector("#tabela-instrumentos-geral");
 
   var registro =
@@ -134,14 +147,20 @@ function PopulateTable(dados) {
       `
             <tr>                            
                 <td>${dados[i].id}</td>
-                <td>${dados[i].nomeInstrumento}</td>                              
-                <td>${dados[i].marcaInstrumento}</td>                             
+                <td>${
+                  dados[i].nomeInstrumento
+                }</td>                              
+                <td>${
+                  dados[i].marcaInstrumento
+                }</td>                             
                 <td>${isEmprestimo}</td>
-                <td>${dados[i].unidadeId}</td> 
+                <td>${unidades[dados[i].unidadeId - 1].nome}</td> 
                 <td>${dataEmp}</td>
                 <td>${alunoEmp}</td>                          
                 <td> 
-                    <a href="#" class="open-info-instrumento toogle-hide ml-auto" data-element="#dataInfoInstrumento" value="${dados[i].id}"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
+                    <a href="#" class="open-info-instrumento toogle-hide ml-auto" data-element="#dataInfoInstrumento" value="${
+                      dados[i].id
+                    }"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
                 </td>
             </tr>
             `;
@@ -165,7 +184,7 @@ function scriptJS() {
     $(el).toggle();
     if ($(el).is(":visible")) {
       var td = e.target.parentNode.parentNode.parentNode;
-      var id = td.children[0].textContent
+      var id = td.children[0].textContent;
       PopulateTableSelect(id);
     }
   });
@@ -178,45 +197,42 @@ function scriptJS() {
   });
 }
 
-
-
 // Popula tabela com os dados do instrumento selecionado
-function PopulateTableSelect(id){
-  var dadosinstrumento
-  dataInstrumentosComEmprestimos.forEach(e => {
+function PopulateTableSelect(id) {
+  var dadosinstrumento;
+  dataInstrumentosComEmprestimos.forEach((e) => {
     if (e.id == id) {
-      dadosinstrumento = e
+      dadosinstrumento = e;
     }
   });
-  console.log(dadosinstrumento)
-  document.getElementById("codigoInstrumento").value = dadosinstrumento.id
-  document.getElementById("nomeInstrumento").value = dadosinstrumento.nomeInstrumento
-  document.getElementById("marcaInstrumento").value = dadosinstrumento.marcaInstrumento
-  document.getElementById("estadoConserv-e").value = dadosinstrumento.estadoConservacaoDoInstrumento
+  console.log(dadosinstrumento);
+  document.getElementById("codigoInstrumento").value = dadosinstrumento.id;
+  document.getElementById("nomeInstrumento").value =
+    dadosinstrumento.nomeInstrumento;
+  document.getElementById("marcaInstrumento").value =
+    dadosinstrumento.marcaInstrumento;
+  document.getElementById("estadoConserv-e").value =
+    dadosinstrumento.estadoConservacaoDoInstrumento;
+  document.getElementById("unidadeAcervo-e").value =
+    unidades[dadosinstrumento.unidadeId - 1].nome;
 
-  var emprestimos = dadosinstrumento.emprestimoInstrumento
+  var emprestimos = dadosinstrumento.emprestimoInstrumento;
   var tabela = document.querySelector(".tabela-instrumento-historico");
-  var registro = ""
+  var registro = "";
 
-  emprestimos.forEach(e => {
-    registro +=     
-            `
+  emprestimos.forEach((e) => {
+    registro += `
             <tr>                            
                 <td>${e.dataInicialEmprestimo}</td>
                 <td> - </td>                          
                 <td>${e.dataFinalEmprestimo}</td>
                 <td> - </td> 
             </tr>
-            `;    
+            `;
   });
 
   tabela.innerHTML = registro;
-
-  
-
 }
-
-
 
 //Função de adicionar instrumento
 //Adiciona função ao submit do form
