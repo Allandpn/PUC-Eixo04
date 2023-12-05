@@ -123,10 +123,17 @@ function PopulateTable(dados, unidades) {
       //     dados[i].emprestimoInstrumento.length - 1
       //   ].dataInicialEmprestimo
       // );
-      dataEmp =
+      var dataString =
         dados[i].emprestimoInstrumento[
           dados[i].emprestimoInstrumento.length - 1
         ].dataInicialEmprestimo;
+
+      var dataObjeto = new Date(dataString);
+      dataEmp = dataObjeto.toLocaleDateString("pt-br", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+      });
     } else {
       dataEmp = " - ";
     }
