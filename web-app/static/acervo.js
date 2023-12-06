@@ -20,8 +20,6 @@ const fetchAlunos = async () => {
     console.error("Error fetching alunos", error);
   }
 };
-//Popula variável com nome de alunos
-var alunos = await fetchAlunos();
 
 //Retorna o nome do aluno com base na variável global que armazena os alunos
 function retornaNomeAluno(id) {

@@ -1,8 +1,6 @@
 import { prisma } from "../../../../prisma/client";
 
 
-
-
 export class GetTurmaUseCase {
 
     async execute(): Promise<any>{
