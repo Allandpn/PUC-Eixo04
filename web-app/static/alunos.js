@@ -11,31 +11,64 @@ import {
 } from "./emprestimosAPI.js";
 import { getUnidades } from "./unidadesAPI.js";
 import { getTurmas, postCriarTurmaApi } from "./turmaAPI.js";
-
-const fetchData = async () => {
-  try {
-    const turmas = getTurmas();
-    const instrumentosComEmprestimos = await getInstrumentosComEmprestimos();
-    const emprestimos = await getEmprestimos();
-    const alunos = await getAlunos();
-    const unidades = await getUnidades();
-    //console.log(JSON.stringify(instrumentosComEmprestimos));
-    return [instrumentosComEmprestimos, emprestimos, alunos, unidades, turmas];
-  } catch (error) {
-    console.error("Error fetching instrumentos", error);
-  }
-};
+import { getCursos } from "./cursosAPI.js";
 
 var dataInstrumentosComEmprestimos = {};
 var emprestimos = {};
 var alunos = {};
 var unidades = {};
 var turmas = {};
+var cursos = {};
+
+const fetchData = async () => {
+  try {
+    let turmasFetch;
+    getTurmas()
+      .then((data) => {
+        turmasFetch = data;
+        //console.log(turmasFetch);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+    let cursosFetch;
+    getCursos()
+      .then((data) => {
+        cursosFetch = data;
+        //console.log(turmasFetch);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    const instrumentosComEmprestimos = await getInstrumentosComEmprestimos();
+    const emprestimos = await getEmprestimos();
+    const alunos = await getAlunos();
+    const unidades = await getUnidades();
+    //console.log(JSON.stringify(instrumentosComEmprestimos));
+    return [
+      instrumentosComEmprestimos,
+      emprestimos,
+      alunos,
+      unidades,
+      turmasFetch,
+      cursosFetch,
+    ];
+  } catch (error) {
+    console.error("Error fetching instrumentos", error);
+  }
+};
 
 async function GetDataAndPopulateTable() {
   try {
-    const [result, getEmprestimos, getAlunos, getUnidades, getTurmas] =
-      await fetchData();
+    const [
+      result,
+      getEmprestimos,
+      getAlunos,
+      getUnidades,
+      getTurmas,
+      getCursos,
+    ] = await fetchData();
     //console.log(result);
     //console.log(result[0].emprestimoInstrumento);
 
@@ -46,9 +79,12 @@ async function GetDataAndPopulateTable() {
     alunos = getAlunos;
     emprestimos = getEmprestimos;
     turmas = getTurmas;
+    cursos = getCursos;
+    //console.log(turmas);
+    //await mapeiaPromiseTurmas(turmasPromise);
     dataInstrumentosComEmprestimos = result;
 
-    populaTableAlunos(alunos, turmas);
+    populaTableAlunos(alunos, turmas, cursos);
   } catch (error) {
     console.error("Error get data and populate table", error);
   }
@@ -64,10 +100,38 @@ async function InserDataPageHtml() {
   }
 }
 
+async function mapeiaPromiseTurmas(turmasPromise) {
+  var turmasValores;
+  turmasPromise
+    .then((result) => {
+      //console.log(result);
+
+      turmasValores = result.map((item) => {
+        return {
+          id: item.id,
+          nroAlunos: item.nroAlunos,
+          nome: item.nome,
+          isAtiva: item.isAtiva,
+          horario: item.horario,
+          unidadeId: item.unidadeId,
+        };
+      });
+      getValue(turmas, turmasValores);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+function getValue(variable, value) {
+  return (variable = value);
+}
+
 InserDataPageHtml();
 
-function populaTableAlunos(alunos, turmas) {
+function populaTableAlunos(alunos, turmas, cursos) {
   var tabela = document.querySelector("#table-alunos");
+  console.log(cursos);
 
   var registro =
     /*html*/
@@ -87,17 +151,51 @@ function populaTableAlunos(alunos, turmas) {
 
   for (let i in alunos) {
     //apresentação de turma do aluno ou valor vazio " - "
+    var turmaAluno;
+    var instrumentoAluno;
+    //console.log(alunos[i].turmaId);
+
+    //popula turma do aluno e instrumento da turma
+    if (alunos[i].turmaId !== null || undefined || "") {
+      turmaAluno = turmas[alunos[i].turmaId - 1].nome;
+      instrumentoAluno =
+        cursos[turmas[alunos[i].turmaId - 1].cursoId - 1].instrumentosCursoNome;
+      console.log(instrumentoAluno);
+    } else {
+      turmaAluno = " - ";
+      instrumentoAluno = " - ";
+    }
+
+    //popula campo de data de admissão
+    var dataAdmissao;
+    if (alunos[i].dataAdmissao !== null || undefined || "") {
+      const dataAdmissaoObjeto = new Date(alunos[i].dataAdmissao);
+      dataAdmissao = dataAdmissaoObjeto.toLocaleDateString("pt-br", {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric",
+      });
+    } else {
+      dataAdmissao = " - ";
+    }
+
+    var isAtivo;
+    if (alunos[i].dataDesligamento == null || undefined || "") {
+      isAtivo = `<i class="fa fa-check text-info" aria-hidden="true"></i>`;
+    } else {
+      dataAdmissao = " - ";
+    }
 
     registro +=
       /*html*/
       `<tr>
             <td>${alunos[i].id}</td>
             <td>${alunos[i].nome}</td>
-            <td>Violão Básico I - Belo Horizonte</td>
-            <td>Violão</td>
-            <td>12/05/21</td>
+            <td>${turmaAluno}</td>
+            <td>${instrumentoAluno}</td>
+            <td>${dataAdmissao}</td>
             <td>
-              <i class="fa fa-check text-info" aria-hidden="true"></i>
+            ${isAtivo}
             </td>
             <td>
               <a
@@ -123,3 +221,27 @@ function populaTableAlunos(alunos, turmas) {
 
   tabela.innerHTML = registro;
 }
+
+//Função de adicionar aluno
+//Adiciona função ao submit do form
+document
+  .getElementById("post-add-aluno-form")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    // Convert FormData to a JSON object
+    const formDataJSON = {};
+    formData.forEach((value, key) => {
+      formDataJSON[key] = value;
+    });
+
+    try {
+      console.log(formDataJSON);
+      //const responseData = await postInstrumentoApi(formDataJSON);
+      //console.log("Response: ", responseData);
+    } catch (error) {
+      console.log("Error: ", error);
+    }
+  });
