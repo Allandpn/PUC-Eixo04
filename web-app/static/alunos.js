@@ -94,37 +94,10 @@ async function InserDataPageHtml() {
   try {
     await GetDataAndPopulateTable();
 
-    //scriptJS();
+    scriptJS();
   } catch (error) {
     console.error("Error get data and populate table", error);
   }
-}
-
-async function mapeiaPromiseTurmas(turmasPromise) {
-  var turmasValores;
-  turmasPromise
-    .then((result) => {
-      //console.log(result);
-
-      turmasValores = result.map((item) => {
-        return {
-          id: item.id,
-          nroAlunos: item.nroAlunos,
-          nome: item.nome,
-          isAtiva: item.isAtiva,
-          horario: item.horario,
-          unidadeId: item.unidadeId,
-        };
-      });
-      getValue(turmas, turmasValores);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-}
-
-function getValue(variable, value) {
-  return (variable = value);
 }
 
 InserDataPageHtml();
@@ -260,3 +233,57 @@ document
       console.log("Error: ", error);
     }
   });
+
+// ----------- TELA DETALHE ALUNO MODAL --------------
+
+function scriptJS() {
+  // exibe tabela com informacoes do membro da equipe selecionado
+  $(".open-info-aluno").click(function (e) {
+    e.preventDefault();
+    const el = $(this).data("element");
+    console.log(el);
+    $(el).toggle();
+    if ($(el).is(":visible")) {
+      var td = e.target.parentNode.parentNode.parentNode; //.parentNode.parentNode.parentNode;
+      var id = td.children[0].textContent;
+      PopulateTableSelect(id);
+    }
+  });
+}
+
+// Popula tabela com os dados do aluno selecionado
+function PopulateTableSelect(id) {
+  var dadosinstrumento;
+  dataInstrumentosComEmprestimos.forEach((e) => {
+    if (e.id == id) {
+      dadosinstrumento = e;
+    }
+  });
+  console.log(dadosinstrumento);
+  document.getElementById("codigoInstrumento").value = dadosinstrumento.id;
+  document.getElementById("nomeInstrumento").value =
+    dadosinstrumento.nomeInstrumento;
+  document.getElementById("marcaInstrumento").value =
+    dadosinstrumento.marcaInstrumento;
+  document.getElementById("estadoConserv-e").value =
+    dadosinstrumento.estadoConservacaoDoInstrumento;
+  document.getElementById("unidadeAcervo-e").value =
+    unidades[dadosinstrumento.unidadeId - 1].nome;
+
+  var emprestimos = dadosinstrumento.emprestimoInstrumento;
+  var tabela = document.querySelector(".tabela-instrumento-historico");
+  var registro = "";
+
+  emprestimos.forEach((e) => {
+    registro += `
+            <tr>                            
+                <td>${e.dataInicialEmprestimo}</td>
+                <td> - </td>                          
+                <td>${e.dataFinalEmprestimo}</td>
+                <td> - </td> 
+            </tr>
+            `;
+  });
+
+  tabela.innerHTML = registro;
+}
