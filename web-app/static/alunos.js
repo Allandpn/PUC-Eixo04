@@ -3,7 +3,7 @@ import {
   postInstrumentoApi,
   postEmprestimoIntrumentoApi,
 } from "./instrumentosAPI.js";
-import { getAlunos, getAlunoId } from "./alunosAPI.js";
+import { getAlunos, getAlunoId, postCreateAlunoApi } from "./alunosAPI.js";
 import {
   getEmprestimoIdInstrumento,
   getEmprestimos,
@@ -232,15 +232,30 @@ document
     const formData = new FormData(e.target);
 
     // Convert FormData to a JSON object
-    const formDataJSON = {};
-    formData.forEach((value, key) => {
-      formDataJSON[key] = value;
-    });
+    const formDataJSON = {
+      nome: formData.get("nome-modal"),
+      dataNascimento: formData.get("dataNascimento-modal"),
+      email: formData.get("emailAluno-modal"),
+      endereco: {
+        rua: formData.get("ruaEndereco-modal"),
+        numero: formData.get("nroEndereco-modal"),
+        complemento: formData.get("nroComplementoEndereco-modal"),
+        bairro: formData.get("bairroEndereco-modal"),
+        cidade: formData.get("cidadeEndereco-modal"),
+        CEP: formData.get("cepEndereco-modal"),
+      },
+      telefone: formData.get("telefoneAluno-modal"),
+      nomeResponsavel: formData.get("nomeResponsavel-modal"),
+      telefoneResponsavel: formData.get("telefoneResponsavel-modal"),
+      emailResponsavel: formData.get("emailResponsavel-modal"),
+      turmaId: formData.get("turmaAluno-modal"),
+      dataAdmissao: formData.get("dataMatricula-modal"),
+      anotacoesAluno: formData.get("anotacoesAluno-modal"),
+    };
 
     try {
-      console.log(formDataJSON);
-      //const responseData = await postInstrumentoApi(formDataJSON);
-      //console.log("Response: ", responseData);
+      const responseData = await postCreateAlunoApi(formDataJSON);
+      console.log("Response: ", responseData);
     } catch (error) {
       console.log("Error: ", error);
     }
