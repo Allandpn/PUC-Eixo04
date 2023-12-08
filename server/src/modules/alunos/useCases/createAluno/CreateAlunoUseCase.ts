@@ -5,7 +5,9 @@ import { prisma } from "../../../../prisma/client";
 import { AppError } from "../../../../errors/AppError";
 
 export class CreateAlunoUseCase {
-    async execute({nome, email, telefone, dataNascimento, endereco, dataAdmissao, nomeResponsavel} : CreateAlunoDTO) : Promise<Aluno>{
+    async execute({nome, email, telefone, dataNascimento, endereco, dataAdmissao, 
+                    nomeResponsavel, telefoneResponsavel, emailResponsavel, 
+                    anotacoesAluno, turmaId  } : CreateAlunoDTO) : Promise<Aluno>{
         //verificar se nome é nulo
         
         //verificar se email já existe
@@ -58,7 +60,17 @@ export class CreateAlunoUseCase {
                 }                 
             },
             nomeResponsavel,
-            dataAdmissao
+            dataAdmissao,
+            telefoneResponsavel,
+            emailResponsavel,
+            anotacoesAluno,
+            turma: {
+                connect: {
+                    id: turmaId
+                }
+            }
+
+
             
         }
         //Criar o Aluno

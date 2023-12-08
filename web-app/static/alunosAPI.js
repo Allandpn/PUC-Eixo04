@@ -28,15 +28,27 @@ export const postCreateAlunoApi = async (formData) => {
   try {
     //console.log(formData);
     // transforma turmaId de string para nro
-    formData.turmaId = Number(formData.turmaId);
+    if (formData.turmaId == 0) {
+      formData.turmaId = null;
+    } else {
+      formData.turmaId = Number(formData.turmaId);
+    }
+
     // transforma data em ISO
-    const dataAdmissaoObjeto = new Date(formData.dataAdmissao);
-    const dataAdmissaoISO = dataAdmissaoObjeto.toISOString();
-    formData.dataAdmissao = dataAdmissaoISO;
+    console.log(formData.dataAdmissao);
+    if (formData.dataAdmissao !== null || 0 || "" || undefined) {
+      const dataAdmissaoObjeto = new Date(formData.dataAdmissao);
+      const dataAdmissaoISO = dataAdmissaoObjeto.toISOString();
+      formData.dataAdmissao = dataAdmissaoISO;
+    } else {
+      formData.dataAdmissao = null;
+    }
 
     const dataNascimentoObjeto = new Date(formData.dataNascimento);
     const dataNascimentoISO = dataNascimentoObjeto.toISOString();
     formData.dataNascimento = dataNascimentoISO;
+
+    console.log(formData);
 
     const response = await apiBase.post("api/aluno", formData);
     if (response.status >= 200 || response.status < 300) {

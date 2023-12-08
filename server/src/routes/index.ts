@@ -9,6 +9,7 @@ import { unidadeRoutes } from "./unidade.routes";
 import { emprestimoRoutes } from "./emprestimo.routes";
 import { chartRoutes } from "./chart.routes";
 import { enderecoRoutes } from "./endereco.routes";
+import { contribuicaoRoutes } from "./contribuicao.routes";
 
 const routes = Router();
 
@@ -22,5 +23,6 @@ routes.use("/unidade", unidadeRoutes);
 routes.use("/emprestimo", emprestimoRoutes);
 routes.use("/chart", chartRoutes)
 routes.use("/endereco", enderecoRoutes);
+routes.use("/contribuicao", contribuicaoRoutes);
 
 export { routes };

@@ -8,5 +8,9 @@ export interface CreateAlunoDTO {
     endereco: Endereco,
     dataAdmissao: Date,
     nomeResponsavel: string,
+    telefoneResponsavel: string,
+    emailResponsavel: string,
+    anotacoesAluno: string,
+    turmaId: number
     
 }

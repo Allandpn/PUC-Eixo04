@@ -14,6 +14,7 @@ import { getUnidades } from "./unidadesAPI.js";
 import { getTurmas, postCriarTurmaApi } from "./turmaAPI.js";
 import { getCursos } from "./cursosAPI.js";
 import { getEnderecos } from "./enderecosAPI.js";
+import { getContribuicoes } from "./contribuicoesAPI.js";
 
 var dataInstrumentosComEmprestimos = {};
 var emprestimos = {};
@@ -23,6 +24,7 @@ var turmas = {};
 var cursos = {};
 var enderecos = {};
 var instrumentos = {};
+var contribuicoes = {};
 
 const fetchData = async () => {
   try {
@@ -66,6 +68,16 @@ const fetchData = async () => {
         console.error("Error:", error);
       });
 
+    let contribuicoesFetch;
+    getContribuicoes()
+      .then((data) => {
+        contribuicoesFetch = data;
+        //console.log(enderecosFetch);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
     const instrumentosComEmprestimos = await getInstrumentosComEmprestimos();
     const emprestimos = await getEmprestimos();
     const alunos = await getAlunos();
@@ -80,6 +92,7 @@ const fetchData = async () => {
       cursosFetch,
       enderecosFetch,
       instrumentosFetch,
+      contribuicoesFetch,
     ];
   } catch (error) {
     console.error("Error fetching instrumentos", error);
@@ -97,6 +110,7 @@ async function GetDataAndPopulateTable() {
       getCursos,
       getEnderecos,
       getInstrumentos,
+      getContribuicoes,
     ] = await fetchData();
     //console.log(result);
     //console.log(result[0].emprestimoInstrumento);
@@ -114,6 +128,7 @@ async function GetDataAndPopulateTable() {
     //console.log(turmas);
     //await mapeiaPromiseTurmas(turmasPromise);
     dataInstrumentosComEmprestimos = result;
+    contribuicoes = getContribuicoes;
 
     populaTableAlunos(alunos, turmas, cursos);
   } catch (error) {
@@ -287,6 +302,7 @@ function PopulateTableSelect(id) {
   var dadosAlunos;
   var dadosAlunosEndereco;
   var dadosAlunosEmprestimo = [];
+  var dadosAlunosContribuicoes = [];
 
   alunos.forEach((e) => {
     if (e.id == id) {
@@ -303,12 +319,18 @@ function PopulateTableSelect(id) {
   emprestimos.forEach((e) => {
     console.log(e.alunoId);
     if (e.alunoId == id) {
-      console.log(e);
+      //console.log(e);
       dadosAlunosEmprestimo.push(e);
     }
   });
 
-  console.log(dadosAlunosEmprestimo);
+  contribuicoes.forEach((e) => {
+    if (e.alunoId == id) {
+      console.log(e);
+      dadosAlunosContribuicoes.push(e);
+    }
+  });
+  //console.log(dadosAlunosContribuicoes);
 
   //console.log(dadosAlunos);
   document.getElementById("nomeAluno-modal-selecao").value = dadosAlunos.nome;
@@ -425,4 +447,58 @@ function PopulateTableSelect(id) {
   });
 
   tabela.innerHTML = registro;
+
+  var tabelaContribuicoes = document.querySelector(
+    "#tabela-emprestimos-alunos-modal-selecao-contribuicao"
+  );
+  console.log(tabelaContribuicoes);
+  var registroContribuição = "";
+
+  dadosAlunosContribuicoes.forEach((e) => {
+    console.log(e);
+
+    let dataContribuicaoModal;
+    if (e.dataContribuicao !== null || undefined) {
+      dataContribuicaoModal = new Date(e.dataContribuicao).toLocaleDateString(
+        "pt-br",
+        {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        }
+      );
+    } else {
+      dataContribuicaoModal = " - ";
+    }
+
+    registroContribuição += `
+            <tr>                            
+                <td>${e.valorContribuicao}</td>
+                <td> ${dataContribuicaoModal} </td>                                           
+            </tr>
+            `;
+  });
+
+  tabelaContribuicoes.innerHTML = registroContribuição;
+
+  if (dadosAlunos.anotacoesAluno !== null || "" || undefined) {
+    document.getElementById("anotacoesAluno-modal-selecao").value =
+      dadosAlunos.anotacoesAluno;
+  }
+
+  let dataDesligamentoModal;
+  if (dadosAlunos.dataDesligamento !== null || undefined) {
+    dataDesligamentoModal = new Date(
+      dadosAlunos.anotacoesAluno
+    ).toLocaleDateString("pt-br", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  } else {
+    dataDesligamentoModal = " - ";
+  }
+
+  document.getElementById("dataDesligamento-modal-selecao").value =
+    dataDesligamentoModal;
 }
