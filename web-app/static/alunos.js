@@ -179,7 +179,7 @@ function populaTableAlunos(alunos, turmas, cursos) {
       turmaAluno = turmas[alunos[i].turmaId - 1].nome;
       instrumentoAluno =
         cursos[turmas[alunos[i].turmaId - 1].cursoId - 1].instrumentosCursoNome;
-      console.log(instrumentoAluno);
+      //console.log(instrumentoAluno);
     } else {
       turmaAluno = " - ";
       instrumentoAluno = " - ";
