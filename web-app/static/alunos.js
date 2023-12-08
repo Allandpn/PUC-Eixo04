@@ -2,6 +2,7 @@ import {
   getInstrumentosComEmprestimos,
   postInstrumentoApi,
   postEmprestimoIntrumentoApi,
+  getInstrumentos,
 } from "./instrumentosAPI.js";
 import { getAlunos, getAlunoId, postCreateAlunoApi } from "./alunosAPI.js";
 import {
@@ -12,6 +13,7 @@ import {
 import { getUnidades } from "./unidadesAPI.js";
 import { getTurmas, postCriarTurmaApi } from "./turmaAPI.js";
 import { getCursos } from "./cursosAPI.js";
+import { getEnderecos } from "./enderecosAPI.js";
 
 var dataInstrumentosComEmprestimos = {};
 var emprestimos = {};
@@ -19,6 +21,8 @@ var alunos = {};
 var unidades = {};
 var turmas = {};
 var cursos = {};
+var enderecos = {};
+var instrumentos = {};
 
 const fetchData = async () => {
   try {
@@ -41,6 +45,27 @@ const fetchData = async () => {
       .catch((error) => {
         console.error("Error:", error);
       });
+
+    let enderecosFetch;
+    getEnderecos()
+      .then((data) => {
+        enderecosFetch = data;
+        //console.log(enderecosFetch);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+    let instrumentosFetch;
+    getInstrumentos()
+      .then((data) => {
+        instrumentosFetch = data;
+        //console.log(enderecosFetch);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
     const instrumentosComEmprestimos = await getInstrumentosComEmprestimos();
     const emprestimos = await getEmprestimos();
     const alunos = await getAlunos();
@@ -53,6 +78,8 @@ const fetchData = async () => {
       unidades,
       turmasFetch,
       cursosFetch,
+      enderecosFetch,
+      instrumentosFetch,
     ];
   } catch (error) {
     console.error("Error fetching instrumentos", error);
@@ -68,6 +95,8 @@ async function GetDataAndPopulateTable() {
       getUnidades,
       getTurmas,
       getCursos,
+      getEnderecos,
+      getInstrumentos,
     ] = await fetchData();
     //console.log(result);
     //console.log(result[0].emprestimoInstrumento);
@@ -80,6 +109,8 @@ async function GetDataAndPopulateTable() {
     emprestimos = getEmprestimos;
     turmas = getTurmas;
     cursos = getCursos;
+    enderecos = getEnderecos;
+    instrumentos = getInstrumentos;
     //console.log(turmas);
     //await mapeiaPromiseTurmas(turmasPromise);
     dataInstrumentosComEmprestimos = result;
@@ -104,7 +135,7 @@ InserDataPageHtml();
 
 function populaTableAlunos(alunos, turmas, cursos) {
   var tabela = document.querySelector("#table-alunos");
-  console.log(cursos);
+  //console.log(cursos);
 
   var registro =
     /*html*/
@@ -241,7 +272,7 @@ function scriptJS() {
   $(".open-info-aluno").click(function (e) {
     e.preventDefault();
     const el = $(this).data("element");
-    console.log(el);
+    //console.log(el);
     $(el).toggle();
     if ($(el).is(":visible")) {
       var td = e.target.parentNode.parentNode.parentNode; //.parentNode.parentNode.parentNode;
@@ -253,34 +284,142 @@ function scriptJS() {
 
 // Popula tabela com os dados do aluno selecionado
 function PopulateTableSelect(id) {
-  var dadosinstrumento;
-  dataInstrumentosComEmprestimos.forEach((e) => {
+  var dadosAlunos;
+  var dadosAlunosEndereco;
+  var dadosAlunosEmprestimo = [];
+
+  alunos.forEach((e) => {
     if (e.id == id) {
-      dadosinstrumento = e;
+      dadosAlunos = e;
     }
   });
-  console.log(dadosinstrumento);
-  document.getElementById("codigoInstrumento").value = dadosinstrumento.id;
-  document.getElementById("nomeInstrumento").value =
-    dadosinstrumento.nomeInstrumento;
-  document.getElementById("marcaInstrumento").value =
-    dadosinstrumento.marcaInstrumento;
-  document.getElementById("estadoConserv-e").value =
-    dadosinstrumento.estadoConservacaoDoInstrumento;
-  document.getElementById("unidadeAcervo-e").value =
-    unidades[dadosinstrumento.unidadeId - 1].nome;
 
-  var emprestimos = dadosinstrumento.emprestimoInstrumento;
-  var tabela = document.querySelector(".tabela-instrumento-historico");
-  var registro = "";
+  enderecos.forEach((e) => {
+    if (e.alunoId == id) {
+      dadosAlunosEndereco = e;
+    }
+  });
 
   emprestimos.forEach((e) => {
+    console.log(e.alunoId);
+    if (e.alunoId == id) {
+      console.log(e);
+      dadosAlunosEmprestimo.push(e);
+    }
+  });
+
+  console.log(dadosAlunosEmprestimo);
+
+  //console.log(dadosAlunos);
+  document.getElementById("nomeAluno-modal-selecao").value = dadosAlunos.nome;
+  document.getElementById("dataNascimento-modal-selecao").value = new Date(
+    dadosAlunos.dataNascimento
+  ).toLocaleDateString("pt-br", {
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+  });
+
+  const enderecoString =
+    "Rua: " +
+    dadosAlunosEndereco.rua +
+    ", nro. " +
+    dadosAlunosEndereco.numero +
+    ", complemento: " +
+    dadosAlunosEndereco.complemento +
+    ", Bairro: " +
+    dadosAlunosEndereco.bairro +
+    ", Cidade: " +
+    dadosAlunosEndereco.cidade +
+    ", CEP: " +
+    dadosAlunosEndereco.CEP;
+
+  document.getElementById("enderecoAluno-modal-selecao").value = enderecoString;
+  document.getElementById("email-modal-selecao").value = dadosAlunos.email;
+  document.getElementById("telefone-modal-selecao").value =
+    dadosAlunos.telefone;
+
+  if (dadosAlunos.nomeResponsavel !== null || "" || undefined) {
+    document.getElementById("nomeResponsavel-modal-selecao").value =
+      dadosAlunos.nomeResponsavel;
+  }
+  if (dadosAlunos.telefoneResponsavel !== null || "" || undefined) {
+    document.getElementById("telefoneResponsavel-modal-selecao").value =
+      dadosAlunos.tefefoneResponsavel;
+  }
+  if (dadosAlunos.emailResponsavel !== null || "" || undefined) {
+    document.getElementById("emailResponsavel-modal-selecao").value =
+      dadosAlunos.emailResponsavel;
+  }
+
+  var turmaAlunoModal;
+  var instrumentoAlunoModal;
+  if (dadosAlunos.turmaId !== null || undefined || "") {
+    turmaAlunoModal = turmas[dadosAlunos.turmaId - 1].nome;
+    instrumentoAlunoModal =
+      cursos[turmas[dadosAlunos.turmaId - 1].cursoId - 1].instrumentosCursoNome;
+  } else {
+    turmaAlunoModal = " - ";
+    instrumentoAlunoModal = " - ";
+  }
+  document.getElementById("turmaAluno-modal-selecao").value = turmaAlunoModal;
+  document.getElementById("instrumentoAluno-modal-selecao").value =
+    instrumentoAlunoModal;
+
+  document.getElementById("dataMatricula-modal-selecao").value = new Date(
+    dadosAlunos.dataAdmissao
+  ).toLocaleDateString("pt-br", {
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+  });
+
+  var tabela = document.querySelector(
+    "#tabela-emprestimos-alunos-modal-selecao-body"
+  );
+  //console.log(tabela);
+  var registro = "";
+
+  dadosAlunosEmprestimo.forEach((e) => {
+    //console.log(e);
+
+    let inicioEmprestimo;
+    if (e.dataInicialEmprestimo !== null || undefined) {
+      inicioEmprestimo = new Date(e.dataInicialEmprestimo).toLocaleDateString(
+        "pt-br",
+        {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        }
+      );
+    } else {
+      inicioEmprestimo = " - ";
+    }
+    //console.log(inicioEmprestimo);
+
+    let finalEmprestimo;
+    if (e.dataFinalEmprestimo !== null || undefined) {
+      finalEmprestimo = new Date(e.dataFinalEmprestimo).toLocaleDateString(
+        "pt-br",
+        {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        }
+      );
+    } else {
+      finalEmprestimo = " - ";
+    }
+    //console.log(finalEmprestimo);
+    //console.log(instrumentos);
+
     registro += `
             <tr>                            
-                <td>${e.dataInicialEmprestimo}</td>
-                <td> - </td>                          
-                <td>${e.dataFinalEmprestimo}</td>
-                <td> - </td> 
+                <td>${instrumentos[e.instrumentoId - 1].nomeInstrumento}</td>
+                <td> ${e.instrumentoId} </td>                          
+                <td>${inicioEmprestimo}</td>
+                <td> ${finalEmprestimo} </td> 
             </tr>
             `;
   });
