@@ -85,6 +85,16 @@ html, body{
    background-color: rgba(255, 255, 255, 0.801);       
 }
 
+
+/*Define tela para cadastro comum a todos*/
+.tela-wrapper-table{
+   overflow-y: auto;
+   position: relative;
+   height: 100%;
+   max-height: 500px;
+}
+
+
 /*Define tela para cadastro comum a todos*/
 .tela-add-item{
    z-index: 1100;   

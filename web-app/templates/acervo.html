@@ -79,7 +79,7 @@
     <div class="wrapper wrapper-tab border p-4 rounded shadow bg-white" style="overflow-x: auto;">
 
         <!--Painel referente aos dados da Equipe da organização-->        
-        <div class="container-fluid">
+        <div class="container-fluid ">
             <div class="row mt-1">
                 <div class="text-muted">
                     <h5>Instrumentos</h5>
@@ -92,59 +92,8 @@
             <div class="row mt-2">
                 <button class="btn btn-info ml-auto btn-emp-instrumento" type="button" data-element="#telaEmprestimoInstrumento">Novo Empréstimo</button> 
             </div>
-            <div class="row mt-2">
-                <table class="table table-hover">
-                    <thead class="bg-gray">
-                        <tr>
-                            <th scope="col"><span class="mr-3 ">Cód.</span><a href="#" ><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Instrumento</span><a href="#" ><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Marca</span><a href="#"><i class="fa fa-sm fa-sort text-muted mr-0" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Data Aquisição</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Empréstimo</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Responsável</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Data Empr.</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Info</span><a href="#"><i class="fa fa-sm fa-sort text-muted" aria-hidden="true"></i></a></th>  
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>                            
-                            <td>vlo01</td>
-                            <td>Violão</td>                              
-                            <td>Serenata</td>                             
-                            <td>12/05/21</td>
-                            <td ><i class="fa fa-check text-info" aria-hidden="true"></i></td> 
-                            <td>Leide Nunes</td>
-                            <td>12/05/22</td>                          
-                            <td> 
-                                <a href="#" class="open-info-aluno toogle-hide ml-auto" data-element="#dataInfoInstrumento"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
-                            </td>
-                        </tr>
-                        <tr>                            
-                            <td>vln01</td>
-                            <td>Violino</td>                               
-                            <td>Serenata</td>              
-                            <td>12/05/22</td> 
-                            <td>-</td> 
-                            <td>-</td>
-                            <td>-</td>                           
-                            <td> 
-                                <a href="#" class="open-info-aluno toogle-hide ml-auto" data-element="#dataInfoInstrumento"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
-                            </td>
-                        </tr> 
-                        <tr>                            
-                            <td>sxf01</td>
-                            <td>Saxofone</td>                              
-                            <td>Serenata</td>                               
-                            <td>12/05/23</td>
-                            <td><i class="fa fa-check text-info" aria-hidden="true"></i></td> 
-                            <td>Caique Brito</td>
-                            <td>12/05/22</td>                               
-                            <td> 
-                                <a href="#" class="open-info-instrumento toogle-hide ml-auto" data-element="#dataInfoInstrumento"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
-                            </td>
-                        </tr>                                                                            
-                    </tbody>
-                </table>
+            <div class="row mt-2 tela-wrapper-table" id="tabela-instrumentos-geral">
+                <!--Tabela a ser populado com os instrumentos-->
             </div>                
         </div>
         
@@ -205,7 +154,7 @@
                             <th scope="row">Editar</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="">
                         <tr>
                             <td>15/10/2021</td>
                             <td>Felipe de Paula</td>
@@ -229,7 +178,7 @@
                             <th scope="row">Observações</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tabela-instrumento-historico">
                         <tr>
                             <td>15/10/2021</td>
                             <td>Felipe de Paula</td>
@@ -259,13 +208,13 @@
 
 
 
-<!--Modal para adicional Instrumento-->
+<!--Modal para adicionar Instrumento-->
 <div class="hidden hide-container" id="telaCadastroInstrumento">
     <div class="bg-container justify-content-center" >
         <div class="background-dark">
         </div>
         <div class="tela-add-instrumento tela-add-item border rounded shadow  p-4 bg-white">
-            <form>
+            <form id="post-Instrumento-Form">
                 <div class="text-center mb-3">
                     <span class="h5 text-info font-weight-bold">Cadastro de Instrumento</span>
                     <button  class="close btn-add-instrumento " data-element="#telaCadastroInstrumento" data-dismiss="tela-add-instrumento" aria-label="Fechar">
@@ -274,35 +223,27 @@
                 </div>
                 <div class="form-group">
                     <label for="nomeInstrumento">Nome do Instrumento</label>
-                <input value="" type="text" class="form-control" id="nomeInstrumento" placeholder="Nome do Instrumento">
+                <input value="" type="text" class="form-control" id="nomeInstrumento" placeholder="Nome do Instrumento" name="nomeInstrumento">
                 </div>
                 <div class="form-group ">
                     <label for="marcaInstrumento">Marca</label>
-                    <input value="" id="marcaInstrumento" type="text" class="form-control" placeholder="marca"/>
+                    <input value="" id="marcaInstrumento" type="text" class="form-control" placeholder="marca" name="marcaInstrumento"/>
                 </div>
                 <div class="form-group">
-                    <label for="dataAquisicao">Data Aquisição</label>
-                    <input value="" id="dataAquisicao" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
-                </div>   
-                <div class="form-group">
-                    <label for="estadoConserv">Estado de Conservação</label>
-                <input value="" type="text" class="form-control" id="estadoConserv" placeholder="estado de conservação">
+                    <label for="estadoConservacaoDoInstrumento">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConservacaoDoInstrumento" name="estadoConservacaoDoInstrumento" placeholder="estado de conservação">
                 </div>
                 <div class="form-group ">
-                    <label for="unidadeAcervo">Unidade do Instrumento</label>
-                    <select class="custom-select" id="unidadeAcervo">
+                    <label for="unidadeId">Unidade do Instrumento</label>
+                    <select class="custom-select" id="unidadeId" name="unidadeId">
                         <option selected disabled>Nome da Unidade</option>
-                        <option value="1">Belo Horizonte</option>
-                        <option value="2">Betim</option>
-                        <option value="3">Contagem</option>
+                        <option value="1">Unidade 01 - Floresta</option>
+                        <option value="2">Unidade 02 - Barreiro</option>
+                        <option value="3">Unidade 03 - California</option>
                     </select>
                 </div>                                   
-                <div class="form-group">
-                    <label for="anotacoesInstrumento">Anotações</label>
-                    <textarea class="form-control bg-white" id="anotacoesInstrumento" rows="3" ></textarea>
-                </div>  
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary ">Salvar</button>
+                    <button type="submit" class="btn btn-primary" id="post-intrumento-btn">Salvar</button>
                     <button type="button" class="btn btn-secondary ml-4  btn-add-instrumento" data-element="#telaCadastroInstrumento">Cancelar</button>
                 </div>
             </form>
@@ -320,7 +261,7 @@
         <div class="background-dark">
         </div>
         <div class="tela-emp-instrumento tela-add-item border rounded shadow  p-4 bg-white">
-            <form>
+            <form id="post-instrumento-emprestimo">
                 <div class="text-center mb-3">
                     <span class="h5 text-info font-weight-bold">Empréstimo de Instrumento</span>
                     <button  class="close btn-emp-instrumento " data-element="#telaEmprestimoInstrumento" data-dismiss="tela-emp-instrumento" aria-label="Fechar">
@@ -328,39 +269,34 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <label for="">Código:  </label>
-                    <select class="custom-select codigoInstrumento" id="codigoInstrumento-s" >
-                        <option value="1">vln01</option>
-                        <option value="2">vlo01</option>
-                        <option value="3">sxf01</option>
+                    <label for="codigoInstrumento-s">Código:  </label>
+                    <select class="custom-select codigoInstrumento" id="codigoInstrumento-s">
+                        
                     </select>
                 </div>                 
                 <div class="form-group">
-                    <label for="nomeInstrumento">Nome do Instrumento</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeInstrumento" placeholder="Nome do Instrumento" disabled>
+                    <label for="nomeInstrumentoEmprestimo">Nome do Instrumento</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeInstrumentoEmprestimo" placeholder="Nome do Instrumento" disabled>
                 </div>
                 <div class="form-group ">
-                    <label for="marcaInstrumento">Marca</label>
-                    <input value="" id="marcaInstrumento" type="text" class="form-control bg-white" placeholder="marca" disabled>
+                    <label for="marcaInstrumentoEmprestimo">Marca</label>
+                    <input value="" id="marcaInstrumentoEmprestimo" type="text" class="form-control bg-white" placeholder="marca" disabled>
+                </div>
+                <div class="form-group ">
+                    <label for="dataInstrumentoEmprestimo">Data Empréstimo</label>
+                    <input value="" id="dataInstrumentoEmprestimo" type="text" class="form-control bg-white" placeholder="marca" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="dataEmprestimo">Data Empréstimo</label>
-                    <input value="" id="dataEmprestimo" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
+                    <label for="estadoConservEmprestimo">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConservEmprestimo" placeholder="estado de conservação">
                 </div>
                 <div class="form-group">
-                    <label for="nomeResponsavel">Nome do Responsável</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeResponsavel" placeholder="Nome do Responsável">
-                </div>   
-                <div class="form-group">
-                    <label for="estadoConserv">Estado de Conservação</label>
-                <input value="" type="text" class="form-control" id="estadoConserv" placeholder="estado de conservação">
-                </div>                       
-                <div class="form-group">
-                    <label for="anotacoesInstrumento">Anotações</label>
-                    <textarea class="form-control bg-white" id="anotacoesInstrumento" rows="1"></textarea>
-                </div>  
+                    <label for="matriculaUsuarioEmprestimo">Matrícula do Aluno</label>
+                <input value="" type="text" class="form-control" id="matriculaUsuarioEmprestimo" placeholder="matrícula do aluno">
+                </div>                 
+ 
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary ">Salvar</button>
+                    <button type="submit" class="btn btn-primary">Emprestar</button>
                     <button type="button" class="btn btn-secondary ml-4  btn-emp-instrumento" data-element="#telaEmprestimoInstrumento">Cancelar</button>
                 </div>
             </form>
@@ -551,11 +487,12 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
     // In your Javascript (external .js resource or <script> tag)
-    $(document).ready(function() {
-        $('.codigoInstrumento').select2();
-    });
+    //$(document).ready(function() {
+    //    $('.codigoInstrumento').select2();
+    //});
 </script>
 <script type='text/javascript' src="../static/main.js"></script>
+<script type='module' src="../static/acervo.js"></script>
 
 </body>
 </html>

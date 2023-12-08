@@ -8,6 +8,7 @@ import { turmaRoutes } from "./turma.routes";
 import { unidadeRoutes } from "./unidade.routes";
 import { emprestimoRoutes } from "./emprestimo.routes";
 import { chartRoutes } from "./chart.routes";
+import { enderecoRoutes } from "./endereco.routes";
 
 const routes = Router();
 
@@ -20,5 +21,6 @@ routes.use("/turma", turmaRoutes);
 routes.use("/unidade", unidadeRoutes);
 routes.use("/emprestimo", emprestimoRoutes);
 routes.use("/chart", chartRoutes)
+routes.use("/endereco", enderecoRoutes);
 
 export { routes };

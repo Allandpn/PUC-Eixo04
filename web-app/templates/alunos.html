@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <table class="table table-hover">
+                <table class="table table-hover" id="table-alunos">
                     <thead class="bg-gray">
                         <tr>
                             <th scope="col"><span class="mr-3 ">Matricula</span><a href="#" ><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
@@ -158,39 +158,39 @@
             <div class="form-row">
                 <div class="form-group col-md-8 mb-3">
                     <label for="nomeCurso">Nome do Aluno</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeAluno" placeholder="Nome" disabled>
+                <input value="" type="text" class="form-control bg-white" id="nomeAluno-modal-selecao" placeholder="Nome" disabled>
                 </div>
                 <div class="form-group col-md-4 mb-3">
                     <label for="dataNascimento">Data Nascimento</label>
-                    <input value="" id="dataNascimento" type="text" class="form-control ml-2 p-1 rounded  bg-white" placeholder="dd/mm/aaaa"  disabled>
+                    <input value="" id="dataNascimento-modal-selecao" type="text" class="form-control ml-2 p-1 rounded  bg-white" placeholder="dd/mm/aaaa"  disabled>
                 </div>
             </div>
             <div class="form-group">
-                <label for="enderecoEquipe">Endereço</label>
-                <input value="" type="text" class="form-control bg-white" id="enderecoEquipe" placeholder="Rua XV de Novembro, nº 0" disabled>
+                <label for="enderecoAluno-modal-selecao">Endereço</label>
+                <input value="" type="text" class="form-control bg-white" id="enderecoAluno-modal-selecao" placeholder="Rua XV de Novembro, nº 0" disabled>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                <input value="" type="email" class="form-control bg-white" id="email" placeholder="email" disabled>
+                    <label for="email-modal-selecao">Email</label>
+                <input value="" type="email" class="form-control bg-white" id="email-modal-selecao" placeholder="email" disabled>
                 </div>                                   
                 <div class="form-group col-md-6">
-                    <label for="telefone">Telefone</label>
-                <input value="" type="text" class="form-control bg-white" id="telefone" placeholder="telefone" disabled>
+                    <label for="telefone-modal-selecao">Telefone</label>
+                <input value="" type="text" class="form-control bg-white" id="telefone-modal-selecao" placeholder="telefone" disabled>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="nomeResponsavel">Nome do Responsável</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeResponsavel" placeholder="Nome" disabled>
+                    <label for="nomeResponsavel-modal-selecao">Nome do(a) Responsável</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeResponsavel-modal-selecao" placeholder="Nome" disabled>
                 </div>                                   
                 <div class="form-group col-md-4">
-                    <label for="telefoneResponsavel">Telefone</label>
-                <input value="" type="text" class="form-control bg-white" id="telefoneResponsavel" placeholder="telefone" disabled>
+                    <label for="telefoneResponsavel-modal-selecao">Telefone do(a) Responsável</label>
+                <input value="" type="text" class="form-control bg-white" id="telefoneResponsavel-modal-selecao" placeholder="telefone" disabled>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="emailResponsavel">Email</label>
-                <input value="" type="text" class="form-control bg-white" id="emailResponsavel" placeholder="email" disabled>
+                    <label for="emailResponsavel-modal-selecao">Email do(a) Responsável</label>
+                <input value="" type="text" class="form-control bg-white" id="emailResponsavel-modal-selecao" placeholder="email" disabled>
                 </div>
             </div>
             <br>
@@ -198,22 +198,22 @@
             <br>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="turmaAluno">Turma</label>
-                <input value="" type="text" class="form-control bg-white" id="turmaAluno" placeholder="Turma" disabled>
+                    <label for="turmaAluno-modal-selecao">Turma</label>
+                <input value="" type="text" class="form-control bg-white" id="turmaAluno-modal-selecao" placeholder="Turma" disabled>
                 </div>                                   
                 <div class="form-group col-md-4">
-                    <label for="instrumentoAluno">Instrumento</label>
-                <input value="" type="text" class="form-control bg-white" id="instrumentoAluno" placeholder="Instrumento" disabled>
+                    <label for="instrumentoAluno-modal-selecao">Instrumento</label>
+                <input value="" type="text" class="form-control bg-white" id="instrumentoAluno-modal-selecao" placeholder="Instrumento" disabled>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="dataMatricula">Data da Matrícula</label>
-                <input value="" type="text" class="form-control bg-white" id="dataMatricula" placeholder="dd/mm/aaaa" disabled>
+                    <label for="dataMatricula-modal-selecao">Data da Matrícula</label>
+                <input value="" type="text" class="form-control bg-white" id="dataMatricula-modal-selecao" placeholder="dd/mm/aaaa" disabled>
                 </div>
             </div> 
             <br>
             <div class="form-group">
-                <label for="turmaEquipe">Emprestimos</label>
-                <table class="table table-bordered bg-white text-center">
+                <label for="tabela-emprestimos-alunos-modal-selecao">Emprestimos</label>
+                <table class="table table-bordered bg-white text-center" id="tabela-emprestimos-alunos-modal-selecao">
                     <thead class="thead-light">
                         <tr>
                             <th scope="row">Instrumento</th>
@@ -222,7 +222,7 @@
                             <th scope="row">Data da Devolução</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tabela-emprestimos-alunos-modal-selecao-body">
                         <tr>
                             <td>Violão</td>
                             <td>vlo123</td>
@@ -242,8 +242,8 @@
             <hr>
             <br>
             <div class="form-group">
-                <label for="turmaEquipe">Doações</label>
-                <table class="table table-bordered bg-white text-center">
+                <label for="tabela-doacoes-alunos-modal-selecao">Doações</label>
+                <table class="table table-bordered bg-white text-center" id="tabela-doacoes-alunos-modal-selecao">
                     <thead class="thead-light">
                         <tr>
                             <th scope="row">Forma de Doação</th>
@@ -267,13 +267,13 @@
             </div>
             <br>
             <div class="form-group">
-                <label for="anotacoesAluno">Anotações</label>
-                <textarea class="form-control bg-white" id="anotacoesAluno" rows="6" disabled></textarea>
+                <label for="anotacoesAluno-modal-selecao">Anotações</label>
+                <textarea class="form-control bg-white" id="anotacoesAluno-modal-selecao" rows="6" disabled></textarea>
             </div>   
             <br>                                               
             <div class="form-group col-md-4">
-                <label for="dataDesligamento">Data do Desligamento</label>
-            <input value="" type="text" class="form-control bg-white" id="dataDesligamento" placeholder="dd/mm/aaaa" disabled>
+                <label for="dataDesligamento-modal-selecao">Data do Desligamento</label>
+            <input value="" type="text" class="form-control bg-white" id="dataDesligamento-modal-selecao" placeholder="dd/mm/aaaa" disabled>
             </div>
         </form>
     </div>
@@ -290,7 +290,7 @@
         <div class="background-dark">
         </div>
         <div class="tela-add-aluno tela-add-item border rounded shadow  p-4 bg-white ">
-            <form>
+            <form id="post-add-aluno-form">
                 <div class="text-center mb-3">
                     <span class="h5 text-info font-weight-bold">Cadastro de Aluno</span>
                     <button  class="close btn-add-aluno " data-element="#telaCadastroAluno" data-dismiss="tela-add-aluno" aria-label="Fechar">
@@ -298,54 +298,75 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <label for="nomeAluno">Nome do Aluno</label>
-                <input value="" type="text" class="form-control" id="nomeAluno" placeholder="Nome do Aluno">
+                    <label for="nome-modal">Nome do Aluno</label>
+                <input value="" type="text" class="form-control"  id="nome-modal" name="nome-modal" placeholder="Nome do Aluno">
                 </div>
                 <div class="form-group ">
-                    <label for="dataNascimentoAluno">Data Nascimento</label>
-                    <input value="" id="dataNascimentoAluno" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
+                    <label for="dataNascimento-modal">Data Nascimento</label>
+                    <input value="" id="dataNascimento-modal" name="dataNascimento-modal" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
+                </div>
+                <h5>Endereço</h5>
+                <div class="form-group">
+                    <label for="ruaEndereco-modal">Rua</label>
+                    <input value="" type="text" class="form-control" name="ruaEndereco-modal" id="ruaEndereco-modal" placeholder="rua">
                 </div>
                 <div class="form-group">
-                    <label for="enderecoAluno">Endereço</label>
-                    <input value="" type="text" class="form-control" id="enderecoAluno" placeholder="Rua XV de Novembro, nº 0">
-                </div>   
+                    <label for="nroEndereco-modal">Número</label>
+                    <input value="" type="text" class="form-control" id="nroEndereco-modal" name="nroEndereco-modal" placeholder="número">
+                </div>
                 <div class="form-group">
-                    <label for="emailAluno">Email</label>
-                <input value="" type="email" class="form-control" id="emailAluno" placeholder="email">
+                    <label for="nroComplementoEndereco-modal">Complemento</label>
+                    <input value="" type="text" class="form-control" id="nroComplementoEndereco-modal" name="nroComplementoEndereco-modal" placeholder="complemento">
+                </div>
+                <div class="form-group">
+                    <label for="bairroEndereco-modal">Bairro</label>
+                    <input value="" type="text" class="form-control" id="bairroEndereco-modal" name="bairroEndereco-modal" placeholder="bairro">
+                </div>
+                <div class="form-group">
+                    <label for="cidadeEndereco-modal">Cidade</label>
+                    <input value="" type="text" class="form-control" id="cidadeEndereco-modal" name="cidadeEndereco-modal" placeholder="cidade">
+                </div>
+                <div class="form-group">
+                    <label for="cepEndereco-modal">CEP</label>
+                    <input value="" type="text" class="form-control" id="cepEndereco-modal" name="cepEndereco-modal" placeholder="CEP">
+                </div>
+                <div class="form-group">
+                    <label for="emailAluno-modal">Email</label>
+                <input value="" type="email" class="form-control" id="emailAluno-modal" name="emailAluno-modal" placeholder="email">
                 </div>                                   
                 <div class="form-group">
-                    <label for="telefoneAluno">Telefone</label>
-                <input value="" type="text" class="form-control" id="telefoneAluno" placeholder="telefone">
+                    <label for="telefoneAluno-modal">Telefone</label>
+                <input value="" type="text" class="form-control" id="telefoneAluno-modal" name="telefoneAluno-modal" placeholder="telefone">
                 </div>
                 <div class="form-group ">
-                    <label for="nomeResponsavel">Nome do Responsável</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeResponsavel" placeholder="Nome do responsável" disabled>
+                    <label for="nomeResponsavel-modal">Nome do Responsável</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeResponsavel-modal" name="nomeResponsavel-modal" placeholder="Nome do responsável">
                 </div>                                   
                 <div class="form-group ">
-                    <label for="telefoneResponsavel">Telefone</label>
-                <input value="" type="text" class="form-control bg-white" id="telefoneResponsavel" placeholder="telefone do responsável" disabled>
+                    <label for="telefoneResponsavel-modal">Telefone</label>
+                <input value="" type="text" class="form-control bg-white" id="telefoneResponsavel-modal" name="telefoneResponsavel-modal" placeholder="telefone do responsável">
                 </div>
                 <div class="form-group ">
-                    <label for="emailResponsavel">Email</label>
-                <input value="" type="text" class="form-control bg-white" id="emailResponsavel" placeholder="email do responsável" disabled>
+                    <label for="emailResponsavel-modal">Email do Responsável</label>
+                <input value="" type="text" class="form-control bg-white" id="emailResponsavel-modal" name="emailResponsavel-modal" placeholder="email do responsável">
                 </div>
                 <br>
                 <div class="form-group ">
-                    <label for="turmaAluno">Turma</label>
-                <input value="" type="text" class="form-control bg-white" id="turmaAluno" placeholder="Turma" disabled>
+                    <label for="turmaAluno-modal">Turma</label>
+                <input value="" type="text" class="form-control bg-white" id="turmaAluno-modal" name="turmaAluno-modal" placeholder="Turma">
                 </div> 
                 <div class="form-group ">
-                    <label for="dataMatricula">Data da Matrícula</label>
-                <input value="" type="text" class="form-control bg-white" id="dataMatricula" placeholder="dd/mm/aaaa" disabled>
+                    <label for="dataMatricula-modal">Data da Matrícula</label>
+                <input value="" type="date" class="form-control bg-white" id="dataMatricula-modal" name="dataMatricula-modal" placeholder="dd/mm/aaaa">
                 </div>
                 <div class="form-group">
-                    <label for="anotacoesAluno">Anotações</label>
-                    <textarea class="form-control bg-white" id="anotacoesAluno" rows="6" disabled></textarea>
+                    <label for="anotacoesAluno-modal">Anotações</label>
+                    <textarea class="form-control bg-white" id="anotacoesAluno-modal" name="anotacoesAluno-modal" rows="6"></textarea>
                 </div>                                                  
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="dataDesligamento">Data do Desligamento</label>
                 <input value="" type="text" class="form-control bg-white" id="dataDesligamento" placeholder="dd/mm/aaaa" disabled>
-                </div>
+                </div> -->
 
 
                 <div class="text-center mt-3">
@@ -485,7 +506,8 @@
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type='module' src="../static/alunos.js"></script>
 <script type='text/javascript' src="../static/layout-slidebar.js"></script>    
-<script type='text/javascript' src="../static/main.js"></script>  
+<script type='text/javascript' src="../static/main.js"></script>
 </body>
 </html>

@@ -8,6 +8,12 @@ const app = express();
 
 const PORT = 3333;
 
+// Middleware to log incoming requests to "/api"
+app.use("/api", (req: Request, res: Response, next: NextFunction) => {
+    console.log(`Received request to /api' using method ${req.method} and url ${req.url}`);
+    next();
+});
+
 app.use(cors())
 app.use(express.json());
 // app.use(cors({
