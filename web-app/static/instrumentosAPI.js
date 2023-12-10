@@ -40,8 +40,8 @@ export const getInstrumentosComEmprestimos = async () => {
 };
 
 export const postInstrumentoApi = async (formData) => {
+  console.log(formData)
   try {
-    console.log(formData);
     const response = await apiBase.post("api/instrumento", formData);
     if (response.status >= 200 || response.status < 300) {
       return response.data;
@@ -61,7 +61,7 @@ export const postEmprestimoIntrumentoApi = async (formData) => {
     //console.log(formData[0].isEmprestado);Number(formData.instrumentoId)
     var instrumento = await getInstrumentoId(Number(formData.instrumentoId));
 
-    console.log(instrumento);
+    //console.log(instrumento);
 
     if (!instrumento.isEmprestado) {
       const response = await apiBase.post("api/emprestimo", formData);

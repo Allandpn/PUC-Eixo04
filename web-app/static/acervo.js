@@ -11,6 +11,8 @@ import {
 } from "./emprestimosAPI.js";
 import { getUnidades } from "./unidadesAPI.js";
 
+
+
 const fetchAlunos = async () => {
   try {
     const alunos = await getAlunos();
@@ -45,22 +47,19 @@ const fetchData = async () => {
 };
 
 var dataInstrumentosComEmprestimos = {};
-var emprestimos = {};
+var emprestimosDB = {};
 var alunos = {};
 var unidades = {};
+
+
 
 async function GetDataAndPopulateTable() {
   try {
     const [result, getEmprestimos, getAlunos, getUnidades] = await fetchData();
-    //console.log(result);
-    //console.log(result[0].emprestimoInstrumento);
-
-    //console.log(result[0].emprestimoInstrumento.length);
-
-    //console.log(dataInstrumentosComEmprestimos);
+   
     unidades = getUnidades;
     alunos = getAlunos;
-    emprestimos = getEmprestimos;
+    emprestimosDB = getEmprestimos;
     dataInstrumentosComEmprestimos = result;
     PopulateTable(result, unidades);
     listaIdInstrumentos(result);
@@ -68,7 +67,10 @@ async function GetDataAndPopulateTable() {
   } catch (error) {
     console.error("Error get data and populate table", error);
   }
+  // console.log(emprestimosDB)
 }
+
+
 
 async function InserDataPageHtml() {
   try {
@@ -86,6 +88,7 @@ InserDataPageHtml();
 
 function PopulateTable(dados, unidades) {
   var tabela = document.querySelector("#tabela-instrumentos-geral");
+  
 
   var registro =
     /*html*/
@@ -103,7 +106,7 @@ function PopulateTable(dados, unidades) {
 						</tr>
         </thead>
         <tbody>`;
-
+  
   for (let i in dados) {
     //console.log(!(dados[i].emprestimoInstrumento == "" || undefined || null));
 
@@ -115,38 +118,50 @@ function PopulateTable(dados, unidades) {
       isEmprestimo = " - ";
     }
 
-    var dataEmp = "";
-    if (dados[i].emprestimoInstrumento.length != 0) {
-      // console.log(
-      //   dados[i].emprestimoInstrumento[
-      //     dados[i].emprestimoInstrumento.length - 1
-      //   ].dataInicialEmprestimo
-      // );
-      var dataString =
-        dados[i].emprestimoInstrumento[
-          dados[i].emprestimoInstrumento.length - 1
-        ].dataInicialEmprestimo;
+    var dataEmp = " - ";
+    var alunoEmp = " - ";
+    let emprestimos = dados[i].emprestimoInstrumento
+    emprestimos.forEach(e => {
+      if(!e.dataFinalEmprestimo){
+        dataEmp = formatDate(e.dataInicialEmprestimo)
+        alunoEmp = retornaNomeAluno(e.alunoId)
+      } else {
+        dataEmp = " - ";
+        alunoEmp = " - "
+      }
+    });
+    
+    // if (dados[i].emprestimoInstrumento.length != 0) {
+    //   // console.log(
+    //   //   dados[i].emprestimoInstrumento[
+    //   //     dados[i].emprestimoInstrumento.length - 1
+    //   //   ].dataInicialEmprestimo
+    //   // );
+    //   var dataString =
+    //     dados[i].emprestimoInstrumento[
+    //       dados[i].emprestimoInstrumento.length - 1
+    //     ].dataInicialEmprestimo;
 
-      var dataObjeto = new Date(dataString);
-      dataEmp = dataObjeto.toLocaleDateString("pt-br", {
-        day: "numeric",
-        month: "numeric",
-        year: "numeric",
-      });
-    } else {
-      dataEmp = " - ";
-    }
+    //   var dataObjeto = new Date(dataString);
+    //   dataEmp = dataObjeto.toLocaleDateString("pt-br", {
+    //     day: "numeric",
+    //     month: "numeric",
+    //     year: "numeric",
+    //   });
+    // } else {
+    //   dataEmp = " - ";
+    // }
 
-    var alunoEmp = "";
-    if (!(dados[i].emprestimoInstrumento == "" || undefined || null)) {
-      alunoEmp =
-        dados[i].emprestimoInstrumento[
-          dados[i].emprestimoInstrumento.length - 1
-        ].alunoId;
-      alunoEmp = retornaNomeAluno(alunoEmp);
-    } else {
-      alunoEmp = " - ";
-    }
+    
+    // if (!(dados[i].emprestimoInstrumento == "" || undefined || null)) {
+    //   alunoEmp =
+    //     dados[i].emprestimoInstrumento[
+    //       dados[i].emprestimoInstrumento.length - 1
+    //     ].alunoId;
+    //   alunoEmp = retornaNomeAluno(alunoEmp);
+    // } else {
+    //   alunoEmp = " - ";
+    // }
 
     registro +=
       /*html*/
@@ -182,68 +197,67 @@ function PopulateTable(dados, unidades) {
 
 // ----------- TELA INSTRUMENTO --------------
 
-function scriptJS() {
-  // exibe tabela com informacoes do membro da equipe selecionado
-  $(".open-info-instrumento").click(function (e) {
-    e.preventDefault();
-    const el = $(this).data("element");
-    $(el).toggle();
-    if ($(el).is(":visible")) {
-      var td = e.target.parentNode.parentNode.parentNode;
-      var id = td.children[0].textContent;
-      PopulateTableSelect(id);
-    }
-  });
 
-  // exibe modal com devolucao instrumento
-  $(".btn-dev-instrumento").click(function (e) {
-    e.preventDefault();
-    const el = $(this).data("element");
-    $(el).toggle();
-  });
-}
 
 // Popula tabela com os dados do instrumento selecionado
-function PopulateTableSelect(id) {
+function PopulateTableSelect(id) {  
   var dadosinstrumento;
   dataInstrumentosComEmprestimos.forEach((e) => {
     if (e.id == id) {
       dadosinstrumento = e;
     }
   });
-  console.log(dadosinstrumento);
-  document.getElementById("codigoInstrumento").value = dadosinstrumento.id;
-  document.getElementById("nomeInstrumento").value =
-    dadosinstrumento.nomeInstrumento;
-  document.getElementById("marcaInstrumento").value =
-    dadosinstrumento.marcaInstrumento;
-  document.getElementById("estadoConserv-e").value =
-    dadosinstrumento.estadoConservacaoDoInstrumento;
-  document.getElementById("unidadeAcervo-e").value =
-    unidades[dadosinstrumento.unidadeId - 1].nome;
+  document.getElementById("codigoInstrumento-at").value = dadosinstrumento.id;
+  document.getElementById("nomeInstrumento-at").value = dadosinstrumento.nomeInstrumento;
+  document.getElementById("marcaInstrumento-at").value = dadosinstrumento.marcaInstrumento;
+  document.getElementById("estadoConserv-at").value = dadosinstrumento.estadoConservacaoDoInstrumento;
+  document.getElementById("unidadeAcervo-at").value = unidades[dadosinstrumento.unidadeId - 1].nome;
 
   var emprestimos = dadosinstrumento.emprestimoInstrumento;
-  var tabela = document.querySelector(".tabela-instrumento-historico");
-  var registro = "";
+  var tabelaHistorico = document.querySelector(".tabela-instrumento-historico");
+  var tabelaAtivo = document.querySelector(".tabela-instrumento-ativo");
+  var registroHistorico = "";
+  var registroAtivo = "";
 
   emprestimos.forEach((e) => {
-    registro += `
-            <tr>                            
-                <td>${e.dataInicialEmprestimo}</td>
-                <td> - </td>                          
-                <td>${e.dataFinalEmprestimo}</td>
+    if(e.dataFinalEmprestimo){
+      registroHistorico += `
+            <tr>
+                <td>${retornaNomeAluno(e.alunoId)}</td>                             
+                <td>${formatDate(e.dataInicialEmprestimo)}</td>
+                <td>${formatDate(e.dataFinalEmprestimo)}</td>
                 <td> - </td> 
             </tr>
             `;
+    } else {
+      registroAtivo += `
+            <tr>                
+                <td>${retornaNomeAluno(e.alunoId)}</td>                            
+                <td>${formatDate(e.dataInicialEmprestimo)}</td>                          
+                <td> - </td>
+                <td>
+                  <a href="#" class="mb-auto btn-dev-instrumento toogle-hide ml-1" data-element="#telaDevolucaoInstrumento"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                </td> 
+            </tr>
+            `;
+    }    
   });
 
-  tabela.innerHTML = registro;
+  tabelaHistorico.innerHTML = registroHistorico;
+  tabelaAtivo.innerHTML = registroAtivo;
+  //ativa modal para editar instrumento e devolucao 
+  scriptJSEditInstrumento(dadosinstrumento)
+  scriptJSDevInstrumento(dadosinstrumento)
+  
 }
+
+
+
 
 //Função de adicionar instrumento
 //Adiciona função ao submit do form
 document
-  .getElementById("post-Instrumento-Form")
+  .querySelector(".post-Instrumento-Form")
   .addEventListener("submit", async function (e) {
     //e.preventDefault();
 
@@ -257,6 +271,7 @@ document
 
     formDataJSON.unidadeId = Number(formDataJSON.unidadeId);
 
+
     try {
       const responseData = await postInstrumentoApi(formDataJSON);
       console.log("Response: ", responseData);
@@ -265,19 +280,21 @@ document
     }
   });
 
+
+
+
 //Adiciona função de criar empréstimos ao botão salvar
 document
   .getElementById("post-instrumento-emprestimo")
   .addEventListener("submit", async function (e) {
-    e.preventDefault();
 
     // Convert FormData to a JSON object
     const formDataJSON = {};
     formDataJSON.alunoId = document.getElementById(
-      "matriculaUsuarioEmprestimo"
+      "matriculaUsuarioEmprestimo-em"
     ).value;
     formDataJSON.instrumentoId = document.getElementById(
-      "codigoInstrumento-s"
+      "codigoInstrumento-em"
     ).value;
 
     //Parse string para int
@@ -288,10 +305,14 @@ document
     try {
       const responseData = await postEmprestimoIntrumentoApi(formDataJSON);
       console.log("Response: ", responseData);
+      window.location.reload();
     } catch (error) {
       console.log("Error: ", error);
     }
   });
+
+
+  
 
 //-------TELA DE EMPRÉSTIMOS------
 
@@ -302,46 +323,42 @@ document
   .addEventListener("change", updateFieldInstrumentos);
 
 function updateFieldInstrumentos() {
-  let dados = dataInstrumentosComEmprestimos;
+  let dados = dataInstrumentosComEmprestimos;  
 
-  var idInstrumento = document.getElementById("codigoInstrumento-s").value;
-
+  var idInstrumento = document.getElementById("codigoInstrumento-em").value;
+ 
   //popula os dados dos campos conforme o select é alterado
-  document.getElementById("nomeInstrumentoEmprestimo").value =
-    dados[idInstrumento - 1].nomeInstrumento;
-  document.getElementById("marcaInstrumentoEmprestimo").value =
-    dados[idInstrumento - 1].marcaInstrumento;
+  document.getElementById("nomeInstrumentoEmprestimo-em").value = dados[idInstrumento - 1].nomeInstrumento;
+  document.getElementById("marcaInstrumentoEmprestimo-em").value = dados[idInstrumento - 1].marcaInstrumento;
+  document.getElementById("estadoConservEmprestimo-em").value = dados[idInstrumento - 1].estadoConservacaoDoInstrumento;
 
-  //popula campo de data
-  var dataInicioEmprestimoString = "";
-  var dataInicioEmprestimoFormatada = " - ";
+  //popula campo data
+  let registro
+  let formData = document.querySelector(".form-data-emprestimo")
 
-  if (dados[idInstrumento - 1].emprestimoInstrumento.length > 0) {
-    dataInicioEmprestimoString =
-      dados[idInstrumento - 1].emprestimoInstrumento[
-        dados[idInstrumento - 1].emprestimoInstrumento.length - 1
-      ].dataInicialEmprestimo;
-    const dataInicioEmprestimoObjeto = new Date(dataInicioEmprestimoString);
-    dataInicioEmprestimoFormatada =
-      dataInicioEmprestimoObjeto.toLocaleDateString("pt-br", {
-        day: "numeric",
-        month: "numeric",
-        year: "numeric",
-      });
+  if (dados[idInstrumento - 1].isEmprestado){
+    let dataEmprestimoAtivo
+    let emprestimos = dados[idInstrumento - 1].emprestimoInstrumento
+    emprestimos.forEach(e => {
+      dataEmprestimoAtivo = formatDate(e.dataInicialEmprestimo)
+    });
+    registro = `<label for="dataInstrumentoEmprestimo-em">Data Empréstimo</label>
+    <input value="${dataEmprestimoAtivo}" id="dataInstrumentoEmprestimo-em" type="text" class="form-control bg-white" placeholder="" disabled>`
+    document.getElementById("btn-emprestar").classList.add("disabled", "btn-secondary");
+    $("#btn-emprestar").css({ "pointer-events": "none" });
   } else {
-    dataInicioEmprestimoFormatada = " - ";
+    registro = `<label for="dataDevolucao-dv">Data Empréstimo</label>
+    <input value="" id="dataDevolucao-dv" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;" required/>`
+    document.getElementById("btn-emprestar").classList.replace("btn-secondary", "btn-primary");
+    document.getElementById("btn-emprestar").classList.remove("disabled");
+    $("#btn-emprestar").css({ "pointer-events": "auto" });
   }
 
-  document.getElementById("dataInstrumentoEmprestimo").value =
-    dataInicioEmprestimoFormatada;
-
-  //popula campo de estado de conservação
-  document.getElementById("estadoConservEmprestimo").value =
-    dados[idInstrumento - 1].estadoConservacaoDoInstrumento;
+  formData.innerHTML = registro  
 }
 
 function listaIdInstrumentos(dados) {
-  var listaIdInstrumentos = document.getElementById("codigoInstrumento-s");
+  var listaIdInstrumentos = document.getElementById("codigoInstrumento-em");
   var listaIdInstrumentoValues;
 
   for (let i in dados) {
@@ -351,4 +368,102 @@ function listaIdInstrumentos(dados) {
   listaIdInstrumentos.innerHTML = listaIdInstrumentoValues;
 }
 
-//dataInstrumentosComEmprestimos[idInstrumento - 1].nomeInstrumento;
+
+
+//---------------MODAL------------------
+
+function scriptJS() {
+  // exibe tabela com informacoes do membro da equipe selecionado
+  $(".open-info-instrumento").click(function (e) {
+    const el = $(this).data("element");
+    $(el).toggle();
+    if ($(el).is(":visible")) {
+      var td = e.target.parentNode.parentNode.parentNode;
+      var id = td.children[0].textContent;
+      PopulateTableSelect(id);
+    }
+  });
+
+}
+
+
+
+//Modal editar instrumento
+function scriptJSEditInstrumento(dadosinstrumento) {
+  // exibe modal editar emprestimo
+  $(".btn-edit-instrumento").off("click")
+  $(".btn-edit-instrumento").click(function (e) {
+    const el = $(this).data("element");
+    $(el).toggle();
+
+    //popula modal
+    document.getElementById("nomeInstrumento-ed").value = dadosinstrumento.nomeInstrumento;
+    document.getElementById("marcaInstrumento-ed").value = dadosinstrumento.marcaInstrumento;
+    document.getElementById("estadoConservacaoDoInstrumento-ed").value = dadosinstrumento.estadoConservacaoDoInstrumento;
+    document.getElementById("unidadeId-ed").value = dadosinstrumento.unidadeId;
+});
+  
+}
+
+
+
+//Modal devolucao de instrumento
+async function scriptJSDevInstrumento(dadosinstrumento) {
+
+  let emprestimoID
+  // exibe modal devolucao emprestimo
+  $(".btn-dev-instrumento").off("click")
+  $(".btn-dev-instrumento").click(function (e) {
+    const el = $(this).data("element");
+    $(el).toggle();
+       
+  });
+    //popula modal 
+    document.getElementById("codigoInstrumento-dv").value = dadosinstrumento.id;
+    document.getElementById("nomeInstrumento-dv").value = dadosinstrumento.nomeInstrumento;
+    document.getElementById("marcaInstrumento-dv").value = dadosinstrumento.marcaInstrumento;
+    document.getElementById("estadoConserv-dv").value = dadosinstrumento.estadoConservacaoDoInstrumento;
+
+
+    try {
+      emprestimosDB = await getEmprestimoIdInstrumento(dadosinstrumento.id);
+    } catch (error){
+      console.log("Error: ", error);
+    }
+     
+    emprestimosDB.forEach(e => {
+      if(!e.dataFinalEmprestimo){
+        emprestimoID = e.id
+      }
+    });
+
+    
+    //Adiciona funcao para devolver emrpestimos
+    document
+    .getElementById("patch-instrumento-emprestimo")
+    .addEventListener("submit", async function(e) {
+      try {
+      const formatDataJSON = {};
+      formatDataJSON.emprestimoId = emprestimoID  
+        const responseData = await patchDevolverEmprestimo(formatDataJSON);
+      } catch (error) {
+        console.log("Error: ", error);
+      }
+      window.location.reload();
+    })
+    
+}
+
+
+
+
+
+
+// funcao para editar datas
+function formatDate(date){
+  return new Date(date).toLocaleDateString("pt-br", {
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+  });
+}

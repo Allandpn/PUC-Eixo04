@@ -91,7 +91,7 @@ html, body{
    overflow-y: auto;
    position: relative;
    height: 100%;
-   max-height: 500px;
+   max-height: 430px;
 }
 
 
@@ -159,6 +159,12 @@ html, body{
 
 /*Define tela para devolucao Instrumento*/
 .tela-dev-instrumento{
+   width: 600px;
+   
+}
+
+/*Define tela para devolucao Instrumento*/
+.tela-edit-instrumento{
    width: 600px;
    
 }

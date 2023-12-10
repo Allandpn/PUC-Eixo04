@@ -111,35 +111,35 @@
                     <span class="h5 text-info font-weight-bold ">Cadastro de Instrumento</span>
                 </div>
                 <div class="col ml-auto">
-                    <a href="#" class="mb-auto btn-add-instrumento toogle-hide ml-1" data-element="#telaCadastroInstrumento"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
+                    <a href="#" class="mb-auto btn-edit-instrumento toogle-hide ml-1" data-element="#telaEditarInstrumento"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4 mb-3">
-                    <label for="codigoInstrumento">Código</label>
-                <input value="" type="text" class="form-control bg-white" id="codigoInstrumento" placeholder="codigo" disabled>
+                    <label for="codigoInstrumento-at">Código</label>
+                <input value="" type="text" class="form-control bg-white" id="codigoInstrumento-at" placeholder="codigo" disabled>
                 </div>
                 <div class="form-group col-md-4 mb-3">
-                    <label for="nomeInstrumento">Nome do Instrumento</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeInstrumento" placeholder="instrumento" disabled>
+                    <label for="nomeInstrumento-at">Nome do Instrumento</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeInstrumento-at" placeholder="instrumento" disabled>
                 </div>
                 <div class="form-group col-md-4 mb-3">
-                    <label for="marcaInstrumento">Marca</label>
-                <input value="" type="text" class="form-control bg-white" id="marcaInstrumento" placeholder="marca" disabled>
+                    <label for="marcaInstrumento-at">Marca</label>
+                <input value="" type="text" class="form-control bg-white" id="marcaInstrumento-at" placeholder="marca" disabled>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="dataAquisicao-e">Data Aquisição</label>
-                    <input value="" id="dataAquisicao-e" type="text" class="form-control" placeholder="dd/mm/aaaa"/>
+                    <label for="dataAquisicao-at">Data Aquisição</label>
+                    <input value="" id="dataAquisicao-at" type="text" class="form-control" placeholder="dd/mm/aaaa"/>
                 </div>                                   
                 <div class="form-group col-md-4">
-                    <label for="estadoConserv-e">Estado de Conservação</label>
-                <input value="" type="text" class="form-control" id="estadoConserv-e" placeholder="estado de conservação">
+                    <label for="estadoConserv-at">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConserv-at" placeholder="estado de conservação">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="unidadeAcervo-e">Unidade do Instrumento</label>
-                <input value="" type="text" class="form-control" id="unidadeAcervo-e" placeholder="unidade">
+                    <label for="unidadeAcervo-at">Unidade do Instrumento</label>
+                <input value="" type="text" class="form-control" id="unidadeAcervo-at" placeholder="unidade">
                 </div>
             </div>
             <br>
@@ -148,21 +148,14 @@
                 <table class="table table-bordered bg-white text-center">
                     <thead class="thead-light">
                         <tr>
-                            <th scope="row">Data Empréstimo</th>
                             <th scope="row">Responsável</th>
+                            <th scope="row">Data Empréstimo</th>
                             <th scope="row">Observações</th>
                             <th scope="row">Editar</th>
                         </tr>
                     </thead>
-                    <tbody class="">
-                        <tr>
-                            <td>15/10/2021</td>
-                            <td>Felipe de Paula</td>
-                            <td>-</td>
-                            <td>
-                                <a href="#" class="mb-auto btn-emp-instrumento toogle-hide ml-1" data-element="#telaDevolucaoInstrumento"><i class='bx bx-edit text-info'  style="font-size: 1.75rem"></i></a>
-                            </td>
-                        </tr>
+                    <tbody class="tabela-instrumento-ativo">
+                    <!--API DATA-->   
                     </tbody>
                 </table>    
             </div>
@@ -171,26 +164,15 @@
                 <label for="turmaEquipe">Histórico de Empréstimos</label>
                 <table class="table table-bordered bg-white text-center">
                     <thead class="thead-light">
-                        <tr>
-                            <th scope="row">Data Empréstimo</th>
+                        <tr>                            
                             <th scope="row">Responsável</th>
+                            <th scope="row">Data Empréstimo</th>
                             <th scope="row">Data da Devolução</th>
                             <th scope="row">Observações</th>
                         </tr>
                     </thead>
                     <tbody class="tabela-instrumento-historico">
-                        <tr>
-                            <td>15/10/2021</td>
-                            <td>Felipe de Paula</td>
-                            <td>01/12/2022</td>
-                            <td>Sem avarias</td>
-                        </tr>
-                        <tr>
-                            <td>15/10/2022</td>
-                            <td>Neymar Junior</td>
-                            <td>15/10/2022</td>
-                            <td>Pequena avaria no cabo</td>
-                        </tr>
+                    <!--API DATA-->
                     </tbody>
                 </table>    
             </div>
@@ -214,7 +196,7 @@
         <div class="background-dark">
         </div>
         <div class="tela-add-instrumento tela-add-item border rounded shadow  p-4 bg-white">
-            <form id="post-Instrumento-Form">
+            <form class="post-Instrumento-Form">
                 <div class="text-center mb-3">
                     <span class="h5 text-info font-weight-bold">Cadastro de Instrumento</span>
                     <button  class="close btn-add-instrumento " data-element="#telaCadastroInstrumento" data-dismiss="tela-add-instrumento" aria-label="Fechar">
@@ -223,19 +205,19 @@
                 </div>
                 <div class="form-group">
                     <label for="nomeInstrumento">Nome do Instrumento</label>
-                <input value="" type="text" class="form-control" id="nomeInstrumento" placeholder="Nome do Instrumento" name="nomeInstrumento">
+                <input value="" type="text" class="form-control" id="nomeInstrumento" placeholder="Nome do Instrumento" name="nomeInstrumento" required>
                 </div>
                 <div class="form-group ">
                     <label for="marcaInstrumento">Marca</label>
-                    <input value="" id="marcaInstrumento" type="text" class="form-control" placeholder="marca" name="marcaInstrumento"/>
+                    <input value="" id="marcaInstrumento" type="text" class="form-control" placeholder="marca" name="marcaInstrumento" required/>
                 </div>
                 <div class="form-group">
                     <label for="estadoConservacaoDoInstrumento">Estado de Conservação</label>
-                <input value="" type="text" class="form-control" id="estadoConservacaoDoInstrumento" name="estadoConservacaoDoInstrumento" placeholder="estado de conservação">
+                <input value="" type="text" class="form-control" id="estadoConservacaoDoInstrumento" name="estadoConservacaoDoInstrumento" placeholder="estado de conservação" required>
                 </div>
                 <div class="form-group ">
                     <label for="unidadeId">Unidade do Instrumento</label>
-                    <select class="custom-select" id="unidadeId" name="unidadeId">
+                    <select class="custom-select" id="unidadeId" name="unidadeId" required>
                         <option selected disabled>Nome da Unidade</option>
                         <option value="1">Unidade 01 - Floresta</option>
                         <option value="2">Unidade 02 - Barreiro</option>
@@ -243,7 +225,7 @@
                     </select>
                 </div>                                   
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary" id="post-intrumento-btn">Salvar</button>
+                    <button type="submit" class="btn btn-primary  post-intrumento-btn">Salvar</button>
                     <button type="button" class="btn btn-secondary ml-4  btn-add-instrumento" data-element="#telaCadastroInstrumento">Cancelar</button>
                 </div>
             </form>
@@ -269,35 +251,79 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <label for="codigoInstrumento-s">Código:  </label>
-                    <select class="custom-select codigoInstrumento" id="codigoInstrumento-s">
+                    <label for="codigoInstrumento-em">Código:  </label>
+                    <select class="custom-select codigoInstrumento" id="codigoInstrumento-em">
                         
                     </select>
                 </div>                 
                 <div class="form-group">
-                    <label for="nomeInstrumentoEmprestimo">Nome do Instrumento</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeInstrumentoEmprestimo" placeholder="Nome do Instrumento" disabled>
+                    <label for="nomeInstrumentoEmprestimo-em">Nome do Instrumento</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeInstrumentoEmprestimo-em" placeholder="Nome do Instrumento" disabled>
                 </div>
                 <div class="form-group ">
-                    <label for="marcaInstrumentoEmprestimo">Marca</label>
-                    <input value="" id="marcaInstrumentoEmprestimo" type="text" class="form-control bg-white" placeholder="marca" disabled>
+                    <label for="marcaInstrumentoEmprestimo-em">Marca</label>
+                    <input value="" id="marcaInstrumentoEmprestimo-em" type="text" class="form-control bg-white" placeholder="marca" disabled>
                 </div>
-                <div class="form-group ">
-                    <label for="dataInstrumentoEmprestimo">Data Empréstimo</label>
-                    <input value="" id="dataInstrumentoEmprestimo" type="text" class="form-control bg-white" placeholder="marca" disabled>
-                </div>
-                <div class="form-group">
-                    <label for="estadoConservEmprestimo">Estado de Conservação</label>
-                <input value="" type="text" class="form-control" id="estadoConservEmprestimo" placeholder="estado de conservação">
+                <div class="form-group form-data-emprestimo">
+                    <label for="dataInstrumentoEmprestimo-em">Data Empréstimo</label>
+                    <input value="" id="dataInstrumentoEmprestimo-em" type="text" class="form-control bg-white" placeholder="" required>
                 </div>
                 <div class="form-group">
-                    <label for="matriculaUsuarioEmprestimo">Matrícula do Aluno</label>
-                <input value="" type="text" class="form-control" id="matriculaUsuarioEmprestimo" placeholder="matrícula do aluno">
+                    <label for="estadoConservEmprestimo-em">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConservEmprestimo-em" placeholder="estado de conservação">
+                </div>
+                <div class="form-group">
+                    <label for="matriculaUsuarioEmprestimo-em">Matrícula do Aluno</label>
+                <input value="" type="text" class="form-control" id="matriculaUsuarioEmprestimo-em" placeholder="matrícula do aluno" required>
                 </div>                 
  
                 <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-primary">Emprestar</button>
+                    <button type="submit" id="btn-emprestar" class="btn disabled btn-secondary">Emprestar</button>
                     <button type="button" class="btn btn-secondary ml-4  btn-emp-instrumento" data-element="#telaEmprestimoInstrumento">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--Modal para editar Instrumento-->
+<div class="hidden hide-container" id="telaEditarInstrumento">
+    <div class="bg-container justify-content-center" >
+        <div class="background-dark">
+        </div>
+        <div class="tela-edit-instrumento tela-add-item border rounded shadow  p-4 bg-white">
+            <form class="post-InstrumentoEdit-Form">
+                <div class="text-center mb-3">
+                    <span class="h5 text-info font-weight-bold">Cadastro de Instrumento</span>
+                    <button  class="close btn-add-instrumento " data-element="#telaEditarInstrumento" data-dismiss="tela-edit-instrumento" aria-label="Fechar">
+                        <span class="btn-edit-instrumento m-3" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label for="nomeInstrumento-ed">Nome do Instrumento</label>
+                <input value="" type="text" class="form-control" id="nomeInstrumento-ed" placeholder="Nome do Instrumento" name="nomeInstrumento-ed">
+                </div>
+                <div class="form-group ">
+                    <label for="marcaInstrumento-ed">Marca</label>
+                    <input value="" id="marcaInstrumento-ed" type="text" class="form-control" placeholder="marca" name="marcaInstrumento-ed"/>
+                </div>
+                <div class="form-group">
+                    <label for="estadoConservacaoDoInstrumento-ed">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConservacaoDoInstrumento-ed" name="estadoConservacaoDoInstrumento-ed" placeholder="estado de conservação">
+                </div>
+                <div class="form-group ">
+                    <label for="unidadeId-ed">Unidade do Instrumento</label>
+                    <select class="custom-select" id="unidadeId-ed" name="unidadeId-ed">
+                        <option selected disabled>Nome da Unidade</option>
+                        <option value="1">Unidade 01 - Floresta</option>
+                        <option value="2">Unidade 02 - Barreiro</option>
+                        <option value="3">Unidade 03 - California</option>
+                    </select>
+                </div>                                   
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary post-intrumentoedit-btn">Salvar</button>
+                    <button type="button" class="btn btn-secondary ml-4  btn-edit-instrumento" data-element="#telaEditarInstrumento">Cancelar</button>
                 </div>
             </form>
         </div>
@@ -312,7 +338,7 @@
         <div class="background-dark">
         </div>
         <div class="tela-dev-instrumento tela-add-item border rounded shadow  p-4 bg-white">
-            <form>
+            <form id="patch-instrumento-emprestimo">
                 <div class="text-center mb-3">
                     <span class="h5 text-info font-weight-bold">Devolução de Instrumento</span>
                     <button  class="close btn-dev-instrumento " data-element="#telaDevolucaoInstrumento" data-dismiss="tela-dev-instrumento" aria-label="Fechar">
@@ -320,28 +346,28 @@
                     </button>
                 </div>
                 <div class="form-group">
-                    <label for="codigoInstrumento-e">Código:  </label>
-                    <input value="" type="text" class="form-control bg-white" id="codigoInstrumento-e" placeholder="vln01" disabled>
+                    <label for="codigoInstrumento-dv">Código:  </label>
+                    <input value="" type="text" class="form-control bg-white" id="codigoInstrumento-dv" placeholder="cod" disabled>
                 </div>                 
                 <div class="form-group">
-                    <label for="nomeInstrumento-e">Nome do Instrumento</label>
-                <input value="" type="text" class="form-control bg-white" id="nomeInstrumento-e" placeholder="Nome do Instrumento" disabled>
+                    <label for="nomeInstrumento-dv">Nome do Instrumento</label>
+                <input value="" type="text" class="form-control bg-white" id="nomeInstrumento-dv" placeholder="Nome do Instrumento" disabled>
                 </div>
                 <div class="form-group ">
-                    <label for="marcaInstrumento-e">Marca</label>
-                    <input value="" id="marcaInstrumento-e" type="text" class="form-control bg-white" placeholder="marca" disabled>
+                    <label for="marcaInstrumento-dv">Marca</label>
+                    <input value="" id="marcaInstrumento-dv" type="text" class="form-control bg-white" placeholder="marca" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="dataDevolucao-e">Data Devolução</label>
-                    <input value="" id="dataDevolucao-e" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;"/>
+                    <label for="dataDevolucao-dv">Data Devolução</label>
+                    <input value="" id="dataDevolucao-dv" type="date" class="form-control ml-2 p-1 date rounded  " style="border-color: gray;" required/>
                 </div>   
                 <div class="form-group">
-                    <label for="estadoConserv-e">Estado de Conservação</label>
-                <input value="" type="text" class="form-control" id="estadoConserv-e" placeholder="estado de conservação">
+                    <label for="estadoConserv-dv">Estado de Conservação</label>
+                <input value="" type="text" class="form-control" id="estadoConserv-dv" placeholder="estado de conservação">
                 </div>                       
                 <div class="form-group">
-                    <label for="anotacoesInstrumento-e">Anotações</label>
-                    <textarea class="form-control bg-white" id="anotacoesInstrumento-e" rows="1"></textarea>
+                    <label for="anotacoesInstrumento-dv">Anotações</label>
+                    <textarea class="form-control bg-white" id="anotacoesInstrumento-dv" rows="1"></textarea>
                 </div>  
                 <div class="text-center mt-3">
                     <button type="submit" class="btn btn-primary ">Salvar</button>

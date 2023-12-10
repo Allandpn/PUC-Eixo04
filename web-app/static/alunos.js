@@ -154,14 +154,14 @@ function populaTableAlunos(alunos, turmas, cursos) {
 
   var registro =
     /*html*/
-    `<table class="table table-hover" id="table-alunos">
+    `<table class="table table-hover tela-wrapper-table" id="table-alunos">
         <thead class="bg-gray">
             <tr>
                 <th scope="col"><span class="mr-3 ">Matricula</span><a href="#" ><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
                 <th scope="col"><span class="mr-3 ">Nome</span><a href="#" ><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
                 <th scope="col"><span class="mr-3 ">Turma</span><a href="#"><i class="fa fa-sort text-muted mr-0" aria-hidden="true"></i></a></th>
                 <th scope="col"><span class="mr-3 ">Instrumento</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
-                <th scope="col"><span class="mr-3 ">Data de Início</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
+                <th scope="col"><span class="mr-3 ">Data Admissão</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
                 <th scope="col"><span class="mr-3 ">Ativo</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
                 <th scope="col"><span class="mr-3 ">Info</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>  
             </tr>

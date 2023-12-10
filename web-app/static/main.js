@@ -191,17 +191,18 @@ $(function () {
     const el = $(this).data("element");
     $(el).toggle();
   });
-});
 
 
-// exibe modal com cadastro emprestimo
-$(function () {
+
   $(".btn-emp-instrumento").click(function (e) {
     e.preventDefault();
     const el = $(this).data("element");
     $(el).toggle();
   });
 });
+
+
+
 
 
 

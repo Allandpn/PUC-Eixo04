@@ -5,7 +5,7 @@ import { prisma } from "../../../prisma/client";
 export class CreateInstrumentoController {
 
     async handle(req: Request, res: Response) {
-        const {nomeInstrumento, marcaInstrumento, estadoConservacaoDoInstrumento, unidadeId} = req.body;;
+        const {nomeInstrumento, marcaInstrumento, estadoConservacaoDoInstrumento, unidadeId} = req.body;
 
         const createinstrumentoUseCase = new CreateInstrumentoUseCase();
 
