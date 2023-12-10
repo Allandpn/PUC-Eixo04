@@ -88,52 +88,7 @@
             </div>
             <div class="row mt-2">
                 <table class="table table-hover" id="table-alunos">
-                    <thead class="bg-gray">
-                        <tr>
-                            <th scope="col"><span class="mr-3 ">Matricula</span><a href="#" ><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Nome</span><a href="#" ><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Turma</span><a href="#"><i class="fa fa-sort text-muted mr-0" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Instrumento</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Data de Início</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Ativo</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>
-                            <th scope="col"><span class="mr-3 ">Info</span><a href="#"><i class="fa fa-sort text-muted" aria-hidden="true"></i></a></th>  
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>                            
-                            <td>01</td>
-                            <td>Leticia</td>                              
-                            <td>Violão Básico I - Belo Horizonte</td>                                
-                            <td>Violão</td>                                
-                            <td>12/05/21</td>
-                            <td><i class="fa fa-check text-info" aria-hidden="true"></i></td>                           
-                            <td> 
-                                <a href="#" class="open-info-aluno toogle-hide ml-auto" data-element="#dataInfoAluno"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
-                            </td>
-                        </tr>
-                        <tr>                            
-                            <td>02</td>
-                            <td>Maria</td>                              
-                            <td>Violino Básico I - Betim</td>                                
-                            <td>Violino</td>                                
-                            <td>12/05/22</td> 
-                            <td><i class="fa fa-times text-danger" aria-hidden="true"></i></td>                          
-                            <td> 
-                                <a href="#" class="open-info-aluno toogle-hide ml-auto" data-element="#dataInfoAluno"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
-                            </td>
-                        </tr> 
-                        <tr>                            
-                            <td>01</td>
-                            <td>Oscar</td>                              
-                            <td>Saxofone Básico I - Contagem</td>                                
-                            <td>Saxofone</td>                                
-                            <td>12/05/23</td>
-                            <td><i class="fa fa-check text-info" aria-hidden="true"></i></td>                              
-                            <td> 
-                                <a href="#" class="open-info-aluno toogle-hide ml-auto" data-element="#dataInfoAluno"><i class='bx bx-file-find text-info mt-auto' style="font-size: 1.75rem"></i></a>                                 
-                            </td>
-                        </tr>                                                                            
-                    </tbody>
+                    <!-- adicionada pela funcao  populaTableAlunos(alunos, turmas, cursos) -->
                 </table>
             </div>                
         </div>
@@ -223,18 +178,7 @@
                         </tr>
                     </thead>
                     <tbody id="tabela-emprestimos-alunos-modal-selecao-body">
-                        <tr>
-                            <td>Violão</td>
-                            <td>vlo123</td>
-                            <td>15/10/2021</td>
-                            <td>01/12/2022</td>
-                        </tr>
-                        <tr>
-                            <td>Violino</td>
-                            <td>vln231</td>
-                            <td>15/01/2022</td>
-                            <td>--</td>
-                        </tr>
+                        <!-- adicionado pela funcao PopulateTableSelect -->
                     </tbody>
                 </table>    
             </div>
@@ -246,22 +190,12 @@
                 <table class="table table-bordered bg-white text-center" id="tabela-doacoes-alunos-modal-selecao">
                     <thead class="thead-light">
                         <tr>
-                            <th scope="row">Forma de Doação</th>
                             <th scope="row">Valor</th>
                             <th scope="row">Data</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Dinheiro</td>
-                            <td>R$ 120,00</td>
-                            <td>15/10/2021</td>
-                        </tr>
-                        <tr>
-                            <td>Pix</td>
-                            <td>R$ 100,00</td>
-                            <td>15/01/2022</td>
-                        </tr>
+                    <tbody id="tabela-emprestimos-alunos-modal-selecao-contribuicao">
+                        <!-- adicionado pela funcao PopulateTableSelect -->
                     </tbody>
                 </table>    
             </div>
